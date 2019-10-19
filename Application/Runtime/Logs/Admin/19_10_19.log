@@ -1,0 +1,869 @@
+[ 2019-10-19T14:33:51+08:00 ] 127.0.0.1 /Category/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001167s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001280s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001310s ]
+SQL: SELECT * FROM `wj_category`  [ RunTime:0.0135s ]
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001249s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001283s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013068s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013094s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001191s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001214s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001464s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001487s ]
+
+[ 2019-10-19T14:33:51+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000640s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000793s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000827s ]
+ERR: 无法加载控制器:Public
+
+[ 2019-10-19T14:35:22+08:00 ] 127.0.0.1 /Category/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000653s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000774s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000799s ]
+SQL: SELECT * FROM `wj_category`  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000053s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000123s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008887s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008928s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000583s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000605s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000886s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000911s ]
+
+[ 2019-10-19T14:35:22+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000713s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000780s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000813s ]
+ERR: 无法加载控制器:Public
+
+[ 2019-10-19T14:35:38+08:00 ] 127.0.0.1 /Category/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000654s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000765s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000787s ]
+NOTIC: [8] Undefined index: validate D:\MyPhpstorm\wenjun-shop\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\MyPhpstorm\wenjun-shop\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `wj_category` (`cname`,`parent_id`,`isrec`) VALUES ('华为手机','1','0') [ RunTime:0.0048s ]
+
+[ 2019-10-19T14:35:48+08:00 ] 127.0.0.1 /Category/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000615s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000726s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000748s ]
+NOTIC: [8] Undefined index: validate D:\MyPhpstorm\wenjun-shop\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\MyPhpstorm\wenjun-shop\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `wj_category` (`cname`,`parent_id`,`isrec`) VALUES ('小米手机','1','0') [ RunTime:0.0003s ]
+
+[ 2019-10-19T14:35:55+08:00 ] 127.0.0.1 /Category/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000726s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000965s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+NOTIC: [8] Undefined index: validate D:\MyPhpstorm\wenjun-shop\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\MyPhpstorm\wenjun-shop\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `wj_category` (`cname`,`parent_id`,`isrec`) VALUES ('坚果手机','1','0') [ RunTime:0.0004s ]
+
+[ 2019-10-19T14:36:06+08:00 ] 127.0.0.1 /Category/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000875s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001040s ]
+SQL: SELECT * FROM `wj_category`  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000046s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000083s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009146s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009180s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000763s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000788s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001350s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001382s ]
+
+[ 2019-10-19T14:36:06+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000590s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000686s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000711s ]
+ERR: 无法加载控制器:Public
+
+[ 2019-10-19T14:36:22+08:00 ] 127.0.0.1 /Category/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000649s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000730s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000753s ]
+NOTIC: [8] Undefined index: validate D:\MyPhpstorm\wenjun-shop\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\MyPhpstorm\wenjun-shop\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `wj_category` (`cname`,`parent_id`,`isrec`) VALUES ('笔记本','','0') [ RunTime:0.0009s ]
+
+[ 2019-10-19T14:36:53+08:00 ] 127.0.0.1 /Category/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000721s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000842s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000885s ]
+SQL: SELECT * FROM `wj_category`  [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000044s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000078s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010465s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010522s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000913s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000948s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001072s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001101s ]
+
+[ 2019-10-19T14:36:53+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000643s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000718s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000746s ]
+ERR: 无法加载控制器:Public
+
+[ 2019-10-19T14:37:07+08:00 ] 127.0.0.1 /Category/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000580s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000914s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000948s ]
+NOTIC: [8] Undefined index: validate D:\MyPhpstorm\wenjun-shop\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\MyPhpstorm\wenjun-shop\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `wj_category` (`cname`,`parent_id`,`isrec`) VALUES ('华为笔记本','6','0') [ RunTime:0.0019s ]
+
+[ 2019-10-19T14:37:11+08:00 ] 127.0.0.1 /Category/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000693s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000846s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000872s ]
+NOTIC: [8] Undefined index: validate D:\MyPhpstorm\wenjun-shop\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\MyPhpstorm\wenjun-shop\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `wj_category` (`cname`,`parent_id`,`isrec`) VALUES ('小米笔记本','6','0') [ RunTime:0.0003s ]
+
+[ 2019-10-19T14:37:15+08:00 ] 127.0.0.1 /Category/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000674s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000755s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000787s ]
+NOTIC: [8] Undefined index: validate D:\MyPhpstorm\wenjun-shop\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\MyPhpstorm\wenjun-shop\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `wj_category` (`cname`,`parent_id`,`isrec`) VALUES ('荣耀笔记本','6','0') [ RunTime:0.0003s ]
+
+[ 2019-10-19T14:37:17+08:00 ] 127.0.0.1 /Category/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000632s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000855s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000890s ]
+SQL: SELECT * FROM `wj_category`  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+NOTIC: [8] Undefined index: pid D:\MyPhpstorm\wenjun-shop\Application\Admin\Model\CommonModel.class.php 第 16 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000044s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000079s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007337s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007380s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000897s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000936s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001009s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001038s ]
+
+[ 2019-10-19T14:37:17+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000583s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000760s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000793s ]
+ERR: 无法加载控制器:Public
+
+[ 2019-10-19T14:39:25+08:00 ] 127.0.0.1 /Category/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000791s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000850s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000875s ]
+SQL: SELECT * FROM `wj_category`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000044s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000084s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008560s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008597s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000653s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000674s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001504s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001539s ]
+
+[ 2019-10-19T14:39:25+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000605s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000741s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000768s ]
+ERR: 无法加载控制器:Public
+
+[ 2019-10-19T14:40:10+08:00 ] 127.0.0.1 /Category/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000797s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000781s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000813s ]
+SQL: SELECT * FROM `wj_category`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000040s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000069s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006388s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006427s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000625s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000646s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000868s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000892s ]
+
+[ 2019-10-19T14:40:10+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000694s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000900s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000935s ]
+ERR: 无法加载控制器:Public
+
+[ 2019-10-19T14:41:53+08:00 ] 127.0.0.1 /Category/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000880s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000932s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000965s ]
+SQL: SELECT * FROM `wj_category`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000063s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000101s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010734s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010773s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000700s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000722s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000928s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000950s ]
+
+[ 2019-10-19T14:41:54+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000597s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000752s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000778s ]
+ERR: 无法加载控制器:Public
+
+[ 2019-10-19T14:43:28+08:00 ] 127.0.0.1 /Category/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000616s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000923s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000970s ]
+SQL: SELECT * FROM `wj_category`  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000040s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000070s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006033s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006073s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000658s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000681s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000815s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000838s ]
+
+[ 2019-10-19T14:43:29+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000763s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000744s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000774s ]
+ERR: 无法加载控制器:Public
+
+[ 2019-10-19T14:46:14+08:00 ] 127.0.0.1 /Category/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000957s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001166s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001205s ]
+SQL: SELECT * FROM `wj_category`  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000065s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000099s ]
+NOTIC: [8] Undefined variable: cate D:\MyPhpstorm\wenjun-shop\Application\Runtime\Cache\Admin\66fedda847d04c654569b2d3b555a142.php 第 59 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016101s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016134s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000826s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000850s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001070s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001099s ]
+
+[ 2019-10-19T14:46:15+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000655s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000868s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000903s ]
+ERR: 无法加载控制器:Public
+
+[ 2019-10-19T14:47:01+08:00 ] 127.0.0.1 /Category/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000598s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000792s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000818s ]
+SQL: SELECT * FROM `wj_category`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000048s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000235s ]
+NOTIC: [8] Undefined index: name D:\MyPhpstorm\wenjun-shop\Application\Runtime\Cache\Admin\66fedda847d04c654569b2d3b555a142.php 第 59 行.
+NOTIC: [8] Undefined index: name D:\MyPhpstorm\wenjun-shop\Application\Runtime\Cache\Admin\66fedda847d04c654569b2d3b555a142.php 第 59 行.
+NOTIC: [8] Undefined index: name D:\MyPhpstorm\wenjun-shop\Application\Runtime\Cache\Admin\66fedda847d04c654569b2d3b555a142.php 第 59 行.
+NOTIC: [8] Undefined index: name D:\MyPhpstorm\wenjun-shop\Application\Runtime\Cache\Admin\66fedda847d04c654569b2d3b555a142.php 第 59 行.
+NOTIC: [8] Undefined index: name D:\MyPhpstorm\wenjun-shop\Application\Runtime\Cache\Admin\66fedda847d04c654569b2d3b555a142.php 第 59 行.
+NOTIC: [8] Undefined index: name D:\MyPhpstorm\wenjun-shop\Application\Runtime\Cache\Admin\66fedda847d04c654569b2d3b555a142.php 第 59 行.
+NOTIC: [8] Undefined index: name D:\MyPhpstorm\wenjun-shop\Application\Runtime\Cache\Admin\66fedda847d04c654569b2d3b555a142.php 第 59 行.
+NOTIC: [8] Undefined index: name D:\MyPhpstorm\wenjun-shop\Application\Runtime\Cache\Admin\66fedda847d04c654569b2d3b555a142.php 第 59 行.
+NOTIC: [8] Undefined index: name D:\MyPhpstorm\wenjun-shop\Application\Runtime\Cache\Admin\66fedda847d04c654569b2d3b555a142.php 第 59 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008977s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009009s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000898s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000945s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001175s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001208s ]
+
+[ 2019-10-19T14:47:02+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000772s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001084s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001128s ]
+ERR: 无法加载控制器:Public
+
+[ 2019-10-19T14:47:12+08:00 ] 127.0.0.1 /Category/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000856s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001411s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001758s ]
+SQL: SELECT * FROM `wj_category`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000044s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000077s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006869s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006901s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000637s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000660s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000792s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000815s ]
+
+[ 2019-10-19T14:47:12+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000640s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000970s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001011s ]
+ERR: 无法加载控制器:Public
+
+[ 2019-10-19T14:49:37+08:00 ] 127.0.0.1 /Category/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001120s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001010s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001045s ]
+SQL: SELECT * FROM `wj_category`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000070s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000107s ]
+ERR: syntax error, unexpected '<'
+
+[ 2019-10-19T14:50:27+08:00 ] 127.0.0.1 /Category/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000797s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000881s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000916s ]
+SQL: SELECT * FROM `wj_category`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000048s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000102s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007831s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007863s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000774s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000796s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000923s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000945s ]
+
+[ 2019-10-19T14:50:27+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000734s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000883s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000918s ]
+ERR: 无法加载控制器:Public
+
+[ 2019-10-19T14:51:15+08:00 ] 127.0.0.1 /Category/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000822s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000767s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000796s ]
+SQL: SELECT * FROM `wj_category`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000070s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000112s ]
+ERR: syntax error, unexpected '<'
+
+[ 2019-10-19T14:51:16+08:00 ] 127.0.0.1 /Category/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000627s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001276s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001318s ]
+SQL: SELECT * FROM `wj_category`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000051s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000084s ]
+ERR: syntax error, unexpected '<'
+
+[ 2019-10-19T14:53:22+08:00 ] 127.0.0.1 /Category/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000834s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001137s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001180s ]
+SQL: SELECT * FROM `wj_category`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000045s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000077s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008466s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008563s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000770s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000794s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000904s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000928s ]
+
+[ 2019-10-19T14:53:22+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000788s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000802s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000831s ]
+ERR: 无法加载控制器:Public
+
+[ 2019-10-19T14:55:38+08:00 ] 127.0.0.1 /Category/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000806s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000874s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000900s ]
+SQL: SELECT * FROM `wj_category`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000046s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000074s ]
+ERR: syntax error, unexpected '?'
+
+[ 2019-10-19T14:56:03+08:00 ] 127.0.0.1 /Category/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000682s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000837s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000868s ]
+SQL: SELECT * FROM `wj_category`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000046s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000083s ]
+ERR: syntax error, unexpected '?'
+
+[ 2019-10-19T14:56:04+08:00 ] 127.0.0.1 /Category/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000622s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001123s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001177s ]
+SQL: SELECT * FROM `wj_category`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000045s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000075s ]
+ERR: syntax error, unexpected '?'
+
+[ 2019-10-19T14:56:09+08:00 ] 127.0.0.1 /Category/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000647s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000715s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000739s ]
+SQL: SELECT * FROM `wj_category`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000044s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000073s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007157s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007183s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000753s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000773s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000832s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000855s ]
+
+[ 2019-10-19T14:56:10+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000646s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000789s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000825s ]
+ERR: 无法加载控制器:Public
+
+[ 2019-10-19T14:56:30+08:00 ] 127.0.0.1 /Category/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000946s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000804s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000836s ]
+SQL: SELECT * FROM `wj_category`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000044s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000073s ]
+ERR: syntax error, unexpected ')', expecting ',' or ';'
+
+[ 2019-10-19T14:56:55+08:00 ] 127.0.0.1 /Category/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000777s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001808s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001846s ]
+SQL: SELECT * FROM `wj_category`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000066s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000096s ]
+ERR: syntax error, unexpected ';'
+
+[ 2019-10-19T14:57:11+08:00 ] 127.0.0.1 /Category/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000677s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000793s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000819s ]
+SQL: SELECT * FROM `wj_category`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000048s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000080s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007024s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007051s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000797s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000819s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000921s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000944s ]
+
+[ 2019-10-19T14:57:12+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000652s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000816s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000848s ]
+ERR: 无法加载控制器:Public
+
+[ 2019-10-19T14:57:45+08:00 ] 127.0.0.1 /Category/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000682s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000766s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000792s ]
+SQL: SELECT * FROM `wj_category`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000048s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000108s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010057s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010092s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000597s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000617s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000756s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000777s ]
+
+[ 2019-10-19T14:57:45+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000677s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000948s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000984s ]
+ERR: 无法加载控制器:Public
+
+[ 2019-10-19T14:57:57+08:00 ] 127.0.0.1 /Category/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000593s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000876s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000909s ]
+SQL: SELECT * FROM `wj_category`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000043s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000071s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006402s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006427s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000531s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000551s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000726s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000747s ]
+
+[ 2019-10-19T14:57:58+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000793s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000864s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000906s ]
+ERR: 无法加载控制器:Public
+
