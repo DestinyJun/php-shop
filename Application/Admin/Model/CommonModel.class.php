@@ -8,18 +8,4 @@ abstract class CommonModel extends Model
   {
     parent::__construct($name, $tablePrefix, $connection);
   }
-  // 无限级分类方法
-  public function getCateTree($arrs,$level=0,$parent_id=0)
-  {
-    static $tree = array();
-    foreach ($arrs as $arr) {
-      if ($arr['parent_id'] == $parent_id) {
-        $arr['level'] = $level;
-        $tree[] = $arr;
-        // 递归调用
-        $this->getCateTree($arrs,$level+1,$arr['id']);
-      }
-    }
-    return $tree;
-  }
 }

@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="/Public/Admin/css/ace.css">
 </head>
 <body>
-  <div id="navbar" class="navbar navbar-default ace-save-state">
+<div id="navbar" class="navbar navbar-default ace-save-state">
   <div class="navbar-container ace-save-state" id="navbar-container">
     <div class="navbar-header pull-left">
       <a href="<?php echo U('index');?>" class="navbar-brand">
@@ -22,7 +22,7 @@
     <div class="navbar-buttons navbar-header pull-right" role="navigation">
       <ul class="nav ace-nav">
         <li class="grey dropdown-modal">
-          <a  href="<?php echo U('Login/login');?>" class="btn btn-danger">退出</a>
+          <a href="<?php echo U('Login/login');?>" class="btn btn-danger">退出</a>
           <!--<a data-toggle="dropdown" class="dropdown-toggle" href="http://ace.jeka.by/index.html#">
             &lt;!&ndash;<i class="ace-icon fa fa-tasks"></i>&ndash;&gt;
             <span class="badge badge-grey">退出</span>
