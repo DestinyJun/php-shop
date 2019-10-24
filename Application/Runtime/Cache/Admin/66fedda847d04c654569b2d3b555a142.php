@@ -39,7 +39,7 @@
         <div class="row">
           <div class="col-xs-12">
             
-  <div class="form-horizontal" role="form">
+  <form class="form-horizontal" role="form" action="<?php echo U('add');?>" method="post">
     <!--分类名称-->
     <div class="form-group">
       <label for="cname" class="col-xs-12 col-sm-3 control-label no-padding-right">分类名称</label>
@@ -85,10 +85,10 @@
     </div>
     <!--提交-->
     <div class="form-group text-center">
-      <button class="btn btn-info" type="button" id="button">提交</button>
-      <a class="btn btn-warning" href="">返回</a>
+      <button class="btn btn-info" type="submit">提交</button>
+      <a class="btn btn-warning" href="<?php echo U('index');?>">返回</a>
     </div>
-  </div>
+  </form>
 
           </div>
         </div>
@@ -99,6 +99,7 @@
 </body>
 <script src="/Public/Admin/Js/jquery-2.1.4.min.js"></script>
 <script src="/Public/Admin/Js/bootstrap.min.js"></script>
+<script src="/Public/Admin/Js/ace.min.js"></script>
 
   <script>
     $("#button").on('click', function () {

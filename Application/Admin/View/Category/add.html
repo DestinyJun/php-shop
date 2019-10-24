@@ -2,7 +2,7 @@
 <block name="title">产品分类管理</block>
 <block name="location">分类添加</block>
 <block name="content">
-  <div class="form-horizontal" role="form">
+  <form class="form-horizontal" role="form" action="{:U('add')}" method="post">
     <!--分类名称-->
     <div class="form-group">
       <label for="cname" class="col-xs-12 col-sm-3 control-label no-padding-right">分类名称</label>
@@ -50,10 +50,10 @@
     </div>
     <!--提交-->
     <div class="form-group text-center">
-      <button class="btn btn-info" type="button" id="button">提交</button>
-      <a class="btn btn-warning" href="">返回</a>
+      <button class="btn btn-info" type="submit">提交</button>
+      <a class="btn btn-warning" href="{:U('index')}">返回</a>
     </div>
-  </div>
+  </form>
 </block>
 <block name="js">
   <script>

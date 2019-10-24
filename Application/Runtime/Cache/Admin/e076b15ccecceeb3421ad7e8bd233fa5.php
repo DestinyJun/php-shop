@@ -100,6 +100,7 @@
 </body>
 <script src="/Public/Admin/Js/jquery-2.1.4.min.js"></script>
 <script src="/Public/Admin/Js/bootstrap.min.js"></script>
+<script src="/Public/Admin/Js/ace.min.js"></script>
 
   <script>
     function deleteItem(id) {

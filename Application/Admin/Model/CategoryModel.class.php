@@ -19,8 +19,7 @@ final class CategoryModel extends CommonModel
     return $this->where("id = {$id}")->delete();
   }
 
-  // 获取无限级分类格式化数据方法
-  // 此方法还可以根据指定ID找出其自己及所有子分类
+  // 获取无限级分类格式化数据方法，此方法获取子分类还是有点问题
   public function getCateTree($id=0){
     // 获取所有分类信息
     $data = $this->select();
@@ -29,10 +28,32 @@ final class CategoryModel extends CommonModel
     return $list;
   }
 
-  // 格式化分类信息
-  public function getTree($arrs,$id=0,$level=0)
+  // 真正获取子分类的方法
+  public function getChildren($id){
+    // 获取所有分类信息
+    $data = $this->select();
+    // 在对获取的信息进行格式化
+    $list = $this->getTree($data,$id,0,false);
+    foreach ($list as $value) {
+      $tree[] = $value['id'];
+    }
+    return $tree;
+  }
+
+  /** 格式化分类信息
+   * @param $arrs
+   * @param int $id
+   * @param int $level
+   * @param bool $is_catch 是否缓存
+   * @return array
+   */
+  public function getTree($arrs,$id=0,$level=0,$is_catch=true)
   {
     static $tree = array();
+    if (!$is_catch) {
+      // 根据参数决定是否需要重置格式化的数据
+      $tree = array();
+    }
     foreach ($arrs as $arr) {
       if ($arr['parent_id'] == $id) {
         $arr['level'] = $level;

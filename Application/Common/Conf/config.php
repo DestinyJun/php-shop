@@ -18,5 +18,5 @@ return array(
   'DB_PWD' => 'root',          // 密码
   'DB_PORT' => '3306',        // 端口
   'DB_PREFIX' => 'wj_',    // 数据库表前缀
-  'SHOW_PAGE_TRACE' => false,    // 开启TP的开发者工具
+  'SHOW_PAGE_TRACE' => true,    // 开启TP的开发者工具
 );

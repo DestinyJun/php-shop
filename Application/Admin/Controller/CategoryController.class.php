@@ -12,7 +12,7 @@ final class CategoryController extends CommonController
   public function add(){
     if (IS_GET) {
       $model =  D('Category');
-      $cate = $model->getCateTree($model->select());
+      $cate = $model->getCateTree();
       $this->assign('cate',$cate);
       $this->display();
     } else {
@@ -20,10 +20,7 @@ final class CategoryController extends CommonController
       // 创建数据
       $data = $model->create();
       if (!$data) {
-        $this->ajaxReturn(array(
-          'status'=>1001,
-          'msg'=>$model->getError(),
-        ));
+        $this->error($model->getError());
       }
       $res = $model->add($data);
       if(!$res) {

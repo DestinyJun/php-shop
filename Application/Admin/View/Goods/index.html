@@ -1,0 +1,127 @@
+<extend name="Public/base"/>
+<block name="title">商品管理</block>
+<block name="location">商品列表</block>
+<block name="content">
+  <div class="row">
+    <div class="col-sm-4">
+      <a href="{:U('add')}" class="btn btn-sm btn-warning">商品添加</a>
+    </div>
+    <div class="col-sm-8">
+      <form action="{:U('index')}" method="get">
+        <label for="category_id" class="col-xs-12 col-sm-2 control-label no-padding-right">
+          <span class="block input-icon input-icon-right">
+          <select class="chosen-select form-control" id="category_id" name="category_id" style="cursor: pointer">
+            <option value="" selected>|--请选择--</option>
+            <volist name="cate" id="item">
+              <option value="{$item.id}" <eq name="Think.get.category_id" value="$item.id">selected</eq>>
+                |{$item.level|str_repeat="----",###}
+                {$item.cname}
+              </option>
+            </volist>
+          </select>
+        </span>
+        </label>
+        <label for="intro_type" class="col-xs-12 col-sm-2 control-label no-padding-right">
+          <span class="block input-icon input-icon-right">
+          <select class="chosen-select form-control" id="intro_type" name="intro_type" style="cursor: pointer">
+            <option value="0">全部</option>
+            <option value="is_rec" <eq name="Think.get.intro_type" value="is_rec">selected</eq>>推荐</option>
+            <option value="is_new" <eq name="Think.get.intro_type" value="is_new">selected</eq>>新品</option>
+            <option value="is_hot" <eq name="Think.get.intro_type" value="is_hot">selected</eq>>热销</option>
+          </select>
+        </span>
+        </label>
+        <label for="is_sale" class="col-xs-12 col-sm-2 control-label no-padding-right">
+          <span class="block input-icon input-icon-right">
+          <select class="chosen-select form-control" id="is_sale" name="is_sale" style="cursor: pointer">
+            <option value="0">全部</option>
+            <option value="1" <eq name="Think.get.is_sale" value="1">selected</eq>>上架</option>
+            <option value="2" <eq name="Think.get.is_sale" value="2">selected</eq>>下架</option>
+          </select>
+        </span>
+        </label>
+        <label for="keyword" class="col-xs-12 col-sm-4 control-label no-padding-right">
+          <span class="block input-icon input-icon-right">
+            <input type="text" id="keyword" class="width-100" name="keyword" placeholder="请输入关键字" value="{$Think.get.keyword}">
+            <i class="ace-icon fa fa-leaf"></i>
+          </span>
+        </label>
+        <div class="help-block col-xs-12 col-sm-reset inline" style="margin-top: 0;margin-left: 10px">
+          <button class="btn btn-sm btn-info" type="submit">搜索</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <table id="simple-table" class="table  table-bordered table-hover">
+    <thead>
+    <tr>
+      <th class="center">
+        <label class="pos-rel">
+          <input type="checkbox" class="ace">
+          <span class="lbl"></span>
+        </label>
+      </th>
+      <th class="detail-col">#</th>
+      <th width="30%">商品名称</th>
+      <th>货号</th>
+      <th>市场价</th>
+      <th>本店价</th>
+      <th>上架</th>
+      <th>推荐</th>
+      <th>新品</th>
+      <th>热销</th>
+      <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <volist name="data" id="item" key="k">
+      <tr>
+        <td class="center">
+          <label class="pos-rel">
+            <input type="checkbox" class="ace">
+            <span class="lbl"></span>
+          </label>
+        </td>
+        <td class="center">{$k}</td>
+        <td>{$item.goods_name}</td>
+        <td>{$item.goods_sn}</td>
+        <td>{$item.market_price}</td>
+        <td>{$item.shop_price}</td>
+        <td><if condition="$item.is_sale eq 1 ">是<else />否</if></td>
+        <td><if condition="$item.is_rec eq 1 ">是<else />否</if></td>
+        <td><if condition="$item.is_new eq 1 ">是<else />否</if></td>
+        <td><if condition="$item.is_hot eq 1 ">是<else />否</if></td>
+        <td>
+          <div class="hidden-sm hidden-xs btn-group">
+            <a class="btn btn-xs btn-info" href="{:U('edit','id='.$item['id'])}">
+              <i class="ace-icon fa fa-pencil bigger-120"></i>
+            </a>
+            <button class="btn btn-xs btn-warning">
+              <i class="ace-icon fa fa-flag bigger-120"></i>
+            </button>
+            <button class="btn btn-xs btn-danger" onclick="deleteItem('{$item.id}')">
+              <i class="ace-icon fa fa-trash-o bigger-120"></i>
+            </button>
+          </div>
+        </td>
+      </tr>
+    </volist>
+    </tbody>
+  </table>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="dataTables_paginate paging_simple_numbers" id="dynamic-table_paginate">
+        {$page}
+      </div>
+    </div>
+  </div>
+</block>
+<block name="js">
+  <script>
+    function deleteItem(id) {
+      if (window.confirm('确定要删除吗？')) {
+        location.href = "/goods/del/id/"+id;
+      }
+    }
+  </script>
+</block>

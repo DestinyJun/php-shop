@@ -1,0 +1,1138 @@
+[ 2019-10-24T09:37:17+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T09:39:51+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T09:39:53+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T09:39:55+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T09:41:02+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T09:48:32+08:00 ] 127.0.0.1 /Goods/index/p/8.html
+ERR: Think\Model:getCateTree方法不存在！
+
+[ 2019-10-24T09:49:17+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T09:52:09+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T09:52:21+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T09:59:55+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T10:00:39+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T10:00:53+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T10:00:58+08:00 ] 127.0.0.1 /Goods/index.html?category_id=15
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '15'' ) LIMIT 0,1' at line 1
+ [ SQL语句 ] : SELECT * FROM `wj_goods` WHERE ( is_del = 1 AND 'category_id = '15'' ) LIMIT 0,1  
+
+[ 2019-10-24T10:01:14+08:00 ] 127.0.0.1 /Goods/index.html?category_id=15
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '15'' ) LIMIT 0,1' at line 1
+ [ SQL语句 ] : SELECT * FROM `wj_goods` WHERE ( is_del = 1 AND 'category_id = '15'' ) LIMIT 0,1  
+
+[ 2019-10-24T10:02:15+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T10:02:26+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T10:40:38+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T10:40:40+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T10:41:16+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T10:41:27+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T10:41:30+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T10:42:48+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T10:43:11+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T10:44:50+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T10:44:51+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T10:52:06+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T10:52:07+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T10:52:19+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T10:55:54+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T11:12:43+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T11:13:29+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T11:13:48+08:00 ] 127.0.0.1 /Goods/index.html?category_id=6
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '6'' ) LIMIT 0,1' at line 1
+ [ SQL语句 ] : SELECT * FROM `wj_goods` WHERE ( is_del = 1 AND 'category_id = '6'' ) LIMIT 0,1  
+
+[ 2019-10-24T11:16:36+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T11:16:39+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T11:22:24+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T11:22:55+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T11:23:09+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T11:25:09+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T11:25:16+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T11:25:19+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T11:25:23+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T11:28:52+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T11:38:02+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T11:38:18+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T11:38:24+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T11:38:36+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T11:38:44+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T11:44:43+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T11:44:52+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T11:46:49+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T11:46:52+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T11:46:53+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T11:46:55+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T11:51:04+08:00 ] 127.0.0.1 /Goods/index/p/1.html
+ERR: Think\Controller:listData方法不存在！
+
+[ 2019-10-24T11:51:48+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T11:52:50+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T11:52:57+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T11:54:42+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T11:54:44+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T11:54:48+08:00 ] 127.0.0.1 /Goods/index.html?category_id=6
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND category_id in (7,23,24,25,9,6) ) LIMIT 0,1' at line 1
+ [ SQL语句 ] : SELECT * FROM `wj_goods` WHERE (  AND category_id in (7,23,24,25,9,6) ) LIMIT 0,1  
+
+[ 2019-10-24T11:54:57+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T11:54:59+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T11:56:08+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T11:56:09+08:00 ] 127.0.0.1 /Goods/index.html?category_id=6
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND category_id in (7,23,24,25,9,6) ) LIMIT 0,1' at line 1
+ [ SQL语句 ] : SELECT * FROM `wj_goods` WHERE (  AND category_id in (7,23,24,25,9,6) ) LIMIT 0,1  
+
+[ 2019-10-24T12:05:40+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T12:05:49+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T12:05:56+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T12:05:59+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T12:06:12+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T12:06:46+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T12:07:02+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T12:07:05+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T12:07:07+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T12:07:08+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T12:07:08+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T12:07:12+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T16:23:24+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T16:23:30+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T16:23:34+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T16:26:49+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T16:34:15+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T16:34:17+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T16:34:23+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T16:34:51+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T16:34:52+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T16:34:53+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T16:34:54+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T16:36:37+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T16:44:02+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T16:44:08+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T16:44:13+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T16:44:16+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T16:44:19+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T16:44:39+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T16:45:11+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T16:45:12+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T16:46:53+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T16:47:09+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T16:48:06+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T16:48:23+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T16:48:46+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T16:49:03+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T16:49:04+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T16:49:30+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T16:49:43+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T16:49:46+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T16:55:49+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T16:55:55+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T16:58:29+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T16:58:34+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T16:58:37+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T16:58:39+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T16:58:39+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T16:58:44+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T16:58:45+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T16:58:46+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T16:59:20+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T16:59:22+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T16:59:33+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T16:59:34+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T16:59:36+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T16:59:37+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T16:59:44+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:00:43+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:00:46+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:00:47+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:00:47+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:00:49+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:00:51+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:00:54+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:02:17+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:02:20+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:05:09+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:05:12+08:00 ] 127.0.0.1 /Goods/index.html?category_id=&intro_type=0&is_sale=1&keyword=%E5%8D%8E%E4%B8%BA
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ADN `is_sale`=1 AND `goods_name` LIKE '%华为%' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `wj_goods` WHERE ( is_del=1 ADN `is_sale`=1 AND `goods_name` LIKE '%华为%' ) LIMIT 1  
+
+[ 2019-10-24T17:05:54+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:05:56+08:00 ] 127.0.0.1 /Goods/index.html?category_id=&intro_type=0&is_sale=1&keyword=
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ADN `is_sale`=1 ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `wj_goods` WHERE ( is_del=1 ADN `is_sale`=1 ) LIMIT 1  
+
+[ 2019-10-24T17:05:58+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:06:34+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:06:44+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:06:49+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:06:51+08:00 ] 127.0.0.1 /Goods/index.html?category_id=&intro_type=0&is_sale=1&keyword=
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ADN is_sale=1 ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `wj_goods` WHERE ( is_del=1 ADN is_sale=1 ) LIMIT 1  
+
+[ 2019-10-24T17:10:41+08:00 ] 127.0.0.1 /Goods/index.html?category_id=&intro_type=0&is_sale=1&keyword=
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ADN is_sale=1 ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `wj_goods` WHERE ( is_del=1 ADN is_sale=1 ) LIMIT 1  
+
+[ 2019-10-24T17:10:58+08:00 ] 127.0.0.1 /Goods/index.html?category_id=&intro_type=0&is_sale=1&keyword=
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ADN is_sale=1 ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `wj_goods` WHERE ( is_del=1 ADN is_sale=1 ) LIMIT 1  
+
+[ 2019-10-24T17:11:00+08:00 ] 127.0.0.1 /Goods/index.html?category_id=&intro_type=0&is_sale=1&keyword=
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ADN is_sale=1 ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `wj_goods` WHERE ( is_del=1 ADN is_sale=1 ) LIMIT 1  
+
+[ 2019-10-24T17:11:01+08:00 ] 127.0.0.1 /Goods/index.html?category_id=&intro_type=0&is_sale=1&keyword=
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ADN is_sale=1 ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `wj_goods` WHERE ( is_del=1 ADN is_sale=1 ) LIMIT 1  
+
+[ 2019-10-24T17:11:02+08:00 ] 127.0.0.1 /Goods/index.html?category_id=&intro_type=0&is_sale=1&keyword=
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ADN is_sale=1 ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `wj_goods` WHERE ( is_del=1 ADN is_sale=1 ) LIMIT 1  
+
+[ 2019-10-24T17:12:09+08:00 ] 127.0.0.1 /Goods/index.html?category_id=&intro_type=0&is_sale=1&keyword=
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ADN is_sale=1 ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `wj_goods` WHERE ( is_del=1 ADN is_sale=1 ) LIMIT 1  
+
+[ 2019-10-24T17:12:15+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:12:18+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:12:36+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:12:45+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:14:47+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:15:43+08:00 ] 127.0.0.1 /Goods/index.html?category_id=6&intro_type=0&is_sale=0&keyword=%E5%8D%8E%E4%B8%BA
+ERR: syntax error, unexpected '"', expecting '-' or identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING)
+
+[ 2019-10-24T17:16:04+08:00 ] 127.0.0.1 /Goods/index.html?category_id=6&intro_type=0&is_sale=0&keyword=%E5%8D%8E%E4%B8%BA
+ERR: syntax error, unexpected '<', expecting variable (T_VARIABLE) or '{' or '$'
+
+[ 2019-10-24T17:16:56+08:00 ] 127.0.0.1 /Goods/index.html?category_id=6&intro_type=0&is_sale=0&keyword=%E5%8D%8E%E4%B8%BA
+ERR: syntax error, unexpected '<', expecting variable (T_VARIABLE) or '{' or '$'
+
+[ 2019-10-24T17:16:57+08:00 ] 127.0.0.1 /Goods/index.html?category_id=6&intro_type=0&is_sale=0&keyword=%E5%8D%8E%E4%B8%BA
+ERR: syntax error, unexpected '<', expecting variable (T_VARIABLE) or '{' or '$'
+
+[ 2019-10-24T17:18:19+08:00 ] 127.0.0.1 /Goods/index.html?category_id=6&intro_type=0&is_sale=0&keyword=%E5%8D%8E%E4%B8%BA
+ERR: syntax error, unexpected ')'
+
+[ 2019-10-24T17:18:21+08:00 ] 127.0.0.1 /Goods/index.html?category_id=6&intro_type=0&is_sale=0&keyword=%E5%8D%8E%E4%B8%BA
+ERR: syntax error, unexpected ')'
+
+[ 2019-10-24T17:18:21+08:00 ] 127.0.0.1 /Goods/index.html?category_id=6&intro_type=0&is_sale=0&keyword=%E5%8D%8E%E4%B8%BA
+ERR: syntax error, unexpected ')'
+
+[ 2019-10-24T17:19:48+08:00 ] 127.0.0.1 /Goods/index.html?category_id=6&intro_type=0&is_sale=0&keyword=%E5%8D%8E%E4%B8%BA
+ERR: syntax error, unexpected ')'
+
+[ 2019-10-24T17:20:00+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:20:13+08:00 ] 127.0.0.1 /Goods/index.html?category_id=&intro_type=0&is_sale=1&keyword=%E5%8D%8E%E4%B8%BA
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ADN is_sale =1 AND `goods_name` LIKE '%华为%' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `wj_goods` WHERE ( is_del=1 ADN is_sale =1 AND `goods_name` LIKE '%华为%' ) LIMIT 1  
+
+[ 2019-10-24T17:22:17+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:22:27+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:22:44+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:23:22+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:23:24+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:23:26+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:23:27+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:23:28+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:24:06+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:24:08+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:24:09+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:24:10+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:24:11+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:24:18+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:24:19+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:24:29+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:24:30+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:24:39+08:00 ] 127.0.0.1 /Goods/index.html?category_id=6&intro_type=is_rec&is_sale=2&keyword=%E5%8D%8E%E4%B8%BA
+ERR: syntax error, unexpected '"', expecting '-' or identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING)
+
+[ 2019-10-24T17:25:15+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:48:48+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:48:56+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:49:10+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:49:14+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:49:22+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:49:27+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:50:13+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:50:41+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:50:48+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:50:56+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:54:11+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:54:13+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:54:44+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:54:54+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:55:11+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:55:12+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:55:20+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:55:49+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T17:58:09+08:00 ] 127.0.0.1 /Goods/index/intro_type/0/is_sale/0/p/2.html
+ERR: syntax error, unexpected 'id' (T_STRING), expecting ',' or ')'
+
+[ 2019-10-24T17:59:19+08:00 ] 127.0.0.1 /Goods/index/intro_type/0/is_sale/0/p/2.html
+ERR: syntax error, unexpected 'id' (T_STRING), expecting ',' or ')'
+
+[ 2019-10-24T17:59:21+08:00 ] 127.0.0.1 /Goods/index/intro_type/0/is_sale/0/p/2.html
+ERR: syntax error, unexpected 'id' (T_STRING), expecting ',' or ')'
+
+[ 2019-10-24T18:07:00+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T18:07:03+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T18:07:07+08:00 ] 127.0.0.1 /goods/del/id/1
+ERR: Think\Model:setFiled方法不存在！
+
+[ 2019-10-24T18:07:50+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T18:07:51+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T18:07:52+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T18:07:54+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T18:08:01+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T19:55:07+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T19:58:10+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T19:58:12+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T19:58:22+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T19:58:31+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T19:58:33+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T19:58:34+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T19:58:35+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T19:58:48+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T19:58:49+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T19:59:23+08:00 ] 127.0.0.1 /Goods/index/intro_type/0/is_sale/0/p/1.html
+ERR: Class 'Admin\Model\Page' not found
+
+[ 2019-10-24T19:59:32+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T19:59:52+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T20:00:02+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T20:02:38+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T20:03:49+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T20:04:04+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T20:04:25+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T20:04:27+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T20:04:29+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T20:04:31+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T20:04:32+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T20:06:09+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T20:06:11+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T20:06:14+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T20:06:19+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T20:06:59+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T20:07:01+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T20:07:11+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T20:07:12+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T20:07:14+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T20:07:15+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T20:08:04+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T20:08:06+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T20:08:22+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T20:08:23+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T20:09:15+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T20:09:34+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T20:09:44+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T20:09:46+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T20:09:49+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T21:01:55+08:00 ] 127.0.0.1 /Goods/edit
+ERR: Cannot use object of type Admin\Model\GoodsModel as array
+
+[ 2019-10-24T21:02:23+08:00 ] 127.0.0.1 /Goods/edit
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `wj_goods` WHERE ( id =  ) LIMIT 1  
+
+[ 2019-10-24T21:02:46+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T21:02:48+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T21:03:08+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T21:03:18+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T21:05:04+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T21:06:02+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T21:06:05+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T21:06:58+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T21:11:24+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T21:11:25+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T21:11:46+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T21:11:50+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T21:13:15+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T21:35:44+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T21:37:19+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T21:37:38+08:00 ] 127.0.0.1 /Category/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000875s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001669s ]
+NOTIC: [8] Undefined index: validate D:\MyPhpstorm\wenjun-shop\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\MyPhpstorm\wenjun-shop\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `wj_category` (`cname`,`parent_id`,`isrec`) VALUES ('电脑','','0') [ RunTime:0.0009s ]
+
+[ 2019-10-24T21:37:48+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T21:40:33+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T21:40:43+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T21:40:45+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T21:40:47+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T21:41:31+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T21:41:47+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T21:42:02+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T21:42:05+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T21:42:29+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T21:42:30+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T21:43:17+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T21:43:25+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T21:43:26+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T21:43:40+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T21:43:44+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T21:43:46+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T21:46:37+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T21:47:58+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T21:50:24+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T22:05:04+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T22:07:10+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T22:07:12+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T22:07:18+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T22:07:20+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T22:09:21+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T22:09:23+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T22:09:36+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T22:09:37+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T22:09:39+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T22:09:47+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T22:09:49+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T22:09:55+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T22:09:57+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T22:14:42+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T22:54:31+08:00 ] 127.0.0.1 /Goods/edit.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : DELETE FROM `wj_goods_cate` WHERE ( goods_id =  )
+
+[ 2019-10-24T22:54:53+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T22:54:55+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T22:54:58+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T22:55:01+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T22:55:06+08:00 ] 127.0.0.1 /Goods/edit.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : DELETE FROM `wj_goods_cate` WHERE ( goods_id =  )
+
+[ 2019-10-24T22:55:15+08:00 ] 127.0.0.1 /Goods/edit.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : DELETE FROM `wj_goods_cate` WHERE ( goods_id =  )
+
+[ 2019-10-24T22:56:18+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T22:56:21+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T22:57:46+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T22:57:50+08:00 ] 127.0.0.1 /Goods/edit.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : DELETE FROM `wj_goods_cate` WHERE ( goods_id= )
+
+[ 2019-10-24T22:58:30+08:00 ] 127.0.0.1 /Goods/edit.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : DELETE FROM `wj_goods_cate` WHERE ( goods_id= )
+
+[ 2019-10-24T23:00:28+08:00 ] 127.0.0.1 /Goods/edit.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : DELETE FROM `wj_goods_cate` WHERE ( goods_id= )
+
+[ 2019-10-24T23:00:57+08:00 ] 127.0.0.1 /Goods/edit.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : DELETE FROM `wj_goods_cate` WHERE ( goods_id= )
+
+[ 2019-10-24T23:02:07+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:02:11+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:03:00+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:03:42+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:05:25+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:06:29+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:07:12+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:08:26+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:08:34+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:08:44+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:09:49+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:10:20+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:10:52+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:10:53+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:10:59+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:11:50+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:11:52+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:12:03+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:13:51+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:13:53+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:15:26+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:15:27+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:18:14+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:18:19+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:19:08+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:19:10+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:23:25+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:23:26+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:24:14+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:24:15+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:24:18+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:24:19+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:25:24+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:25:39+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:26:23+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:27:13+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:27:22+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:27:25+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:27:27+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:27:28+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:28:59+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:29:31+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:29:36+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:30:23+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:32:14+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:34:22+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:34:23+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:34:38+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:35:06+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:35:24+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:35:26+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2019-10-24T23:35:30+08:00 ] 127.0.0.1 /Public/Admin/Js/jquery.min.map
+ERR: 无法加载控制器:Public
+
