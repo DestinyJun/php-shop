@@ -1,0 +1,32 @@
+[ 2019-10-25T17:06:05+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff2
+ERR: 无法加载控制器:Public
+
+[ 2019-10-25T17:06:05+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.woff
+ERR: 无法加载控制器:Public
+
+[ 2019-10-25T17:06:05+08:00 ] 127.0.0.1 /Public/Admin/fonts/glyphicons-halflings-regular.ttf
+ERR: 无法加载控制器:Public
+
+[ 2019-10-25T17:08:36+08:00 ] 127.0.0.1 /Goods/recover/id/1.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : DELETE FROM `wj_goods_cate` WHERE ( goods_id= )
+
+[ 2019-10-25T17:12:58+08:00 ] 127.0.0.1 /Goods/recover/id/4.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : DELETE FROM `wj_goods_cate` WHERE ( goods_id= )
+
+[ 2019-10-25T17:14:36+08:00 ] 127.0.0.1 /Goods/recover/id/4.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : DELETE FROM `wj_goods_cate` WHERE ( goods_id= )
+
+[ 2019-10-25T17:14:37+08:00 ] 127.0.0.1 /Goods/recover/id/4.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : DELETE FROM `wj_goods_cate` WHERE ( goods_id= )
+
+[ 2019-10-25T17:15:17+08:00 ] 127.0.0.1 /Goods/in
+ERR: 非法操作:in
+
+[ 2019-10-25T17:15:32+08:00 ] 127.0.0.1 /goods/del/id/1
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : DELETE FROM `wj_goods_cate` WHERE ( goods_id= )
+

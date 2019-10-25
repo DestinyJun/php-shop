@@ -4,15 +4,16 @@ namespace Admin\Model;
 
 use Admin\Common\MyPage;
 use Think\Image;
-use Think\Model;
+use Think\Page;
 use Think\Upload;
 
-final class GoodsModel extends Model
+final class GoodsModel extends CommonModel
 {
   // 自定义字段
   protected $fields = array(
     'id', 'goods_name', 'goods_sn', 'category_id', 'market_price', 'shop_price', 'goods_body',
     'goods_img', 'goods_thumb', 'is_hot', 'is_rec', 'is_new', 'is_del', 'is_sale', 'addtime');
+
   // 定义字段自动校验
   protected $_validate = array(
     array('goods_name', 'require', '商品名称必填', 1, 'regex', 3),
@@ -42,28 +43,15 @@ final class GoodsModel extends Model
         $this->error = '商品货号已存在，请从新输入';
         return false;
       }
-    } else {
+    }
+    else {
       $data['goods_sn'] = 'wj' . uniqid();
     }
-
-    // 实现图片上传
-    $fileConfig = array(
-      'exts' => array('jpg', 'gif', 'png'), // 配置文件上传的文件后缀名
-      'maxSize' => 3145728, //上传的文件大小限制 (0-不做限制)
-      'savePath' => 'goods/', //保存路径
-    );
-    $upload = new Upload($fileConfig);
-    $info = $upload->uploadOne($_FILES['file']);
-    if (!$info) {
-      $this->error = $upload->getError();
-      return false;
+    $imagePath = $this->uploadImg();
+    if ($imagePath) {
+      $data['goods_img'] = $imagePath['goods_img'];
+      $data['goods_thumb'] = $imagePath['goods_thumb'];
     }
-    $data['goods_img'] = 'Uploads/' . $info['savepath'] . $info['savename'];
-    // 实现缩略图处理
-    $data['goods_thumb'] = 'Uploads/' . $info['savepath'] . 'thumb' . $info['savename'];
-    $img = new Image(); // 实例化缩略图对象
-    $img->open($data['goods_img']); // 打开需要制作的图片蓝本
-    $img->thumb(450, 450)->save($data['goods_thumb']); // 制作缩略图并保存
   }
 
   // 使用钩子函数写入商品的扩展分类，在商品添加成功操作
@@ -72,21 +60,13 @@ final class GoodsModel extends Model
     // $data是数据插入后返回来的插入的数据的一维数组，里面携带了ID,相当于插入后在数据库里面查出来的
     $goods_id = $data['id']; // 获取$goods_id
     $data = I('post.cate_id'); // 这里接收到的是一个cate_id的数组
-    $data = array_unique($data); // 去除数组中重复的元素
-    foreach ($data as $key => $value) {
-      $list[] = array(
-        'goods_id' => $goods_id,
-        'cate_id' => $value,
-      );
-    }
-    // 使用模型的addAll必须注意，首先是二维数组，其次下标必须是索引数组且从0开始
-    M('goods_cate')->addAll($list); // 实例化扩展分类表的基类，并多条一起存入数据
+    D('goods_cate')->insertExtCate($data,$goods_id);
   }
 
-  // 获取文章列表
-  public function listData() {
+  // 获取商品列表
+  public function listData($is_del=1) {
     // 按条件搜索查询
-    $where = "is_del=1"; // 只查询没有伪删除的商品
+    $where = "is_del={$is_del}"; // 只查询没有伪删除的商品
     // 根据商品分类查询
     $category_id = intval(I('get.category_id'));
     if ($category_id) {
@@ -172,25 +152,30 @@ final class GoodsModel extends Model
         return false;
       }
     }
-    // （2）解决扩展分类的问题
-    // 删除之前的扩展分类
-    $extCateModel = M('goods_cate');
+
+    // （2）解决扩展分类的问题,删除之前的扩展分类
+    $extCateModel = D('GoodsCate');
     $extCateModel->where("goods_id={$goods_id}")->delete();
     // 将最新的扩展分类写入扩展分类表
     $ext_cate = I('post.cate_id'); // 这里接收到的是一个cate_id的数组
     $ext_cate = array_unique($ext_cate); // 去除数组中重复的元素
-    foreach ($ext_cate as $key => $value) {
-      if ($value) {
-        $list[] = array(
-          'goods_id' => $goods_id,
-          'category_id' => $value,
-        );
-      }
-    }
-    // 使用模型的addAll必须注意，首先是二维数组，其次下标必须是索引数组且从0开始
-    M('goods_cate')->addAll($list); // 实例化扩展分类表的基类，并多条一起存入数据
+    D('GoodsCate')->insertExtCate($ext_cate,$goods_id);
 
-    // （3）解决商品图片修改问题
+    // （2）解决商品图片修改问题
+    $imagePath = $this->uploadImg();
+    if ($imagePath) {
+      $data['goods_img'] = $imagePath['goods_img'];
+      $data['goods_thumb'] = $imagePath['goods_thumb'];
+    }
+    return $this->save($data);
+  }
+
+  // 公共的图片上传方法
+  public function uploadImg(){
+    // 首先判断是否有图片上传
+    if (!isset($_FILES['goods_img']) || $_FILES['goods_img']['error'] != 0) {
+      return false;
+    }
     // 实现图片上传
     $fileConfig = array(
       'exts' => array('jpg', 'gif', 'png'), // 配置文件上传的文件后缀名
@@ -200,17 +185,36 @@ final class GoodsModel extends Model
     $upload = new Upload($fileConfig);
     $info = $upload->uploadOne($_FILES['file']);
     if (!$info) {
-      dump('图片上传失败');
       $this->error = $upload->getError();
       return false;
     }
-    $data['goods_img'] = 'Uploads/' . $info['savepath'] . $info['savename'];
-    // 实现缩略图处理
-    $data['goods_thumb'] = 'Uploads/' . $info['savepath'] . 'thumb' . $info['savename'];
+    $goods_img = 'Uploads/' . $info['savepath'] . $info['savename']; //上传成功后拼接图片地址
+    // 制作上传图片的缩略图
     $img = new Image(); // 实例化缩略图对象
-    $img->open($data['goods_img']); // 打开需要制作的图片蓝本
-    $img->thumb(450, 450)->save($data['goods_thumb']); // 制作缩略图并保存
-    return $this->save($data);
+    $img->open($goods_img); // 打开需要制作的图片蓝本
+    $goods_thumb = 'Uploads/' . $info['savepath'] . 'thumb' . $info['savename']; // 拼接制作缩略图的地址
+    $img->thumb(450, 450)->save($goods_thumb); // 制作缩略图并保存
+    // 返回图片的保存地址
+    return array(
+      'goods_img'=>$goods_img,
+      'goods_thumb'=>$goods_thumb,
+    );
+  }
+
+  // 彻底删除商品
+  public function remove($id){
+    // （1）删除商品的图片
+    $goods_info = $this->where("id=$id")->find();
+    if (!$goods_info) {
+      $this->error = '查找信息失败';
+      return false;
+    }
+    unlink($goods_info['goods_img']);
+    unlink($goods_info['goods_thumb']);
+    // （2）删除商品的扩展分类
+    D('GoodsCate')->where("goods_id={$id}")->delete();
+    // （3）删除商品的基本信息
+    return $res = $this->where("id={$id}")->delete();
   }
 
   // 使用自动完成规则补齐参数

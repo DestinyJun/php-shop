@@ -4,6 +4,7 @@ use Think\Controller;
 
 final class GoodsController extends Controller
 {
+  // 商品添加
   public function add(){
     if (IS_GET){
       $cate = D('category')->getCateTree();
@@ -23,7 +24,7 @@ final class GoodsController extends Controller
     $this->success('添加成功');
   }
 
-  // 显示文章列表
+  // 商品列表
   public function index(){
     $model = D('goods');
     $data =$model->listData();
@@ -32,6 +33,7 @@ final class GoodsController extends Controller
     $this->assign($data);
     $this->display();
   }
+
   // 伪删除操作
   public function del() {
     $model = D('goods');
@@ -42,6 +44,7 @@ final class GoodsController extends Controller
     }
     $this->success('删除成功');
   }
+
   // 商品编辑
   public function edit() {
     $model = D('goods');
@@ -74,5 +77,37 @@ final class GoodsController extends Controller
       }
       $this->success('修改成功',U('index'));
     }
+  }
+
+  // 商品回收站
+  public function trash() {
+    $model = D('goods');
+    $data =$model->listData(0);
+    $cate  = D('category')->getCateTree();
+    $data['cate'] = $cate;
+    $this->assign($data);
+    $this->display();
+  }
+
+  // 商品还原
+  public function recover(){
+    $model = D('goods');
+    $id = intval(I('get.id'));
+    $res = $model->where("id={$id}")->setField('is_del',1);
+    if (!$res) {
+      $this->error('还原失败！');
+    }
+    $this->success('还原成功！');
+  }
+
+  // 彻底删除商品
+  public function remove(){
+    $model = D('goods');
+    $id = intval(I('get.id'));
+    $res = $model->remove($id);
+    if (!$res) {
+      $this->error('删除失败！');
+    }
+    $this->success('删除成功！');
   }
 }
