@@ -1,0 +1,79 @@
+<extend name="Public/base"/>
+<block name="title">用户管理</block>
+<block name="location">用户添加</block>
+<block name="content">
+  <form class="form-horizontal" role="form" action="" method="post" enctype="multipart/form-data">
+    <!--用户名-->
+    <div class="form-group">
+      <label for="username" class="col-xs-12 col-sm-3 control-label no-padding-right">用户名</label>
+      <div class="col-xs-12 col-sm-5">
+        <span class="block input-icon input-icon-right">
+          <input type="text" id="username" class="width-100" name="username">
+          <i class="ace-icon fa fa-leaf"></i>
+        </span>
+      </div>
+      <div class="help-block col-xs-12 col-sm-reset inline">
+        <span class="text-danger">*</span>
+        用户名必填
+      </div>
+    </div>
+    <!--密码-->
+    <div class="form-group">
+      <label for="password" class="col-xs-12 col-sm-3 control-label no-padding-right">密码</label>
+      <div class="col-xs-12 col-sm-5">
+        <span class="block input-icon input-icon-right">
+          <input type="password" id="password" class="width-100" name="password">
+          <i class="ace-icon fa fa-leaf"></i>
+        </span>
+      </div>
+      <div class="help-block col-xs-12 col-sm-reset inline">
+        <span class="text-danger">*</span>
+        <span>密码是必填项</span>
+      </div>
+    </div>
+    <!--角色选择-->
+    <div class="form-group">
+      <label for="role_id" class="col-xs-12 col-sm-3 control-label no-padding-right">角色选择</label>
+      <div class="col-xs-12 col-sm-5">
+        <span class="block input-icon input-icon-right">
+          <select class="chosen-select form-control" id="role_id" name="role_id" style="cursor: pointer">
+            <option value="" selected>|--请选择角色--</option>
+            <volist name="role" id="item">
+              <option value="{$item.id}">
+                {$item.role_name}
+              </option>
+            </volist>
+          </select>
+        </span>
+      </div>
+      <div class="help-block col-xs-12 col-sm-reset inline">
+        <span class="text-danger">*</span>
+        <span>请选择角色</span>
+      </div>
+    </div>
+    <!--提交-->
+    <div class="form-group text-center">
+      <button class="btn btn-info" type="submit" id="button">提交</button>
+      <a class="btn btn-warning" href="{:U('index')}">返回</a>
+    </div>
+  </form>
+</block>
+<block name="js">
+  <script>
+    /*$("#button").on('click', function () {
+      $.ajax({
+        url: "{:U('add')}",
+        type: "POST",
+        dataType: "JSON",
+        data: {
+          cname: $("#cname").val(),
+          parent_id: $("#parent_id").val(),
+          isrec: $("input[name='isrec']:checked").val(),
+        },
+        success: function (data) {
+          console.log(data);
+        }
+      })
+    })*/
+  </script>
+</block>

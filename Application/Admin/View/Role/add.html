@@ -1,0 +1,45 @@
+<extend name="Public/base"/>
+<block name="title">角色管理</block>
+<block name="location">角色添加</block>
+<block name="content">
+  <form class="form-horizontal" role="form" action="{:U('add')}" method="post">
+    <!--分类名称-->
+    <div class="form-group">
+      <label for="cname" class="col-xs-12 col-sm-3 control-label no-padding-right">角色名称</label>
+      <div class="col-xs-12 col-sm-5">
+        <span class="block input-icon input-icon-right">
+          <input type="text" id="cname" class="width-100" name="role_name">
+          <i class="ace-icon fa fa-leaf"></i>
+        </span>
+      </div>
+      <div class="help-block col-xs-12 col-sm-reset inline">
+        <span class="text-danger">*</span>
+        角色名称是必填项
+      </div>
+    </div>
+    <!--提交-->
+    <div class="form-group text-center">
+      <button class="btn btn-info" type="submit">提交</button>
+      <a class="btn btn-warning" href="{:U('index')}">返回</a>
+    </div>
+  </form>
+</block>
+<block name="js">
+  <script>
+    $("#button").on('click', function () {
+      $.ajax({
+        url: "{:U('add')}",
+        type: "POST",
+        dataType: "JSON",
+        data: {
+          cname: $("#cname").val(),
+          parent_id: $("#parent_id").val(),
+          isrec: $("input[name='isrec']:checked").val(),
+        },
+        success: function (data) {
+          console.log(data);
+        }
+      })
+    })
+  </script>
+</block>

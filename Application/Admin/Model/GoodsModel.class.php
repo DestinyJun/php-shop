@@ -4,7 +4,6 @@ namespace Admin\Model;
 
 use Admin\Common\MyPage;
 use Think\Image;
-use Think\Page;
 use Think\Upload;
 
 final class GoodsModel extends CommonModel
