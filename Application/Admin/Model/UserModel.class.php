@@ -92,4 +92,21 @@ class UserModel extends CommonModel
     $this->commit();
     return true;
   }
+
+  public function login($username,$password) {
+    // （1）验证用户名
+    $user_info = $this->where("username='{$username}'")->find();
+    if (!$user_info) {
+      $this->error='用户名或密码不正确';
+      return false;
+    }
+    // （2）验证密码
+    if ($user_info['password'] != md5($password)) {
+      $this->error='用户名或密码不正确';
+      return false;
+    }
+    // 用户名密码验证成功，保存用户状态
+    session('user',$user_info);
+    return true;
+  }
 }

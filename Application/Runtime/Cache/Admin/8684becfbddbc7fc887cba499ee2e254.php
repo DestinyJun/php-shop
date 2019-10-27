@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>
-    产品分类管理
+    权限管理
   </title>
   <link rel="stylesheet" href="/Public/Admin/css/bootstrap.min.css">
   <link rel="stylesheet" href="/Public/Admin/css/font-awesome.min.css">
@@ -22,7 +22,7 @@
             <a href="<?php echo U('Index/right');?>">主页</a>
           </li>
           <li class="active">
-            产品分类管理
+            权限列表
           </li>
           <li class="active">
             
@@ -43,7 +43,7 @@
           <div class="col-xs-12">
             
   <div class="add-btn">
-    <a href="<?php echo U('add');?>" class="btn btn-warning">分类添加</a>
+    <a href="<?php echo U('add');?>" class="btn btn-warning">权限添加</a>
   </div>
   <table id="simple-table" class="table  table-bordered table-hover">
     <thead>
@@ -55,14 +55,16 @@
         </label>
       </th>
       <th class="detail-col">#</th>
-      <th>分类名称</th>
-      <th>级别</th>
-      <th>是否推荐</th>
+      <th>权限名称</th>
+      <th>模块名称</th>
+      <th>控制器名称</th>
+      <th>方法名称</th>
+      <th>是否导航显示</th>
       <th>操作</th>
     </tr>
     </thead>
     <tbody>
-    <?php if(is_array($cate)): $k = 0; $__LIST__ = $cate;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$item): $mod = ($k % 2 );++$k;?><tr>
+    <?php if(is_array($rule)): $k = 0; $__LIST__ = $rule;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$item): $mod = ($k % 2 );++$k;?><tr>
         <td class="center">
           <label class="pos-rel">
             <input type="checkbox" class="ace">
@@ -72,11 +74,13 @@
         <td class="center"><?php echo ($k); ?></td>
         <td>
           |<?php echo (str_repeat('----',$item["level"])); ?>
-          <?php echo ($item["cname"]); ?>
+          <?php echo ($item["rule_name"]); ?>
         </td>
-        <td><?php echo ($item["parent_id"]); ?></td>
+        <td><?php echo ($item["module_name"]); ?></td>
+        <td><?php echo ($item["controller_name"]); ?></td>
+        <td><?php echo ($item["action_name"]); ?></td>
         <td>
-          <?php if($item["isrec"] == 1 ): ?>是
+          <?php if($item["is_show"] == 1 ): ?>是
           <?php else: ?>
             否<?php endif; ?>
         </td>
@@ -108,7 +112,7 @@
   <script>
     function deleteItem(id) {
       if (window.confirm('确定要删除吗？')) {
-        location.href = "/category/delete/id/"+id;
+        location.href = "/rule/del/id/"+id;
       }
     }
   </script>

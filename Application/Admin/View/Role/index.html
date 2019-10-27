@@ -83,9 +83,9 @@
               <a class="btn btn-xs btn-info" href="{:U('edit','id='.$item['id'])}" title="角色编辑">
                 <i class="ace-icon fa fa-pencil bigger-120"></i>
               </a>
-              <!--<button class="btn btn-xs btn-warning">
+              <a class="btn btn-xs btn-warning" href="{:U('disfetch','id='.$item['id'])}" title="配置权限">
                 <i class="ace-icon fa fa-flag bigger-120"></i>
-              </button>-->
+              </a>
               <button class="btn btn-xs btn-danger" onclick="deleteItem('{$item.id}')" title="角色删除">
                 <i class="ace-icon fa fa-trash-o bigger-120"></i>
               </button>

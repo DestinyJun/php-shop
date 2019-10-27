@@ -22,10 +22,12 @@
             <a href="<?php echo U('Index/right');?>">主页</a>
           </li>
           <li class="active">
-            角色添加
+            
+  <a href="<?php echo U('index');?>">角色管理</a>
+
           </li>
           <li class="active">
-            
+            角色权限配置
           </li>
         </ul>
         <div class="nav-search" id="nav-search">
@@ -42,26 +44,31 @@
         <div class="row">
           <div class="col-xs-12">
             
-  <form class="form-horizontal" role="form" action="<?php echo U('add');?>" method="post">
-    <!--分类名称-->
-    <div class="form-group">
-      <label for="cname" class="col-xs-12 col-sm-3 control-label no-padding-right">角色名称</label>
-      <div class="col-xs-12 col-sm-5">
-        <span class="block input-icon input-icon-right">
-          <input type="text" id="cname" class="width-100" name="role_name">
-          <i class="ace-icon fa fa-leaf"></i>
-        </span>
-      </div>
-      <div class="help-block col-xs-12 col-sm-reset inline">
-        <span class="text-danger">*</span>
-        角色名称是必填项
-      </div>
-    </div>
-    <!--提交-->
-    <div class="form-group text-center">
-      <button class="btn btn-info" type="submit">提交</button>
-      <a class="btn btn-warning" href="<?php echo U('index');?>">返回</a>
-    </div>
+  <form action="" method="post">
+    <table id="simple-table" class="table  table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>操作</th>
+          <th>权限名称</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php if(is_array($rule)): $k = 0; $__LIST__ = $rule;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$item): $mod = ($k % 2 );++$k;?><tr>
+            <td class="center">
+              <label class="pos-rel">
+                <input type="checkbox" class="ace" name="rule[]" value="<?php echo ($item["id"]); ?>" <?php if(in_array(($item["id"]), is_array($has_rule_id)?$has_rule_id:explode(',',$has_rule_id))): ?>checked<?php endif; ?>>
+                <span class="lbl"></span>
+              </label>
+            </td>
+            <td>
+              |<?php echo (str_repeat('----',$item["level"])); ?>
+              <?php echo ($item["rule_name"]); ?>
+            </td>
+          </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+      </tbody>
+    </table>
+    <input type="hidden" name="id" value="<?php echo ($_GET['id']); ?>">
+    <button type="submit" class="btn btn-sm btn-danger">提交</button>
   </form>
 
           </div>
@@ -74,23 +81,5 @@
 <script src="/Public/Admin/Js/jquery-2.1.4.min.js"></script>
 <script src="/Public/Admin/Js/bootstrap.min.js"></script>
 <script src="/Public/Admin/Js/ace.min.js"></script>
-
-  <script>
-    $("#button").on('click', function () {
-      $.ajax({
-        url: "<?php echo U('add');?>",
-        type: "POST",
-        dataType: "JSON",
-        data: {
-          cname: $("#cname").val(),
-          parent_id: $("#parent_id").val(),
-          isrec: $("input[name='isrec']:checked").val(),
-        },
-        success: function (data) {
-          console.log(data);
-        }
-      })
-    })
-  </script>
 
 </html>

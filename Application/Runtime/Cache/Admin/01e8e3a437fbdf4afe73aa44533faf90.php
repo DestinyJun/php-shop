@@ -24,6 +24,9 @@
           <li class="active">
             角色列表
           </li>
+          <li class="active">
+            
+          </li>
         </ul>
         <div class="nav-search" id="nav-search">
           <form class="form-search">
@@ -116,9 +119,9 @@
               <a class="btn btn-xs btn-info" href="<?php echo U('edit','id='.$item['id']);?>" title="角色编辑">
                 <i class="ace-icon fa fa-pencil bigger-120"></i>
               </a>
-              <!--<button class="btn btn-xs btn-warning">
+              <a class="btn btn-xs btn-warning" href="<?php echo U('disfetch','id='.$item['id']);?>" title="配置权限">
                 <i class="ace-icon fa fa-flag bigger-120"></i>
-              </button>-->
+              </a>
               <button class="btn btn-xs btn-danger" onclick="deleteItem('<?php echo ($item["id"]); ?>')" title="角色删除">
                 <i class="ace-icon fa fa-trash-o bigger-120"></i>
               </button>

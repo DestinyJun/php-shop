@@ -1,0 +1,73 @@
+<extend name="Public/base"/>
+<block name="title">权限管理</block>
+<block name="location">权限列表</block>
+<block name="content">
+  <div class="add-btn">
+    <a href="{:U('add')}" class="btn btn-warning">权限添加</a>
+  </div>
+  <table id="simple-table" class="table  table-bordered table-hover">
+    <thead>
+    <tr>
+      <th class="center">
+        <label class="pos-rel">
+          <input type="checkbox" class="ace">
+          <span class="lbl"></span>
+        </label>
+      </th>
+      <th class="detail-col">#</th>
+      <th>权限名称</th>
+      <th>模块名称</th>
+      <th>控制器名称</th>
+      <th>方法名称</th>
+      <th>是否导航显示</th>
+      <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <volist name="rule" id="item" key="k">
+      <tr>
+        <td class="center">
+          <label class="pos-rel">
+            <input type="checkbox" class="ace">
+            <span class="lbl"></span>
+          </label>
+        </td>
+        <td class="center">{$k}</td>
+        <td>
+          |{$item.level|str_repeat='----',###}
+          {$item.rule_name}
+        </td>
+        <td>{$item.module_name}</td>
+        <td>{$item.controller_name}</td>
+        <td>{$item.action_name}</td>
+        <td>
+          <if condition="$item.is_show eq 1 ">
+            是
+          <else />
+            否
+          </if>
+        </td>
+        <td>
+          <div class="hidden-sm hidden-xs btn-group">
+            <a class="btn btn-xs btn-info" href="{:U('edit','id='.$item['id'])}">
+              <i class="ace-icon fa fa-pencil bigger-120"></i>
+            </a>
+            <button class="btn btn-xs btn-danger" onclick="deleteItem('{$item.id}')">
+              <i class="ace-icon fa fa-trash-o bigger-120"></i>
+            </button>
+          </div>
+        </td>
+      </tr>
+    </volist>
+    </tbody>
+  </table>
+</block>
+<block name="js">
+  <script>
+    function deleteItem(id) {
+      if (window.confirm('确定要删除吗？')) {
+        location.href = "/rule/del/id/"+id;
+      }
+    }
+  </script>
+</block>

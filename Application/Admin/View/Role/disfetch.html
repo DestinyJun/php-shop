@@ -1,0 +1,37 @@
+<extend name="Public/base"/>
+<block name="title">角色管理</block>
+<block name="location">
+  <a href="{:U('index')}">角色管理</a>
+</block>
+<block name="locationTwo">角色权限配置</block>
+<block name="content">
+  <form action="" method="post">
+    <table id="simple-table" class="table  table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>操作</th>
+          <th>权限名称</th>
+        </tr>
+      </thead>
+      <tbody>
+        <volist name="rule" id="item" key="k">
+          <tr>
+            <td class="center">
+              <label class="pos-rel">
+                <input type="checkbox" class="ace" name="rule[]" value="{$item.id}" <in name="item.id" value="$has_rule_id">checked</in>>
+                <span class="lbl"></span>
+              </label>
+            </td>
+            <td>
+              |{$item.level|str_repeat='----',###}
+              {$item.rule_name}
+            </td>
+          </tr>
+        </volist>
+      </tbody>
+    </table>
+    <input type="hidden" name="id" value="{$Think.get.id}">
+    <button type="submit" class="btn btn-sm btn-danger">提交</button>
+  </form>
+</block>
+<block name="js"></block>

@@ -63,4 +63,36 @@ class RoleController extends CommonController
       $this->success('修改成功',U('index'));
     }
   }
+
+  // 配置权限
+  public function disfetch(){
+    if (IS_GET) {
+      $ruleModel = D('Rule');
+      $rule = $ruleModel->getCateTree();
+      $role_id = intval(I('get.id'));
+      if ($role_id<=1) {
+        $this->error('参数错误');
+      }
+      $has_rule = D('RoleRule')->getRules($role_id);
+      foreach ($has_rule as $value) {
+        $has_rule_id[] = $value['rule_id'];
+      }
+      $this->assign(array(
+        'rule'=>$rule,
+        'has_rule_id'=>$has_rule_id,
+      ));
+      $this->display();
+    } else {
+      $role_id = intval(I('post.id'));
+      if ($role_id<=1) {
+        $this->error('参数错误');
+      }
+      $rules = I('post.rule');
+      $res = D('RoleRule')->disfetch($role_id,$rules);
+      if (!$res) {
+        $this->error('权限配置失败');
+      }
+      $this->success('权限配置成功！',U('index'));
+    }
+  }
 }
