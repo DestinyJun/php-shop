@@ -89,10 +89,29 @@ class RoleController extends CommonController
       }
       $rules = I('post.rule');
       $res = D('RoleRule')->disfetch($role_id,$rules);
+      // 修改角色权限后，需要删除当前角色所对应的所有用户的缓存文件删除，否则每次这些
+      //用户都要等系统清空缓存且重新登陆才能看到新权限释放的菜单及权限
+      // （1）根据角色id拿到该角色下的所有用户的id
+      $user_info = D('UserRole')->where("role_id={$role_id}")->select();
+      // （2）循环清空角色所对应的所有用户下的缓存文件
+      foreach ($user_info as $value) {
+        S('user_'.$value['user_id'],null);
+      }
       if (!$res) {
         $this->error('权限配置失败');
       }
       $this->success('权限配置成功！',U('index'));
     }
+  }
+
+  // 清除超级管理员的权限信息
+  public function flushAdmin() {
+    // 查出所有的超级管理员用户
+    $user_info = D('UserRole')->where("role_id=1")->select();
+    // 循环清空角色所对应的所有用户下的缓存文件
+    foreach ($user_info as $value) {
+      S('user_'.$value['user_id'],null);
+    }
+    echo '缓存清除成功';
   }
 }

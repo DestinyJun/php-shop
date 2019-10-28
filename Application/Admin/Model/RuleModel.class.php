@@ -10,6 +10,21 @@ final class RuleModel extends CommonModel
     array('action_name','require','方法名称必填'),
   );
 
+  // 获取权限列表
+  public function listData() {
+   /* // 分页实现
+    $count = $this->count(); // 数据总条数
+    $pagesize = 3; // 每页显示多少条
+    $page = new MyPage($count,$pagesize); // 实例化分页类
+    $pageStr = $page->show(); // 拿到分页html
+    $p = I('get.p'); // 接收当前处于第几页，p参数的分页类定死的，不能改
+    $data = $this->where($where)->page($p,$pagesize)->select();// 根据当前页以及查询多少条查询数据，TP基础数据模型提供
+    return  array(
+      'data'=>$data,
+      'page'=>$pageStr
+    );*/
+  }
+
   // 实现删除方法，如果其有子分类不允许删除
   public function dels($id){
     $res = $this->where("parent_id = {$id}")->find();

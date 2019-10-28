@@ -11,6 +11,46 @@
   <link rel="stylesheet" href="__PUBLIC_ADMIN__/css/ace.css">
 </head>
 <body class="no-skin">
+<div class="main-container ace-save-state" id="main-container">
+  <div id="sidebar" class="sidebar responsive ace-save-state" data-sidebar="true" data-sidebar-scroll="true" data-sidebar-hover="true">
+    <ul class="nav nav-list" style="top: 0;">
+      <li class="active">
+        <a href="{:U('Index/right')}" target="rightFrame">
+          <i class="menu-icon fa fa-tachometer"></i>
+          <span class="menu-text">系统首页</span>
+        </a>
+        <b class="arrow"></b>
+      </li>
+      <volist name="menus" id="item">
+        <eq name="item.parent_id" value="0">
+          <li class="">
+            <a href="#" class="dropdown-toggle">
+              <i class="menu-icon fa fa-desktop"></i>
+              <span class="menu-text">{$item.rule_name}</span>
+              <b class="arrow fa fa-angle-down"></b>
+            </a>
+            <b class="arrow"></b>
+            <ul class="submenu">
+              <volist name="menus" id="vo">
+                <eq name="vo.parent_id" value="$item.id">
+                  <li class="">
+                    <a href="{:U($vo['controller_name'].'/'.$vo['action_name'])}" target="rightFrame">
+                      <i class="menu-icon fa fa-caret-right"></i>
+                      {$vo.rule_name}
+                    </a>
+                    <b class="arrow"></b>
+                  </li>
+                </eq>
+              </volist>
+            </ul>
+          </li>
+        </eq>
+      </volist>
+    </ul>
+  </div>
+</div>
+</body>
+<!--<body class="no-skin">
 <div id="sidebar" class="sidebar responsive ace-save-state" data-sidebar="true" data-sidebar-scroll="true" data-sidebar-hover="true">
   <ul class="nav nav-list" style="top: 0;" id="navList">
     <li class="active">
@@ -19,6 +59,24 @@
         <span class="menu-text">系统首页</span>
       </a>
       <b class="arrow"></b>
+      <ul class="submenu nav-hide" style="display: none;">
+        <li class="">
+          <a href="tables.html">
+            <i class="menu-icon fa fa-caret-right"></i>
+            Simple &amp; Dynamic
+          </a>
+
+          <b class="arrow"></b>
+        </li>
+
+        <li class="">
+          <a href="jqgrid.html">
+            <i class="menu-icon fa fa-caret-right"></i>
+            jqGrid plugin
+          </a>
+          <b class="arrow"></b>
+        </li>
+      </ul>
     </li>
     <li>
       <a href="{:U('Category/index')}" target="rightFrame">
@@ -28,42 +86,44 @@
       <b class="arrow"></b>
     </li>
     <li>
-      <a href="javascript:void(0)">
+      <a href="{:U('Goods/index')}" target="rightFrame">
         <i class="menu-icon fa fa-list"></i>
-        <span class="menu-text">新闻管理</span>
+        <span class="menu-text">商品管理</span>
       </a>
       <b class="arrow"></b>
     </li>
     <li>
-      <a href="javascript:void(0)">
+      <a href="{:U('User/index')}" target="rightFrame">
         <i class="menu-icon fa fa-pencil-square-o"></i>
-        <span class="menu-text">分类管理</span>
+        <span class="menu-text">用户管理</span>
       </a>
       <b class="arrow"></b>
     </li>
     <li>
-      <a href="javascript:void(0)">
+      <a href="{:U('Role/index')}" target="rightFrame">
+        <i class="menu-icon fa fa-pencil-square-o"></i>
+        <span class="menu-text">角色管理</span>
+      </a>
+      <b class="arrow"></b>
+    </li>
+    <li>
+      <a href="{:U('Rule/index')}" target="rightFrame">
         <i class="menu-icon fa fa-calendar"></i>
-        <span class="menu-text">友情链接</span>
+        <span class="menu-text">权限管理</span>
       </a>
       <b class="arrow"></b>
     </li>
   </ul>
 </div>
-</body>
+</body>-->
 <script src="__PUBLIC_ADMIN__/Js/jquery-2.1.4.min.js"></script>
 <script src="__PUBLIC_ADMIN__/Js/bootstrap.min.js"></script>
 <script src="__PUBLIC_ADMIN__/Js/ace.min.js"></script>
 <script>
-  $("#navList > li").on('click',function () {
-    $("#navList > li").removeClass('active');
+  $(".nav li").on('click',function (event) {
+    // event.stopPropagation();
+    $(".nav li").removeClass('active');
     $(this).addClass('active');
   })
-  // var controller = location.href.split('?')[1].split('&')[0].split('=')[1];
-  /*for (let i =0;i<$("#navList > li").length;i++) {
-    if ($($("#navList > li")[i]).data().c === controller) {
-      $($("#navList > li")[i]).addClass('active')
-    }
-  }*/
 </script>
 </html>

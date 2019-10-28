@@ -1,8 +1,7 @@
 <?php
 namespace Admin\Controller;
-use Think\Controller;
 
-final class GoodsController extends Controller
+final class GoodsController extends CommonController
 {
   // 商品添加
   public function add(){

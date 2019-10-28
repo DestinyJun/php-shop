@@ -14,6 +14,8 @@ class IndexController extends CommonController
   }
   public function left()
   {
+    $menus = $this->user['menus'];
+    $this->assign('menus',$menus);
     $this->display();
   }
   public function right()
