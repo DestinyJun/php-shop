@@ -1,0 +1,144 @@
+<extend name="Public/base"/>
+<block name="title">商品属性管理</block>
+<block name="location">商品属性添加</block>
+<block name="content">
+  <form class="form-horizontal" role="form" action="{:U('add')}" method="post" enctype="multipart/form-data">
+    <!--商品名称-->
+    <div class="form-group">
+      <label for="attr_name" class="col-xs-12 col-sm-3 control-label no-padding-right">商品属性名称</label>
+      <div class="col-xs-12 col-sm-5">
+        <span class="block input-icon input-icon-right">
+          <input type="text" id="attr_name" class="width-100" name="v">
+          <i class="ace-icon fa fa-leaf"></i>
+        </span>
+      </div>
+      <div class="help-block col-xs-12 col-sm-reset inline">
+        <span class="text-danger">*</span>
+        必填字段
+      </div>
+    </div>
+    <!--所属类型-->
+    <div class="form-group">
+      <label for="category_id" class="col-xs-12 col-sm-3 control-label no-padding-right">所属类型</label>
+      <div class="col-xs-12 col-sm-5">
+        <span class="block input-icon input-icon-right">
+          <select class="chosen-select form-control" id="category_id" name="category_id" style="cursor: pointer">
+            <option value="" selected>|--请选择所属类型--</option>
+            <volist name="type" id="item">
+              <option value="{$item.id}">
+                {$item.type_name}
+              </option>
+            </volist>
+          </select>
+        </span>
+      </div>
+      <div class="help-block col-xs-12 col-sm-reset inline">
+        <span class="text-danger">*</span>
+        <span>商品分类必填</span>
+      </div>
+    </div>
+    <!--属性类型-->
+    <div class="form-group">
+      <span class="col-xs-12 col-sm-3 control-label no-padding-right">属性类型</span>
+      <div class="col-xs-12 col-sm-5">
+        <label>
+          <input name="attr_type" type="radio" class="ace" value="1" checked>
+          <span class="lbl">唯一</span>
+        </label>
+        <label>
+          <input name="attr_type" type="radio" class="ace" value="0">
+          <span class="lbl">单选</span>
+        </label>
+      </div>
+    </div>
+    <!--属性录入方法-->
+    <div class="form-group">
+      <span class="col-xs-12 col-sm-3 control-label no-padding-right">属性录入方法</span>
+      <div class="col-xs-12 col-sm-5">
+        <label>
+          <input name="attr_input_type" type="radio" class="ace" value="1" checked>
+          <span class="lbl">手动</span>
+        </label>
+        <label>
+          <input name="attr_input_type" type="radio" class="ace" value="0">
+          <span class="lbl">列表选择</span>
+        </label>
+      </div>
+    </div>
+    <!--属性手动录入默认值-->
+    <div class="form-group">
+      <label for="attr_value" class="col-xs-12 col-sm-3 control-label no-padding-right">默认值</label>
+      <div class="col-xs-12 col-sm-5">
+        <textarea class="form-control" id="attr_value" name="attr_value"></textarea>
+      </div>
+      <div class="help-block col-xs-12 col-sm-reset inline">
+        <span class="text-danger">*</span>
+        默认值为手动时必须输入，输入的多个值之间用英文逗号隔开
+      </div>
+    </div>
+    <script>
+      $(function () {
+        $('textarea[name="attr_value"]').attr('disabled',true);
+        $('input:radio[name="attr_input_type"]').on('change',function () {
+          var checked = $(this).val();
+          if (checked === '1') {
+            $('textarea[name="attr_value"]').attr('disabled',true).val('');
+          } else {
+            $('textarea[name="attr_value"]').attr('disabled',false);
+          }
+      })
+      })
+    </script>
+    <!--提交-->
+    <div class="form-group text-center">
+      <button class="btn btn-info" type="submit" id="button">提交</button>
+      <a class="btn btn-warning" href="">返回</a>
+    </div>
+  </form>
+</block>
+<block name="js">
+  <script>
+    $("#addCate").on('click', function () {
+      var str = `
+      <div class="form-group">
+      <label class="col-xs-12 col-sm-3 control-label no-padding-right"></label>
+      <div class="col-xs-12 col-sm-5">
+        <span class="block input-icon input-icon-right">
+          <select class="chosen-select form-control" name="cate_id[]" style="cursor: pointer">
+            <option value="" selected>|--请选择--</option>
+            <volist name="cate" id="item">
+              <option value="{$item.id}">
+                |{$item.level|str_repeat="----",###}
+                {$item.cname}
+              </option>
+            </volist>
+          </select>
+        </span>
+      </div>
+      <div class="help-block col-xs-12 col-sm-reset inline" style="margin-top: 0">
+        <button type="button" class="btn btn-sm btn-danger" onclick="delCate(event)">删除扩展分类</button>
+      </div>
+    </div>
+      `;
+      $("#cate_exm").after(str);
+    });
+    function delCate(event) {
+      $(event.target).parent().parent('.form-group').remove()
+    }
+    /*$("#button").on('click', function () {
+      $.ajax({
+        url: "{:U('add')}",
+        type: "POST",
+        dataType: "JSON",
+        data: {
+          cname: $("#cname").val(),
+          parent_id: $("#parent_id").val(),
+          isrec: $("input[name='isrec']:checked").val(),
+        },
+        success: function (data) {
+          console.log(data);
+        }
+      })
+    })*/
+  </script>
+</block>

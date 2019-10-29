@@ -1,0 +1,65 @@
+<extend name="Public/base"/>
+<block name="title">商品类型管理</block>
+<block name="location">商品类型列表</block>
+<block name="content">
+  <div class="row">
+    <div class="col-sm-4">
+      <a href="{:U('add')}" class="btn btn-sm btn-warning">商品类型添加</a>
+    </div>
+  </div>
+  <table id="simple-table" class="table  table-bordered table-hover">
+    <thead>
+    <tr>
+      <th class="center">
+        <label class="pos-rel">
+          <input type="checkbox" class="ace">
+          <span class="lbl"></span>
+        </label>
+      </th>
+      <th class="detail-col">#</th>
+      <th>商品类型名称</th>
+      <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <volist name="data" id="item" key="k">
+      <tr>
+        <td class="center">
+          <label class="pos-rel">
+            <input type="checkbox" class="ace">
+            <span class="lbl"></span>
+          </label>
+        </td>
+        <td class="center">{$k}</td>
+        <td>{$item.type_name}</td>
+        <td>
+          <div class="hidden-sm hidden-xs btn-group">
+            <a class="btn btn-xs btn-info" href="{:U('edit','id='.$item['id'])}" title="商品类型编辑">
+              <i class="ace-icon fa fa-pencil bigger-120"></i>
+            </a>
+            <button class="btn btn-xs btn-danger" onclick="deleteItem('{$item.id}')" title="商品类型删除">
+              <i class="ace-icon fa fa-trash-o bigger-120"></i>
+            </button>
+          </div>
+        </td>
+      </tr>
+    </volist>
+    </tbody>
+  </table>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="dataTables_paginate paging_simple_numbers" id="dynamic-table_paginate">
+        {$page}
+      </div>
+    </div>
+  </div>
+</block>
+<block name="js">
+  <script>
+    function deleteItem(id) {
+      if (window.confirm('确定要删除吗？')) {
+        location.href = "/type/del/id/"+id;
+      }
+    }
+  </script>
+</block>
