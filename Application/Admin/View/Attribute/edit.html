@@ -1,14 +1,14 @@
 <extend name="Public/base"/>
 <block name="title">商品属性管理</block>
-<block name="location">商品属性添加</block>
+<block name="location">商品属性编辑</block>
 <block name="content">
-  <form class="form-horizontal" role="form" action="{:U('add')}" method="post" enctype="multipart/form-data">
+  <form class="form-horizontal" role="form" action="{:U('edit')}" method="post" enctype="multipart/form-data">
     <!--商品名称-->
     <div class="form-group">
       <label for="attr_name" class="col-xs-12 col-sm-3 control-label no-padding-right">商品属性名称</label>
       <div class="col-xs-12 col-sm-5">
         <span class="block input-icon input-icon-right">
-          <input type="text" id="attr_name" class="width-100" name="attr_name">
+          <input type="text" id="attr_name" class="width-100" name="attr_name" value="{$info.attr_name}">
           <i class="ace-icon fa fa-leaf"></i>
         </span>
       </div>
@@ -25,7 +25,7 @@
           <select class="chosen-select form-control" id="type_id" name="type_id" style="cursor: pointer">
             <option value="" selected>|--请选择所属类型--</option>
             <volist name="type" id="item">
-              <option value="{$item.id}">
+              <option value="{$item.id}" <eq name="info.type_id" value="$item.id">selected</eq>>
                 {$item.type_name}
               </option>
             </volist>
@@ -42,11 +42,11 @@
       <span class="col-xs-12 col-sm-3 control-label no-padding-right">属性类型</span>
       <div class="col-xs-12 col-sm-5">
         <label>
-          <input name="attr_type" type="radio" class="ace" value="1" checked>
+          <input name="attr_type" type="radio" class="ace" value="1" <eq name="info.attr_type" value="1">checked</eq>>
           <span class="lbl">唯一</span>
         </label>
         <label>
-          <input name="attr_type" type="radio" class="ace" value="2">
+          <input name="attr_type" type="radio" class="ace" value="2" <eq name="info.attr_type" value="2">checked</eq>>
           <span class="lbl">单选</span>
         </label>
       </div>
@@ -56,11 +56,11 @@
       <span class="col-xs-12 col-sm-3 control-label no-padding-right">属性录入方法</span>
       <div class="col-xs-12 col-sm-5">
         <label>
-          <input name="attr_input_type" type="radio" class="ace" value="1" checked>
+          <input name="attr_input_type" type="radio" class="ace" value="1" <eq name="info.attr_input_type" value="1">checked</eq>>
           <span class="lbl">手动</span>
         </label>
         <label>
-          <input name="attr_input_type" type="radio" class="ace" value="2">
+          <input name="attr_input_type" type="radio" class="ace" value="2" <eq name="info.attr_input_type" value="2">checked</eq>>
           <span class="lbl">列表选择</span>
         </label>
       </div>
@@ -69,7 +69,7 @@
     <div class="form-group">
       <label for="attr_value" class="col-xs-12 col-sm-3 control-label no-padding-right">默认值</label>
       <div class="col-xs-12 col-sm-5">
-        <textarea class="form-control" id="attr_value" name="attr_value"></textarea>
+        <textarea class="form-control" id="attr_value" name="attr_value">{$info.attr_value}</textarea>
       </div>
       <div class="help-block col-xs-12 col-sm-reset inline">
         <span class="text-danger">*</span>
@@ -79,7 +79,6 @@
     <script>
       $(function () {
         var checked = $("input[name='attr_input_type']:checked").val();
-        console.log(checked);
         if (checked === '1') {
           $('textarea[name="attr_value"]').attr('disabled',true).val('');
         } else {
@@ -97,6 +96,7 @@
     </script>
     <!--提交-->
     <div class="form-group text-center">
+      <input type="hidden" name="id" value="{$info.id}">
       <button class="btn btn-info" type="submit" id="button">提交</button>
       <a class="btn btn-warning" href="{:U('index')}">返回</a>
     </div>

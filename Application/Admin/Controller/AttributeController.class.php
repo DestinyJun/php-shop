@@ -26,8 +26,8 @@ final class AttributeController extends CommonController
 
   public function index(){
     $model =  D('Attribute');
-    $attributes = $model->listData();
-    $this->assign('attributes',$attributes);
+    $data = $model->listData();
+    $this->assign($data);
     $this->display();
   }
 
@@ -64,7 +64,7 @@ final class AttributeController extends CommonController
       if (!$data){
         $this->error($model->getError());
       }
-      $res = $model->update($data);
+      $res = $model->save($data);
       if (!$res) {
         $this->error($model->getError());
       }

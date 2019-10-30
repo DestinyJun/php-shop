@@ -7,7 +7,11 @@ final class GoodsController extends CommonController
   public function add(){
     if (IS_GET){
       $cate = D('category')->getCateTree();
-      $this->assign('cate',$cate);
+      $types = D('Type')->select();
+      $this->assign(array(
+        'cate'=>$cate,
+        'types'=>$types,
+      ));
       $this->display();
       exit();
     }
@@ -23,6 +27,21 @@ final class GoodsController extends CommonController
     $this->success('添加成功');
   }
 
+  // 显示商品属性
+  public function showAttr(){
+    $type_id = intval(I('post.type_id'));
+    if ($type_id<=0){
+      $this->error('参数错误');
+    }
+    $attributes = D('Attribute')->where("type_id={$type_id}")->select();
+    foreach ($attributes as $key=>$value) {
+      if ($value['attr_input_type'] == 2) {
+        $attributes[$key]['attr_value'] = explode(',',$value['attr_value']);
+      }
+    }
+    $this->assign('attribute',$attributes);
+    $this->display();
+  }
   // 商品列表
   public function index(){
     $model = D('goods');

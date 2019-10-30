@@ -1,0 +1,73 @@
+<extend name="Public/base"/>
+<block name="title">商品属性管理</block>
+<block name="location">商品属性列表</block>
+<block name="content">
+  <div class="row">
+    <div class="col-sm-4">
+      <a href="{:U('add')}" class="btn btn-sm btn-warning">属性添加</a>
+    </div>
+  </div>
+  <table id="simple-table" class="table  table-bordered table-hover">
+    <thead>
+    <tr>
+      <th class="center">
+        <label class="pos-rel">
+          <input type="checkbox" class="ace">
+          <span class="lbl"></span>
+        </label>
+      </th>
+      <th class="detail-col">#</th>
+      <th>属性名称</th>
+      <th>类型名称</th>
+      <th>属性类型</th>
+      <th>录入方式</th>
+      <th>默认值</th>
+      <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <volist name="data" id="item" key="k">
+      <tr>
+        <td class="center">
+          <label class="pos-rel">
+            <input type="checkbox" class="ace">
+            <span class="lbl"></span>
+          </label>
+        </td>
+        <td class="center">{$k}</td>
+        <td>{$item.attr_name}</td>
+        <td>{$item.type_id}</td>
+        <td><eq name="item.attr_type" value="1">唯一属性<else/>单选属性</eq></td>
+        <td><eq name="item.attr_input_type" value="1">手动输入<else/>列表选择</eq></td>
+        <td>{$item.attr_value}</td>
+        <td>
+          <div class="hidden-sm hidden-xs btn-group">
+            <a class="btn btn-xs btn-info" href="{:U('edit','id='.$item['id'])}" title="属性编辑">
+              <i class="ace-icon fa fa-pencil bigger-120"></i>
+            </a>
+            <button class="btn btn-xs btn-danger" onclick="deleteItem('{$item.id}')" title="属性删除">
+              <i class="ace-icon fa fa-trash-o bigger-120"></i>
+            </button>
+          </div>
+        </td>
+      </tr>
+    </volist>
+    </tbody>
+  </table>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="dataTables_paginate paging_simple_numbers" id="dynamic-table_paginate">
+        {$page}
+      </div>
+    </div>
+  </div>
+</block>
+<block name="js">
+  <script>
+    function deleteItem(id) {
+      if (window.confirm('确定要删除吗？')) {
+        location.href = "/attribute/del/id/"+id;
+      }
+    }
+  </script>
+</block>

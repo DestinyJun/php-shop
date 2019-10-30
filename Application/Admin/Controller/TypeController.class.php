@@ -15,6 +15,7 @@ class TypeController extends CommonController
       if (!$res) {
         $this->error($model->getError());
       }
+      S('attribute_type',null);
       $this->success('添加成功',U('index'));
     }
   }
