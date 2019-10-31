@@ -11,14 +11,14 @@ final class GoodsModel extends CommonModel
   // 自定义字段
   protected $fields = array(
     'id', 'goods_name', 'goods_sn', 'category_id', 'market_price', 'shop_price', 'goods_body',
-    'goods_img', 'goods_thumb', 'is_hot', 'is_rec', 'is_new', 'is_del', 'is_sale', 'addtime');
+    'goods_img', 'goods_thumb', 'is_hot', 'is_rec', 'is_new', 'is_del', 'is_sale', 'addtime','type_id');
 
   // 定义字段自动校验
   protected $_validate = array(
-    array('goods_name', 'require', '商品名称必填', 1, 'regex', 3),
-    array('category_id', 'checkCategory', '分类名称必填', 1, 'callback', 3),
-    array('market_price', 'currency', '市场价格格式不对', 1, 'regex', 3),
-    array('shop_price', 'currency', '本店价格格式不对', 1, 'regex', 3),
+//    array('goods_name', 'require', '商品名称必填', 1, 'regex', 3),
+//    array('category_id', 'checkCategory', '分类名称必填', 1, 'callback', 3),
+//    array('market_price', 'currency', '市场价格格式不对', 1, 'regex', 3),
+//    array('shop_price', 'currency', '本店价格格式不对', 1, 'regex', 3),
   );
 
   // 校验商品分类的回调函数
@@ -57,9 +57,43 @@ final class GoodsModel extends CommonModel
   public function _after_insert($data, $options)
   {
     // $data是数据插入后返回来的插入的数据的一维数组，里面携带了ID,相当于插入后在数据库里面查出来的
+    // 商品扩展分类入库
     $goods_id = $data['id']; // 获取$goods_id
     $data = I('post.cate_id'); // 这里接收到的是一个cate_id的数组
     D('goods_cate')->insertExtCate($data,$goods_id);
+    // 商品属性入库
+    $attr = I('post.attr');
+    $goodsAttrModel = D('GoodsAttr');
+    $goodsAttrModel->where("goods_id={$goods_id}")->delete();
+    $goodsAttrModel->insertAttr($attr,$goods_id);
+
+    // 商品相册图片入库
+    $fileConfig = array(
+      'exts' => array('jpg', 'gif', 'png'), // 配置文件上传的文件后缀名
+      'maxSize' => 3145728, //上传的文件大小限制 (0-不做限制)
+      'savePath' => 'goods/photo/', //保存路径
+    );
+    $upload = new Upload($fileConfig);
+    unset($_FILES['goods_img']);  // 需要把商品的图片排除在外
+    $info = $upload->upload();
+    // 由于上传的图片不止一张，因此需要循环拼接图片地址
+    foreach ($info as $value) {
+      $goods_img = 'Uploads/' . $value['savepath'] . $value['savename']; //上传成功后拼接图片地址
+      // 制作缩略图
+      $img = new Image(); // 第一步，实例化图片操作的对象
+      $img->open($goods_img); // 第二步，打开需要操作的图片
+      $goods_thumb = 'Uploads/' . $value['savepath'] . 'thumb' . $value['savename']; // 第三步：拼接缩略图的保存路径
+      $img->thumb(100,100)->save($goods_thumb); // 第四步，制作缩略图并保存
+      $list[] = array(
+        'goods_id'=>$goods_id,
+        'goods_img'=>$goods_img,
+        'goods_thumb'=>$goods_thumb,
+      );
+    }
+    // 相册图片入库
+    if ($list) {
+      M('goods_img')->addAll($list);
+    }
   }
 
   // 获取商品列表
@@ -147,7 +181,7 @@ final class GoodsModel extends CommonModel
       // 解决sn是原来的没有发生变化
       $res = $this->where("goods_sn='{$goods_sn} AND id != {$goods_id}'")->find();
       if ($res) {
-        $this->error = '货号货号';
+        $this->error = '货号已存在，请重新输入！';
         return false;
       }
     }
@@ -158,22 +192,63 @@ final class GoodsModel extends CommonModel
     // 将最新的扩展分类写入扩展分类表
     $ext_cate = I('post.cate_id'); // 这里接收到的是一个cate_id的数组
     $ext_cate = array_unique($ext_cate); // 去除数组中重复的元素
-    D('GoodsCate')->insertExtCate($ext_cate,$goods_id);
+    $extCateModel->insertExtCate($ext_cate,$goods_id);
 
-    // （2）解决商品图片修改问题
-    $imagePath = $this->uploadImg();
+    // （3）解决商品图片修改问题
+    $imagePath = $this->uploadImg($data);
     if ($imagePath) {
       $data['goods_img'] = $imagePath['goods_img'];
       $data['goods_thumb'] = $imagePath['goods_thumb'];
     }
+
+    // （4）解决商品属性的问题，删除原来的所有商品属性，然后重新写入
+    $attr = I('post.attr');
+    $goodsAttrModel = D('GoodsAttr');
+    $goodsAttrModel->where("goods_id={$goods_id}")->delete();
+    $goodsAttrModel->insertAttr($attr,$goods_id);
+
+    // （5）给商品追加相册图片
+    $fileConfig = array(
+      'exts' => array('jpg', 'gif', 'png'), // 配置文件上传的文件后缀名
+      'maxSize' => 3145728, //上传的文件大小限制 (0-不做限制)
+      'savePath' => 'goods/photo/', //保存路径
+    );
+    $upload = new Upload($fileConfig);
+    unset($_FILES['goods_img']);  // 需要把商品的图片排除在外
+    $info = $upload->upload();
+    // 由于上传的图片不止一张，因此需要循环拼接图片地址
+    foreach ($info as $value) {
+      $goods_img = 'Uploads/' . $value['savepath'] . $value['savename']; //上传成功后拼接图片地址
+      // 制作缩略图
+      $img = new Image(); // 第一步，实例化图片操作的对象
+      $img->open($goods_img); // 第二步，打开需要操作的图片
+      $goods_thumb = 'Uploads/' . $value['savepath'] . 'thumb' . $value['savename']; // 第三步：拼接缩略图的保存路径
+      $img->thumb(100,100)->save($goods_thumb); // 第四步，制作缩略图并保存
+      $list[] = array(
+        'goods_id'=>$goods_id,
+        'goods_img'=>$goods_img,
+        'goods_thumb'=>$goods_thumb,
+      );
+    }
+    // 相册图片入库
+    if ($list) {
+      M('goods_img')->addAll($list);
+    }
+    // 修改入库
     return $this->save($data);
   }
 
   // 公共的图片上传方法
-  public function uploadImg(){
+  public function uploadImg($goods_info=null){
     // 首先判断是否有图片上传
     if (!isset($_FILES['goods_img']) || $_FILES['goods_img']['error'] != 0) {
       return false;
+    }
+    // 如果有图片上传，就先删除原来的图片
+    if ($goods_info) {
+      $info = $this->where("id={$goods_info['id']}")->find();
+      unlink($info['goods_img']);
+      unlink($info['goods_thumb']);
     }
     // 实现图片上传
     $fileConfig = array(
@@ -182,7 +257,7 @@ final class GoodsModel extends CommonModel
       'savePath' => 'goods/', //保存路径
     );
     $upload = new Upload($fileConfig);
-    $info = $upload->uploadOne($_FILES['file']);
+    $info = $upload->uploadOne($_FILES['goods_img']);
     if (!$info) {
       $this->error = $upload->getError();
       return false;

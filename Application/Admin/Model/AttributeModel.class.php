@@ -13,7 +13,7 @@ class AttributeModel extends CommonModel
   );
 
   public function listData() {
-    $pagesize = 3;
+    $pagesize = 10;
     $count = $this->count();
     $page = new MyPage($count,$pagesize);
     $pageStr = $page->show();
