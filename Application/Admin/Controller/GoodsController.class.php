@@ -174,4 +174,68 @@ final class GoodsController extends CommonController
     }
     $this->ajaxReturn(array('status'=>'1000','msg'=>'删除成功！'));
   }
+
+  // 库存设置
+  public function setNUmber() {
+    if (IS_GET) {
+      $goods_id = intval(I('get.id'));
+      if ($goods_id<=0) {
+        $this->error('参数错误');
+      }
+      $attrModel = D('GoodsAttr');
+      $data = $attrModel->alias('a')->
+        join("left join wj_attribute b on a.attr_id=b.id")->
+        field("a.*,b.attr_name,attr_type,attr_input_type,attr_value")->
+        where("a.goods_id={$goods_id} AND b.attr_type=2")->select();
+      foreach ($data as $value){
+        $list[$value['attr_id']][] = $value;
+      }
+     /* foreach ($list as $key=>$value) {
+        foreach ($value as $k=>$v) {
+          $list[$key][$k]['attr_value'] = explode(',',$v['attr_value']);
+        }
+      }*/
+      $this->assign(array(
+        'data'=>$list
+      ));
+      $this->display();
+    } else {
+      $attr = I('post.attr');
+      $goods_number = I('post.goods_number');
+      $goods_id = I('post.goods_id');
+      foreach ($goods_number as $key=>$value) {
+        $tem = array();
+        foreach ($attr as $k=>$v){
+          $tem[] = $v[$key];
+        }
+        // 避免出现3，4或者4，3d组合，因此需要排序
+        sort($tem);
+        // 实现组合去重，避免数据重复导致错乱
+        $goods_attr_ids = implode(',',$tem);
+        if (isset($has)) {
+          if (in_array($goods_attr_ids,$has)) {
+            // 手动去除重复的库存量
+            unset($goods_number[$key]);
+            // 结束当前循环
+            continue;
+          }
+        }
+        $has[] = $goods_attr_ids;
+        $list[] = array(
+          'goods_id' => $goods_id,
+          'goods_number' => $value,
+          'goods_attr_ids' => $goods_attr_ids,
+        );
+      }
+      // 在给商品设置库存信息之前，得把原来得库存删掉
+      $model = M('goods_number');
+      $model->where("goods_id={$goods_id}")->delete();
+      // 计算商品得库存总数并入库
+       $model->addAll($list);
+      // 新库存信息入库成功需要更新商品得总库存信息
+      $goods_count = array_sum($goods_number);
+      D('Goods')->where("id={$goods_id}")->setField("goods_number",$goods_count);
+      $this->success('添加成功');
+    }
+  }
 }

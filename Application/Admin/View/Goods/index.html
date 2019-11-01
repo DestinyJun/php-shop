@@ -93,14 +93,14 @@
         <td><if condition="$item.is_hot eq 1 ">是<else />否</if></td>
         <td>
           <div class="hidden-sm hidden-xs btn-group">
-            <a class="btn btn-xs btn-info" href="{:U('edit','id='.$item['id'])}">
-              <i class="ace-icon fa fa-pencil bigger-120"></i>
+            <a class="btn btn-xs btn-success" href="{:U('edit','id='.$item['id'])}">
+              编辑
             </a>
-            <button class="btn btn-xs btn-warning">
-              <i class="ace-icon fa fa-flag bigger-120"></i>
-            </button>
-            <button class="btn btn-xs btn-danger" onclick="deleteItem('{$item.id}')">
-              <i class="ace-icon fa fa-trash-o bigger-120"></i>
+            <a class="btn btn-xs btn-primary" href="{:U('setNumber','id='.$item['id'])}">
+              库存
+            </a>
+            <button class="btn btn-xs btn-danger" onclick="deleteItem('{$item.id}')" type="button">
+              删除
             </button>
           </div>
         </td>

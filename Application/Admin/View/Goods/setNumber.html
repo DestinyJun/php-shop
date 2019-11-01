@@ -1,0 +1,69 @@
+<extend name="Public/base"/>
+<block name="title">商品管理</block>
+<block name="location">商品库存管理</block>
+<block name="content">
+  <form action="" method="post">
+    <table id="simple-table" class="table  table-bordered table-hover">
+      <thead>
+      <tr>
+        <volist name="data" id="item">
+          <th>{$item[0]['attr_name']}</th>
+        </volist>
+        <th>数量</th>
+        <th>操作</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <volist name="data" id="item">
+          <td>
+            <select class="chosen-select form-control" name="attr[{$item.0.attr_id}][]" style="cursor: pointer">
+              <volist name="item" id="vo">
+                <option value="{$vo.attr_values}">{$vo.attr_values}</option>
+              </volist>
+            </select>
+          </td>
+        </volist>
+        <td>
+          <label>
+            <input type="text" class="form-control" name="goods_number[]">
+          </label>
+        </td>
+        <td>
+          <div class="hidden-sm hidden-xs btn-group">
+            <input type="hidden" name="goods_id" value="{$Think.get.id}">
+            <a class="btn btn-xs btn-danger" type="button" onclick="cloneThis(this)">增加</a>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="row">
+      <div class="col-xs-12">
+        <button class="btn btn-sm btn-success">提交</button>
+        <button class="btn btn-sm btn-warning">返回</button>
+      </div>
+    </div>
+  </form>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="dataTables_paginate paging_simple_numbers" id="dynamic-table_paginate">
+        {$page}
+      </div>
+    </div>
+  </div>
+</block>
+<block name="js">
+  <script>
+    function cloneThis(obj){
+      var current = $(obj).parent().parent().parent();
+      var newDom = current.clone();
+      if ($(obj).html() === '增加') {
+        newDom.find('a').html('减少');
+        current.after(newDom);
+      } else {
+        current.remove();
+      }
+    }
+  </script>
+</block>
