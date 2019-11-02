@@ -1,6 +1,6 @@
 <?php
 return array(
-  //'配置项'=>'配置值'
+  //'配置项'=>'配置值'自定义的模板替换，此标签在模板中自动换成对应的值
   'TMPL_PARSE_STRING' => array(
     '__PUBLIC_ADMIN__' => '/Public/Admin', // 后台静态资源目录
     '__PUBLIC_HOME__' => '/Public/Home',    // 前台静态资源目录

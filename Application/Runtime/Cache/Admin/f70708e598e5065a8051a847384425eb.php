@@ -105,6 +105,7 @@
       <th>货号</th>
       <th>市场价</th>
       <th>本店价</th>
+      <th>库存</th>
       <th>上架</th>
       <th>推荐</th>
       <th>新品</th>
@@ -125,6 +126,7 @@
         <td><?php echo ($item["goods_sn"]); ?></td>
         <td><?php echo ($item["market_price"]); ?></td>
         <td><?php echo ($item["shop_price"]); ?></td>
+        <td><?php echo ($item["goods_number"]); ?></td>
         <td><?php if($item["is_sale"] == 1 ): ?>是<?php else: ?>否<?php endif; ?></td>
         <td><?php if($item["is_rec"] == 1 ): ?>是<?php else: ?>否<?php endif; ?></td>
         <td><?php if($item["is_new"] == 1 ): ?>是<?php else: ?>否<?php endif; ?></td>

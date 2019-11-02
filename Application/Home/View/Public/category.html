@@ -1,0 +1,106 @@
+<!--商品分类-->
+<div class="nav" ectype="dscNav">
+  <div class="w w1200">
+    <div class='categorys <eq name="is_show" value="1" ><else />site_mast</eq>'>
+      <div class="categorys-type">
+        <a href="categoryall.php" target="_blank">全部商品分类</a>
+      </div>
+      <div class="categorys-tab-content">
+        <div class="categorys-items" id="cata-nav">
+          <volist name="cate" id="item">
+            <eq name="item.parent_id" value="0">
+              <div class="categorys-item">
+                <div class="item item-content">
+                  <i class="iconfont icon-ele"><img src="__PUBLIC_HOME__/images/icon/elece.png"></i>
+                  <div class="categorys-title">
+                    <strong>
+                      <a href="{:U('Category/index','id='.$item['id'])}" target="_blank">{$item.cname}</a>
+                    </strong>
+                    <span>
+                  <!--<a href="#" target="_blank">大家电</a>
+                  <a href="#" target="_blank">生活电器</a>-->
+                </span>
+                  </div>
+                </div>
+                <div class="categorys-items-layer">
+                  <div class="cate-layer-con clearfix">
+                    <div class="cate-layer-left">
+                      <div class="cate_channel">
+                        <a href="#" target="_blank">品牌日</a>
+                        <a href="#" target="_blank">家电城</a>
+                        <a href="#" target="_blank">智能生活馆</a>
+                        <a href="#" target="_blank">京东净化馆</a>
+                        <a href="#" target="_blank">京东帮服务店</a>
+                        <a href="#" target="_blank">值得买精选</a>
+                      </div>
+                      <div class="cate_detail">
+                        <volist name="cate" id="vo">
+                          <eq name="vo.parent_id" value="$item.id">
+                            <dl class="dl_fore1">
+                            <dt><a href="{:U('Category/index','id='.$vo['id'])}" target="_blank">{$vo.cname}</a></dt>
+                            <dd>
+                              <volist name="cate" id="list">
+                                <eq name="list.parent_id" value="$vo.id">
+                                  <a href="{:U('Category/index','id='.$list['id'])}" target="_blank">{$list.cname}</a>
+                                </eq>
+                              </volist>
+                            </dd>
+                          </dl>
+                          </eq>
+                        </volist>
+                      </div>
+                    </div>
+                    <div class="cate-layer-rihgt">
+                      <h3>猜你喜欢</h3>
+                      <div class="cate-layer-right-slide">
+                        <img src="__PUBLIC_HOME__/images/elec1.jpg"/>
+                      </div>
+                      <div class="cate-layer-right-slide">
+                        <img src="__PUBLIC_HOME__/images/elec1.jpg"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </eq>
+          </volist>
+        </div>
+      </div>
+    </div>
+    <div class="nav-main" id="nav">
+      <ul class="navitems">
+        <li>
+          <a href="#" class="curr">首页</a>
+        </li>
+        <li>
+          <a href="#">食品特产</a>
+        </li>
+        <li>
+          <a href="#">服装城</a>
+        </li>
+        <li>
+          <a href="#">大家电</a>
+        </li>
+        <li>
+          <a href="#">鞋靴箱包</a>
+        </li>
+        <li>
+          <a href="#">品牌专区</a>
+        </li>
+        <li>
+          <a href="#">聚划算</a>
+        </li>
+        <li>
+          <a href="#">积分商城</a>
+        </li>
+        <li>
+          <a href="#">预售</a>
+        </li>
+        <li>
+          <a href="#">店铺街</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

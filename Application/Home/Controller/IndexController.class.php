@@ -1,13 +1,10 @@
 <?php
-
 namespace Home\Controller;
-
-use Think\Controller;
-
-class IndexController extends Controller
+class IndexController extends CommonController
 {
   public function index()
   {
-    $this->display('index');
+    $this->assign('is_show',1);
+    $this->display();
   }
 }

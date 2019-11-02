@@ -312,7 +312,7 @@
     <div class="form-group text-center">
       <input type="hidden" name="id" value="<?php echo ($data["id"]); ?>">
       <button class="btn btn-info" type="submit" id="button">提交</button>
-      <a class="btn btn-warning" href="">返回</a>
+      <a class="btn btn-warning" href="<?php echo U('index');?>">返回</a>
     </div>
   </form>
 

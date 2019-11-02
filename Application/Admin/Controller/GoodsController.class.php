@@ -23,7 +23,7 @@ final class GoodsController extends CommonController
       if (!$res) {
         $this->error($model->getError());
       }
-      $this->success('添加成功');
+      $this->success('添加成功',U('index'));
     }
   }
 
@@ -182,27 +182,35 @@ final class GoodsController extends CommonController
       if ($goods_id<=0) {
         $this->error('参数错误');
       }
-      $attrModel = D('GoodsAttr');
-      $data = $attrModel->alias('a')->
-        join("left join wj_attribute b on a.attr_id=b.id")->
-        field("a.*,b.attr_name,attr_type,attr_input_type,attr_value")->
-        where("a.goods_id={$goods_id} AND b.attr_type=2")->select();
-      foreach ($data as $value){
-        $list[$value['attr_id']][] = $value;
+      $model = D('goodsAttr');
+      $attr = $model->getSingleAttr($goods_id);
+      If (!$attr) {
+        // 没有单选属性的商品查询库存
+        $info = D('goods')->where("id={$goods_id}")->find();
+        $this->assign('data',$info);
+        $this->display('noSingle');
+        exit();
       }
-     /* foreach ($list as $key=>$value) {
-        foreach ($value as $k=>$v) {
-          $list[$key][$k]['attr_value'] = explode(',',$v['attr_value']);
-        }
-      }*/
+      // 有单选属性的商品查询库存
+      $info = M('goods_number')->where("goods_id={$goods_id}")->select();
+      // 如果商品没有设置库存，需要循环一次添加
+      if (!$info) {
+        $info = array('goods_number'=>0);
+      }
       $this->assign(array(
-        'data'=>$list
+        'data'=>$attr,
+        'info'=>$info,
       ));
       $this->display();
     } else {
       $attr = I('post.attr');
       $goods_number = I('post.goods_number');
       $goods_id = I('post.goods_id');
+      if (!$attr) {
+        D('Goods')->where("id={$goods_id}")->setField("goods_number",$goods_number);
+        $this->success('添加成功',U('index'));
+        exit();
+      }
       foreach ($goods_number as $key=>$value) {
         $tem = array();
         foreach ($attr as $k=>$v){
@@ -235,7 +243,7 @@ final class GoodsController extends CommonController
       // 新库存信息入库成功需要更新商品得总库存信息
       $goods_count = array_sum($goods_number);
       D('Goods')->where("id={$goods_id}")->setField("goods_number",$goods_count);
-      $this->success('添加成功');
+      $this->success('添加成功',U('index'));
     }
   }
 }

@@ -11,7 +11,7 @@ final class GoodsModel extends CommonModel
   // 自定义字段
   protected $fields = array(
     'id', 'goods_name', 'goods_sn', 'category_id', 'market_price', 'shop_price', 'goods_body',
-    'goods_img', 'goods_thumb', 'is_hot', 'is_rec', 'is_new', 'is_del', 'is_sale', 'addtime','type_id');
+    'goods_img', 'goods_thumb', 'is_hot', 'is_rec', 'is_new', 'is_del', 'is_sale', 'addtime','type_id','goods_number');
 
   // 定义字段自动校验
   protected $_validate = array(

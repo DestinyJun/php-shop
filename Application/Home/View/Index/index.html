@@ -1,17 +1,158 @@
-<!doctype html>
-<html lang="zh">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>我是前台</title>
-</head>
-<body>
-<div class="header">
-  <h1>我是前台</h1>
-  <include file="Public/header" />
-  <include file="Public:header" />
-</div>
-</body>
-</html>
+<extend name="Public/base" />
+<block name="title">首页</block>
+<block name="content">
+  <!--商品分类-->
+  <include file="Public:category"/>
+  <!--轮播图-->
+  <include file="Public:slide"/>
+  <!--购物新闻推荐-->
+  <include file="Public:shopNew"/>
+  <!--今日秒杀-->
+  <include file="Public:seckill" />
+  <!--优质新品-->
+  <include file="Public:needChannel" />
+  <!--垂钓专场分割图-->
+  <div class="discount">
+    <div class="dis_con">
+      <a href="#"><img src="__PUBLIC_HOME__/images/discount1.png" /></a>
+    </div>
+  </div>
+  <!--更多推荐-->
+  <include file="Public:more" />
+</block>
+<block name="red_bag">
+  <!--右侧红包栏-->
+  <!--<div class="bk_foot_redbag">
+    <a href="javascript:void(0)" id="red_bag">
+      <img src="__PUBLIC_HOME__/images/red_package.png" width="100%" alt="">
+    </a>
+    <span class="closehd"></span>
+  </div>
+  <div class="red_bag">
+    <span class="hide font">
+      <span>10</span>元红包砸中了您
+    </span>
+    <br />
+    <button class="hide font" id="ensure">确定</button>
+  </div>-->
+</block>
+<block name="js">
+  <script type="text/javascript" src="__PUBLIC_HOME__/js/kuCity.js"></script>
+  <script type="text/javascript" src="__PUBLIC_HOME__/js/jquery.SuperSlider.js"></script>
+  <script type="text/javascript" src="__PUBLIC_HOME__/js/slide.js"></script>
+  <script>
+    $('.li_dorpdown').hover(function() {
+      $('.dorpdown-layer').show();
+    });
+    $('.li_dorpdown').mouseleave(function() {
+      $('.dorpdown-layer').hide();
+    });
+    $('.icon-close').click(function() {
+      $('.top_banner').hide();
+    });
+    $('.my_center_box_left a').hover(function() {
+
+    });
+    $('.cate-layer-right-slide img').mouseenter(function() {
+
+      $(this).delay('300').animate(300);
+    });
+    $('.cate-layer-right-slide img').mouseleave(function() {
+      $(this).css('border', 'none')
+    });
+    $()
+  </script>
+  <script>
+    $('.search').kuCity();
+    $("#lun2").slide({
+      autoplay: true,
+      autoTime: 5000,
+    });
+  </script>
+  <!--滚动展示-->
+  <script type="text/javascript">
+    (function($) {
+
+      $.fn.myScroll = function(options) {
+        //默认配置
+        var defaults = {
+          speed: 50, //滚动速度,值越大速度越慢
+          rowHeight: 50 //每行的高度
+        };
+
+        var opts = $.extend({}, defaults, options),
+          intId = [];
+
+        function marquee(obj, step) {
+
+          obj.find("ul").animate({
+            marginTop: '-=1'
+          }, 0, function() {
+            var s = Math.abs(parseInt($(this).css("margin-top")));
+            if(s >= step) {
+              $(this).find("li").slice(0, 1).appendTo($(this));
+              $(this).css("margin-top", 0);
+            }
+          });
+        }
+
+        this.each(function(i) {
+          var sh = opts["rowHeight"],
+            speed = opts["speed"],
+            _this = $(this);
+          intId[i] = setInterval(function() {
+            if(_this.find("ul").height() <= _this.height()) {
+              clearInterval(intId[i]);
+            } else {
+              marquee(_this, sh);
+            }
+          }, speed);
+
+          _this.hover(function() {
+            clearInterval(intId[i]);
+          }, function() {
+            intId[i] = setInterval(function() {
+              if(_this.find("ul").height() <= _this.height()) {
+                clearInterval(intId[i]);
+              } else {
+                marquee(_this, sh);
+              }
+            }, speed);
+          });
+
+        });
+
+      }
+
+    })(jQuery);
+
+    $(function() {
+
+      $("div.ranklist").myScroll({
+        speed: 50,
+        rowHeight: 50
+      });
+
+    });
+    $(".closehd").click(function() { //右下角红包图标点击变小
+      $(this).hide();
+      $('.bk_foot_redbag a').animate({
+        width: '80px',
+        height: '100px'
+      });
+    });
+    $('#red_bag').click(function(){
+      $(this).hide();
+      $('.closehd').hide();
+      $('.font').show();
+      $('.font').css('display','inline-block')
+      $('.red_bag').animate({
+        width:'400px',
+        height:'300px'
+      });
+    });
+    $('#ensure').click(function(){
+      $('.red_bag').fadeOut();
+    });
+  </script>
+</block>

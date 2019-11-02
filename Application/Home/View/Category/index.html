@@ -1,0 +1,158 @@
+<extend name="Public/base" />
+<block name="title">分类列表页</block>
+<block name="content">
+  <!--商品分类-->
+  <include file="Public:category"/>
+  <!--商品列表-->
+  <div class="w1200_container" style="min-height: 600px;">
+    <!--热卖推荐-->
+    <include file="Public:categoryHot"/>
+    <!--商品筛选-->
+    <!--商品列表-->
+    <include file="Public:categoryList"/>
+  </div>
+</block>
+<block name="js">
+  <script type="text/javascript" src="__PUBLIC_HOME__/js/jquery.SuperSlider.js"></script>
+  <script type="text/javascript" src="__PUBLIC_HOME__/js/kuCity.js"></script>
+  <script>
+    $('.li_dorpdown').hover(function() {
+      $('.dorpdown-layer').show();
+    });
+    $('.li_dorpdown').mouseleave(function() {
+      $('.dorpdown-layer').hide();
+    });
+    $('.icon-close').click(function() {
+      $('.top_banner').hide();
+    });
+    $('.my_center_box_left a').hover(function() {
+
+    });
+    $('.cate-layer-right-slide img').mouseenter(function() {
+
+      $(this).delay('300').animate(300);
+    });
+    $('.cate-layer-right-slide img').mouseleave(function() {
+      $(this).css('border', 'none')
+    });
+  </script>
+  <script>
+    $('.search').kuCity();
+    $("#lun2").slide({
+      autoplay: true,
+      autoTime: 5000,
+    });
+  </script>
+  <!--滚动展示-->
+  <script type="text/javascript">
+    (function($) {
+
+      $.fn.myScroll = function(options) {
+        //默认配置
+        var defaults = {
+          speed: 50, //滚动速度,值越大速度越慢
+          rowHeight: 50 //每行的高度
+        };
+
+        var opts = $.extend({}, defaults, options),
+          intId = [];
+
+        function marquee(obj, step) {
+
+          obj.find("ul").animate({
+            marginTop: '-=1'
+          }, 0, function() {
+            var s = Math.abs(parseInt($(this).css("margin-top")));
+            if(s >= step) {
+              $(this).find("li").slice(0, 1).appendTo($(this));
+              $(this).css("margin-top", 0);
+            }
+          });
+        }
+
+        this.each(function(i) {
+          var sh = opts["rowHeight"],
+            speed = opts["speed"],
+            _this = $(this);
+          intId[i] = setInterval(function() {
+            if(_this.find("ul").height() <= _this.height()) {
+              clearInterval(intId[i]);
+            } else {
+              marquee(_this, sh);
+            }
+          }, speed);
+
+          _this.hover(function() {
+            clearInterval(intId[i]);
+          }, function() {
+            intId[i] = setInterval(function() {
+              if(_this.find("ul").height() <= _this.height()) {
+                clearInterval(intId[i]);
+              } else {
+                marquee(_this, sh);
+              }
+            }, speed);
+          });
+
+        });
+
+      }
+
+    })(jQuery);
+
+    $(function() {
+
+      $("div.ranklist").myScroll({
+        speed: 50,
+        rowHeight: 50
+      });
+
+    });
+    $(".closehd").click(function() { //右下角红包图标点击变小
+      $(this).hide();
+      $('.bk_foot_redbag a').animate({
+        width: '80px',
+        height: '100px'
+      });
+    });
+    $('#red_bag').click(function() {
+      $(this).hide();
+      $('.closehd').hide();
+      $('.font').show();
+      $('.font').css('display', 'inline-block')
+      $('.red_bag').animate({
+        width: '400px',
+        height: '300px'
+      });
+    });
+    $('#ensure').click(function() {
+      $('.red_bag').fadeOut();
+    });
+    $('#red_bag').click(function() {
+      $(this).hide();
+      $('.closehd').hide();
+      $('.font').show();
+      $('.font').css('display', 'inline-block')
+      $('.red_bag1').animate({
+        width: '400px',
+        height: '300px'
+      });
+    });
+    $('#ensure').click(function() {
+      $('.red_bag1').fadeOut();
+    });
+
+    //添加成功
+    $('.in_ca').click(function(){
+      $('.succeed').show();
+      $(function () {
+        setTimeout(function () {
+          $(".succeed").fadeOut();
+        }, 1000);
+      })
+    });
+  </script>
+  <script type="text/javascript">
+    jQuery(".picFocus1").slide({ mainCell: ".bd ul", effect: "left", });
+  </script>
+</block>

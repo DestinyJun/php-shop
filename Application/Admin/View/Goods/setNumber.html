@@ -6,6 +6,7 @@
     <table id="simple-table" class="table  table-bordered table-hover">
       <thead>
       <tr>
+        <th>#</th>
         <volist name="data" id="item">
           <th>{$item[0]['attr_name']}</th>
         </volist>
@@ -14,34 +15,37 @@
       </tr>
       </thead>
       <tbody>
-      <tr>
-        <volist name="data" id="item">
+      <volist name="info" id="v" key="keys">
+        <tr>
+          <td>{$keys}</td>
+          <volist name="data" id="item">
+            <td>
+              <select class="chosen-select form-control" name="attr[{$item.0.attr_id}][]" style="cursor: pointer">
+                <volist name="item" id="vo">
+                  <option value="{$vo.attr_values}" <in name="vo.attr_values" value="$v.goods_attr_ids">selected</in>>{$vo.attr_values}</option>
+                </volist>
+              </select>
+            </td>
+          </volist>
           <td>
-            <select class="chosen-select form-control" name="attr[{$item.0.attr_id}][]" style="cursor: pointer">
-              <volist name="item" id="vo">
-                <option value="{$vo.attr_values}">{$vo.attr_values}</option>
-              </volist>
-            </select>
+            <label>
+              <input type="text" class="form-control" name="goods_number[]" value="{$v.goods_number}">
+            </label>
           </td>
-        </volist>
-        <td>
-          <label>
-            <input type="text" class="form-control" name="goods_number[]">
-          </label>
-        </td>
-        <td>
-          <div class="hidden-sm hidden-xs btn-group">
-            <input type="hidden" name="goods_id" value="{$Think.get.id}">
-            <a class="btn btn-xs btn-danger" type="button" onclick="cloneThis(this)">增加</a>
-          </div>
-        </td>
-      </tr>
+          <td>
+            <div class="hidden-sm hidden-xs btn-group">
+              <input type="hidden" name="goods_id" value="{$Think.get.id}">
+              <input class="btn btn-xs btn-danger" type="button" onclick="cloneThis(this)" value="<eq name='keys' value='1'>增加<else/>减少</eq>">
+            </div>
+          </td>
+        </tr>
+      </volist>
       </tbody>
     </table>
     <div class="row">
       <div class="col-xs-12">
         <button class="btn btn-sm btn-success">提交</button>
-        <button class="btn btn-sm btn-warning">返回</button>
+        <a class="btn btn-sm btn-warning" href="{:U('index')}">返回</a>
       </div>
     </div>
   </form>
@@ -58,8 +62,9 @@
     function cloneThis(obj){
       var current = $(obj).parent().parent().parent();
       var newDom = current.clone();
-      if ($(obj).html() === '增加') {
-        newDom.find('a').html('减少');
+      console.log(newDom.find('input')[0]);
+      if ($(obj).val() == '增加') {
+        newDom.find('.btn').val('减少');
         current.after(newDom);
       } else {
         current.remove();
