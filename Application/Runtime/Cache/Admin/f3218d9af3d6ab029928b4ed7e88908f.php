@@ -1,9 +1,49 @@
-<extend name="Public/base"/>
-<block name="title">商品管理</block>
-<block name="location"><a href="{:U('index')}">商品列表</a></block>
-<block name="locationTwo">商品添加</block>
-<block name="content">
-  <form class="form-horizontal" role="form" action="{:U('add')}" method="post" enctype="multipart/form-data">
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>
+    商品管理
+  </title>
+  <link rel="stylesheet" href="/Public/Admin/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/Public/Admin/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/Public/Admin/css/fonts.googleapis.com.css">
+  <link rel="stylesheet" href="/Public/Admin/css/ace.css">
+  <script src="/Public/Admin/Js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+<div class="main-container ace-save-state" id="main-container">
+  <div class="main-content">
+    <div class="main-content-inner">
+      <!--内容导航-->
+      <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+        <ul class="breadcrumb">
+          <li>
+            <i class="ace-icon fa fa-home home-icon"></i>
+            <a href="<?php echo U('Index/right');?>">主页</a>
+          </li>
+          <li class="active">
+            商品添加
+          </li>
+          <li class="active">
+            
+          </li>
+        </ul>
+        <div class="nav-search" id="nav-search">
+          <form class="form-search">
+								<span class="input-icon">
+									<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off">
+									<i class="ace-icon fa fa-search nav-search-icon"></i>
+								</span>
+          </form>
+        </div>
+      </div>
+      <!--主体内容-->
+      <div class="page-content overflow-scroll" style="height: 90vh">
+        <div class="row">
+          <div class="col-xs-12">
+            
+  <form class="form-horizontal" role="form" action="<?php echo U('add');?>" method="post" enctype="multipart/form-data">
   <div class="widget-box transparent" id="recent-box">
     <div class="widget-header">
       <div class="widget-toolbar no-border" style="float: left;">
@@ -65,7 +105,7 @@
               <label for="start" class="col-xs-12 col-sm-3 control-label no-padding-right">促销开始时间</label>
               <div class="col-xs-12 col-sm-5">
                 <span class="block input-icon input-icon-right">
-                  <input type="text" id="start" class="width-100" name="start">
+                  <input type="date" id="start" class="width-100" name="start">
                   <i class="ace-icon fa fa-leaf"></i>
                 </span>
               </div>
@@ -79,7 +119,7 @@
               <label for="end" class="col-xs-12 col-sm-3 control-label no-padding-right">促销结束时间</label>
               <div class="col-xs-12 col-sm-5">
                 <span class="block input-icon input-icon-right">
-                  <input type="text" id="end" class="width-100" name="end">
+                  <input type="date" id="end" class="width-100" name="end">
                   <i class="ace-icon fa fa-leaf"></i>
                 </span>
               </div>
@@ -95,12 +135,10 @@
                 <span class="block input-icon input-icon-right">
                   <select class="chosen-select form-control" id="category_id" name="category_id" style="cursor: pointer">
                     <option value="" selected>|--请选择--</option>
-                    <volist name="cate" id="item">
-                      <option value="{$item.id}">
-                        |{$item.level|str_repeat="----",###}
-                        {$item.cname}
-                      </option>
-                    </volist>
+                    <?php if(is_array($cate)): $i = 0; $__LIST__ = $cate;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$item): $mod = ($i % 2 );++$i;?><option value="<?php echo ($item["id"]); ?>">
+                        |<?php echo (str_repeat("----",$item["level"])); ?>
+                        <?php echo ($item["cname"]); ?>
+                      </option><?php endforeach; endif; else: echo "" ;endif; ?>
                   </select>
                 </span>
               </div>
@@ -116,12 +154,10 @@
                 <span class="block input-icon input-icon-right">
                   <select class="chosen-select form-control" id="cate_id" name="cate_id[]" style="cursor: pointer">
                     <option value="" selected>|--请选择--</option>
-                    <volist name="cate" id="item">
-                      <option value="{$item.id}">
-                        |{$item.level|str_repeat="----",###}
-                        {$item.cname}
-                      </option>
-                    </volist>
+                    <?php if(is_array($cate)): $i = 0; $__LIST__ = $cate;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$item): $mod = ($i % 2 );++$i;?><option value="<?php echo ($item["id"]); ?>">
+                        |<?php echo (str_repeat("----",$item["level"])); ?>
+                        <?php echo ($item["cname"]); ?>
+                      </option><?php endforeach; endif; else: echo "" ;endif; ?>
                   </select>
                 </span>
               </div>
@@ -208,9 +244,9 @@
             <div class="form-group">
               <label for="editor" class="col-xs-12 col-sm-3 control-label no-padding-right">商品详情</label>
               <div class="col-xs-12 col-sm-7">
-                <script src="__PUBLIC__/Ueditor/ueditor.config.js"></script>
-                <script src="__PUBLIC__/Ueditor/ueditor.all.min.js"></script>
-                <script src="__PUBLIC__/Ueditor/lang/zh-cn/zh-cn.js"></script>
+                <script src="/Public/Ueditor/ueditor.config.js"></script>
+                <script src="/Public/Ueditor/ueditor.all.min.js"></script>
+                <script src="/Public/Ueditor/lang/zh-cn/zh-cn.js"></script>
                 <textarea id="editor" type="text/plain" style="width:100%;height:500px;" name="goods_body"></textarea>
                 <script>
                   //实例化编辑器
@@ -233,11 +269,9 @@
                 <span class="block input-icon input-icon-right">
                   <select class="chosen-select form-control" id="type_id" name="type_id" style="cursor: pointer">
                     <option value="" selected>|--请选择商品类型--</option>
-                    <volist name="types" id="item">
-                      <option value="{$item.id}">
-                        {$item.type_name}
-                      </option>
-                    </volist>
+                    <?php if(is_array($types)): $i = 0; $__LIST__ = $types;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$item): $mod = ($i % 2 );++$i;?><option value="<?php echo ($item["id"]); ?>">
+                        <?php echo ($item["type_name"]); ?>
+                      </option><?php endforeach; endif; else: echo "" ;endif; ?>
                   </select>
 
                 </span>
@@ -271,11 +305,20 @@
     <!--提交-->
     <div class="form-group text-center">
       <button class="btn btn-info" type="submit" id="button">提交</button>
-      <a class="btn btn-warning" href="{:U('index')}">返回</a>
+      <a class="btn btn-warning" href="<?php echo U('index');?>">返回</a>
     </div>
   </form>
-</block>
-<block name="js">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+<script src="/Public/Admin/Js/bootstrap.min.js"></script>
+<script src="/Public/Admin/Js/ace.min.js"></script>
+
   <script>
     $("#addCate").on('click', function () {
       var str = `
@@ -285,12 +328,10 @@
         <span class="block input-icon input-icon-right">
           <select class="chosen-select form-control" name="cate_id[]" style="cursor: pointer">
             <option value="" selected>|--请选择--</option>
-            <volist name="cate" id="item">
-              <option value="{$item.id}">
-                |{$item.level|str_repeat="----",###}
-                {$item.cname}
-              </option>
-            </volist>
+            <?php if(is_array($cate)): $i = 0; $__LIST__ = $cate;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$item): $mod = ($i % 2 );++$i;?><option value="<?php echo ($item["id"]); ?>">
+                |<?php echo (str_repeat("----",$item["level"])); ?>
+                <?php echo ($item["cname"]); ?>
+              </option><?php endforeach; endif; else: echo "" ;endif; ?>
           </select>
         </span>
       </div>
@@ -309,7 +350,7 @@
         var type_id = $(this).val();
         console.log();
         $.ajax({
-          url: "{:U('showAttr')}",
+          url: "<?php echo U('showAttr');?>",
           data: {type_id: type_id},
           type: 'post',
           success: function (data) {
@@ -333,4 +374,5 @@
       }
     }
   </script>
-</block>
+
+</html>

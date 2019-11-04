@@ -11,7 +11,9 @@ final class GoodsModel extends CommonModel
   // 自定义字段
   protected $fields = array(
     'id', 'goods_name', 'goods_sn', 'category_id', 'market_price', 'shop_price', 'goods_body',
-    'goods_img', 'goods_thumb', 'is_hot', 'is_rec', 'is_new', 'is_del', 'is_sale', 'addtime','type_id','goods_number');
+    'goods_img', 'goods_thumb', 'is_hot', 'is_rec', 'is_new', 'is_del', 'is_sale', 'addtime','type_id','goods_number',
+    'cx_price','start','end'
+  );
 
   // 定义字段自动校验
   protected $_validate = array(
@@ -34,6 +36,15 @@ final class GoodsModel extends CommonModel
   // 在模型中使用钩子函数补齐参数
   public function _before_insert(&$data, $options)
   {
+    // 促销商品时间格式化操作
+    if ($data['cx_price']>0) {
+      $data['start'] = strtotime($data['start']);
+      $data['end'] = strtotime($data['end']);
+    } else {
+      $data['cx_price'] = 0.00;
+      $data['start'] = 0;
+      $data['end'] = 0;
+    }
     // 补全参数
     $data['addtime'] = time();
     if ($data['goods_sn']) {
@@ -168,7 +179,16 @@ final class GoodsModel extends CommonModel
 
   // 商品信息修改
   public function update($data){
-    // 在数据修改之前要解决修改的三个问题
+    // 促销商品时间格式化操作
+    if ($data['cx_price']>0) {
+      $data['start'] = strtotime($data['start']);
+      $data['end'] = strtotime($data['end']);
+    } else {
+      $data['cx_price'] = 0.00;
+      $data['start'] = 0;
+      $data['end'] = 0;
+    }
+
     // （1）解决货号唯一的问题
     $goods_id = $data['id'];
     $goods_sn = $data['goods_sn'];
@@ -293,7 +313,16 @@ final class GoodsModel extends CommonModel
 
   // 根据类型获取商品
   public function getRecGoods($type) {
-    return $this->where("is_sale=1 AND {$type}=1")->select();
+    return $this->where("is_sale=1 AND {$type}=1")-> limit(5)->select();
+  }
+
+  // 获取促销中的商品
+  public function getCrazyGoods() {
+    // 获取促销商品的查询条件
+    // 1、当前商品正在销售 2、当前时间处于促销的开始时间跟结束时间之间 3、促销价格大于0
+    return $this->
+    where("is_sale=1 AND cx_price>0 AND start<".time()." AND end>".time())->
+    limit(5)->select();
   }
 
   // 使用自动完成规则补齐参数

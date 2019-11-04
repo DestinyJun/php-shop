@@ -1,9 +1,49 @@
-<extend name="Public/base"/>
-<block name="title">商品管理</block>
-<block name="location"><a href="{:U('index')}">商品列表</a></block>
-<block name="locationTwo">商品编辑</block>
-<block name="content">
-  <form class="form-horizontal" role="form" action="{:U('edit')}" method="post" enctype="multipart/form-data">
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>
+    商品管理
+  </title>
+  <link rel="stylesheet" href="/Public/Admin/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/Public/Admin/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/Public/Admin/css/fonts.googleapis.com.css">
+  <link rel="stylesheet" href="/Public/Admin/css/ace.css">
+  <script src="/Public/Admin/Js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+<div class="main-container ace-save-state" id="main-container">
+  <div class="main-content">
+    <div class="main-content-inner">
+      <!--内容导航-->
+      <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+        <ul class="breadcrumb">
+          <li>
+            <i class="ace-icon fa fa-home home-icon"></i>
+            <a href="<?php echo U('Index/right');?>">主页</a>
+          </li>
+          <li class="active">
+            <a href="<?php echo U('index');?>">商品列表</a>
+          </li>
+          <li class="active">
+            商品编辑
+          </li>
+        </ul>
+        <div class="nav-search" id="nav-search">
+          <form class="form-search">
+								<span class="input-icon">
+									<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off">
+									<i class="ace-icon fa fa-search nav-search-icon"></i>
+								</span>
+          </form>
+        </div>
+      </div>
+      <!--主体内容-->
+      <div class="page-content overflow-scroll" style="height: 90vh">
+        <div class="row">
+          <div class="col-xs-12">
+            
+  <form class="form-horizontal" role="form" action="<?php echo U('edit');?>" method="post" enctype="multipart/form-data">
     <div class="widget-box transparent" id="recent-box">
       <div class="widget-header">
         <div class="widget-toolbar no-border" style="float: left;">
@@ -23,7 +63,7 @@
                 <label for="goods_name" class="col-xs-12 col-sm-3 control-label no-padding-right">商品名称</label>
                 <div class="col-xs-12 col-sm-5">
         <span class="block input-icon input-icon-right">
-          <input type="text" id="goods_name" class="width-100" name="goods_name" value="{$data.goods_name}">
+          <input type="text" id="goods_name" class="width-100" name="goods_name" value="<?php echo ($data["goods_name"]); ?>">
           <i class="ace-icon fa fa-leaf"></i>
         </span>
                 </div>
@@ -37,7 +77,7 @@
                 <label for="goods_sn" class="col-xs-12 col-sm-3 control-label no-padding-right">商品货号</label>
                 <div class="col-xs-12 col-sm-5">
                   <span class="block input-icon input-icon-right">
-                    <input type="text" id="goods_sn" class="width-100" name="goods_sn" value="{$data.goods_sn}">
+                    <input type="text" id="goods_sn" class="width-100" name="goods_sn" value="<?php echo ($data["goods_sn"]); ?>">
                     <i class="ace-icon fa fa-leaf"></i>
                   </span>
                 </div>
@@ -51,7 +91,7 @@
                 <label for="cx_price" class="col-xs-12 col-sm-3 control-label no-padding-right">促销价格</label>
                 <div class="col-xs-12 col-sm-5">
                 <span class="block input-icon input-icon-right">
-                  <input type="text" id="cx_price" class="width-100" name="cx_price" value="{$data.cx_price}">
+                  <input type="text" id="cx_price" class="width-100" name="cx_price" value="<?php echo ($data["cx_price"]); ?>">
                   <i class="ace-icon fa fa-leaf"></i>
                 </span>
                 </div>
@@ -65,7 +105,7 @@
                 <label for="start" class="col-xs-12 col-sm-3 control-label no-padding-right">促销开始时间</label>
                 <div class="col-xs-12 col-sm-5">
                 <span class="block input-icon input-icon-right">
-                  <input type="text" id="start" class="width-100" name="start" <neq name="data.end" value="0">value="{$data.start|date='Y-m-d H:i:s',###}"</neq>>
+                  <input type="text" id="start" class="width-100" name="start" <?php if(($data["end"]) != "0"): ?>value="<?php echo (date('Y-m-d H:i:s',$data["start"])); ?>"<?php endif; ?>>
                   <i class="ace-icon fa fa-leaf"></i>
                 </span>
                 </div>
@@ -79,7 +119,7 @@
                 <label for="end" class="col-xs-12 col-sm-3 control-label no-padding-right">促销结束时间</label>
                 <div class="col-xs-12 col-sm-5">
                 <span class="block input-icon input-icon-right">
-                  <input type="text" id="end" class="width-100" name="end" <neq name="data.end" value="0">value="{$data.end|date='Y-m-d H:i:s',###}"</neq>>
+                  <input type="text" id="end" class="width-100" name="end" <?php if(($data["end"]) != "0"): ?>value="<?php echo (date('Y-m-d H:i:s',$data["end"])); ?>"<?php endif; ?>>
                   <i class="ace-icon fa fa-leaf"></i>
                 </span>
                 </div>
@@ -95,12 +135,10 @@
         <span class="block input-icon input-icon-right">
           <select class="chosen-select form-control" id="category_id" name="category_id" style="cursor: pointer">
             <option value="" selected>|--请选择--</option>
-            <volist name="cate" id="item">
-              <option value="{$item.id}" <eq name="data.category_id" value="$item.id">selected</eq>>
-                |{$item.level|str_repeat="----",###}
-                {$item.cname}
-              </option>
-            </volist>
+            <?php if(is_array($cate)): $i = 0; $__LIST__ = $cate;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$item): $mod = ($i % 2 );++$i;?><option value="<?php echo ($item["id"]); ?>" <?php if(($data["category_id"]) == $item["id"]): ?>selected<?php endif; ?>>
+                |<?php echo (str_repeat("----",$item["level"])); ?>
+                <?php echo ($item["cname"]); ?>
+              </option><?php endforeach; endif; else: echo "" ;endif; ?>
           </select>
         </span>
                 </div>
@@ -116,12 +154,10 @@
         <span class="block input-icon input-icon-right">
           <select class="chosen-select form-control" id="cate_id" name="cate_id[]" style="cursor: pointer">
             <option value="" selected>|--请选择--</option>
-            <volist name="cate" id="item">
-              <option value="{$item.id}">
-                |{$item.level|str_repeat="----",###}
-                {$item.cname}
-              </option>
-            </volist>
+            <?php if(is_array($cate)): $i = 0; $__LIST__ = $cate;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$item): $mod = ($i % 2 );++$i;?><option value="<?php echo ($item["id"]); ?>">
+                |<?php echo (str_repeat("----",$item["level"])); ?>
+                <?php echo ($item["cname"]); ?>
+              </option><?php endforeach; endif; else: echo "" ;endif; ?>
           </select>
         </span>
                 </div>
@@ -129,33 +165,29 @@
                   <button type="button" class="btn btn-sm btn-warning" id="addCate">增加扩展分类</button>
                 </div>
               </div>
-              <volist name="ext_cate" id="vo">
-                <div class="form-group">
+              <?php if(is_array($ext_cate)): $i = 0; $__LIST__ = $ext_cate;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><div class="form-group">
                   <label class="col-xs-12 col-sm-3 control-label no-padding-right"></label>
                   <div class="col-xs-12 col-sm-5">
         <span class="block input-icon input-icon-right">
           <select class="chosen-select form-control" name="cate_id[]" style="cursor: pointer">
             <option value="" selected>|--请选择--</option>
-            <volist name="cate" id="item">
-              <option value="{$item.id}" <eq name="item.id" value="$vo.category_id">selected</eq>>
-                |{$item.level|str_repeat="----",###}
-                {$item.cname}
-              </option>
-            </volist>
+            <?php if(is_array($cate)): $i = 0; $__LIST__ = $cate;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$item): $mod = ($i % 2 );++$i;?><option value="<?php echo ($item["id"]); ?>" <?php if(($item["id"]) == $vo["category_id"]): ?>selected<?php endif; ?>>
+                |<?php echo (str_repeat("----",$item["level"])); ?>
+                <?php echo ($item["cname"]); ?>
+              </option><?php endforeach; endif; else: echo "" ;endif; ?>
           </select>
         </span>
                   </div>
                   <div class="help-block col-xs-12 col-sm-reset inline" style="margin-top: 0">
                     <button type="button" class="btn btn-sm btn-danger" onclick="delCate(event)">删除扩展分类</button>
                   </div>
-                </div>
-              </volist>
+                </div><?php endforeach; endif; else: echo "" ;endif; ?>
               <!--本店售价-->
               <div class="form-group">
                 <label for="shop_price" class="col-xs-12 col-sm-3 control-label no-padding-right">本店售价</label>
                 <div class="col-xs-12 col-sm-5">
         <span class="block input-icon input-icon-right">
-          <input type="number" id="shop_price" class="width-100" name="shop_price" value="{$data.shop_price}">
+          <input type="number" id="shop_price" class="width-100" name="shop_price" value="<?php echo ($data["shop_price"]); ?>">
           <i class="ace-icon fa fa-leaf"></i>
         </span>
                 </div>
@@ -169,11 +201,11 @@
                 <span class="col-xs-12 col-sm-3 control-label no-padding-right">是否上架</span>
                 <div class="col-xs-12 col-sm-5">
                   <label>
-                    <input name="is_sale" type="radio" class="ace" value="1" <eq name="data.is_sale" value="1">checked</eq>>
+                    <input name="is_sale" type="radio" class="ace" value="1" <?php if(($data["is_sale"]) == "1"): ?>checked<?php endif; ?>>
                     <span class="lbl">是</span>
                   </label>
                   <label>
-                    <input name="is_sale" type="radio" class="ace" value="0" <eq name="data.is_sale" value="0">checked</eq>>
+                    <input name="is_sale" type="radio" class="ace" value="0" <?php if(($data["is_sale"]) == "0"): ?>checked<?php endif; ?>>
                     <span class="lbl">否</span>
                   </label>
                 </div>
@@ -183,15 +215,15 @@
                 <span class="col-xs-12 col-sm-3 control-label no-padding-right">加入推荐</span>
                 <div class="col-xs-12 col-sm-5">
                   <label>
-                    <input name="is_hot" type="checkbox" class="ace" value="1" <eq name="data.is_hot" value="1">checked</eq>>
+                    <input name="is_hot" type="checkbox" class="ace" value="1" <?php if(($data["is_hot"]) == "1"): ?>checked<?php endif; ?>>
                     <span class="lbl">热卖</span>
                   </label>
                   <label>
-                    <input name="is_new" type="checkbox" class="ace" value="1" <eq name="data.is_new" value="1">checked</eq>>
+                    <input name="is_new" type="checkbox" class="ace" value="1" <?php if(($data["is_new"]) == "1"): ?>checked<?php endif; ?>>
                     <span class="lbl">新品</span>
                   </label>
                   <label>
-                    <input name="is_rec" type="checkbox" class="ace" value="1" <eq name="data.is_rec" value="1">checked</eq>>
+                    <input name="is_rec" type="checkbox" class="ace" value="1" <?php if(($data["is_rec"]) == "1"): ?>checked<?php endif; ?>>
                     <span class="lbl">推荐</span>
                   </label>
                 </div>
@@ -201,7 +233,7 @@
                 <label for="market_price" class="col-xs-12 col-sm-3 control-label no-padding-right">市场售价</label>
                 <div class="col-xs-12 col-sm-5">
         <span class="block input-icon input-icon-right">
-          <input type="number" id="market_price" class="width-100" name="market_price" value="{$data.market_price}">
+          <input type="number" id="market_price" class="width-100" name="market_price" value="<?php echo ($data["market_price"]); ?>">
           <i class="ace-icon fa fa-leaf"></i>
         </span>
                 </div>
@@ -223,11 +255,11 @@
               <div class="form-group">
                 <label for="editor" class="col-xs-12 col-sm-3 control-label no-padding-right">商品详情</label>
                 <div class="col-xs-12 col-sm-7">
-                  <script src="__PUBLIC__/Ueditor/ueditor.config.js"></script>
-                  <script src="__PUBLIC__/Ueditor/ueditor.all.min.js"></script>
-                  <script src="__PUBLIC__/Ueditor/lang/zh-cn/zh-cn.js"></script>
+                  <script src="/Public/Ueditor/ueditor.config.js"></script>
+                  <script src="/Public/Ueditor/ueditor.all.min.js"></script>
+                  <script src="/Public/Ueditor/lang/zh-cn/zh-cn.js"></script>
                   <textarea id="editor" type="text/plain" style="width:100%;height:500px;" name="goods_body">
-          {$data.goods_body}
+          <?php echo ($data["goods_body"]); ?>
         </textarea>
                   <script>
                     //实例化编辑器
@@ -250,11 +282,9 @@
                   <span class="block input-icon input-icon-right">
                   <select class="chosen-select form-control" id="type_id" name="type_id" style="cursor: pointer">
                     <option value="" selected>|--请选择商品类型--</option>
-                    <volist name="types" id="item">
-                      <option value="{$item.id}" <eq name="data.type_id" value="$item.id">selected</eq>>
-                        {$item.type_name}
-                      </option>
-                    </volist>
+                    <?php if(is_array($types)): $i = 0; $__LIST__ = $types;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$item): $mod = ($i % 2 );++$i;?><option value="<?php echo ($item["id"]); ?>" <?php if(($data["type_id"]) == $item["id"]): ?>selected<?php endif; ?>>
+                        <?php echo ($item["type_name"]); ?>
+                      </option><?php endforeach; endif; else: echo "" ;endif; ?>
                   </select>
                 </span>
                 </div>
@@ -266,41 +296,31 @@
                   <div class="col-xs-12 col-sm-3"></div>
                   <div class="col-xs-12 col-sm-6" id="showinfo">
                     <div class="form-group">
-                      <volist name="goodsAttrs" id="list">
-                        <volist name="list" id="item">
-                          <eq name="item.attr_input_type" value="1">
-                            <div class="row">
+                      <?php if(is_array($goodsAttrs)): $i = 0; $__LIST__ = $goodsAttrs;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$list): $mod = ($i % 2 );++$i; if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$item): $mod = ($i % 2 );++$i; if(($item["attr_input_type"]) == "1"): ?><div class="row">
                               <label for="{'input'.$item.id}" class="col-xs-12 col-sm-3 control-label no-padding-right">
-                                {$item.attr_name}
+                                <?php echo ($item["attr_name"]); ?>
                               </label>
                               <div class="col-xs-12 col-sm-6">
                               <span class="block input-icon input-icon-right">
-                                <input type="text" id="{'input'.$item.id}" class="width-100" name="attr[{$item.attr_id}][]" value="{$item.attr_values}">
+                                <input type="text" id="{'input'.$item.id}" class="width-100" name="attr[<?php echo ($item["attr_id"]); ?>][]" value="<?php echo ($item["attr_values"]); ?>">
                                 <i class="ace-icon fa fa-leaf"></i>
                               </span>
                               </div>
                             </div>
-                            <else/>
+                            <?php else: ?>
                             <div class="row">
                               <label for="{'select'.$item.id}" class="col-xs-12 col-sm-3 control-label no-padding-right">
-                                <eq name="item.attr_type" value="2">
-                                  <a href="javascript:void(0)" onclick="cloneThis(this)"><eq name="i" value="1">[+]<else/>[-]</eq></a>
-                                </eq>
-                                {$item.attr_name}
+                                <?php if(($item["attr_type"]) == "2"): ?><a href="javascript:void(0)" onclick="cloneThis(this)"><?php if(($i) == "1"): ?>[+]<?php else: ?>[-]<?php endif; ?></a><?php endif; ?>
+                                <?php echo ($item["attr_name"]); ?>
                               </label>
                               <div class="col-xs-12 col-sm-6">
                               <span class="block input-icon input-icon-right">
-                                <select class="chosen-select form-control" id="{'select'.$item.id}" name="attr[{$item.attr_id}][]" style="cursor: pointer">
-                                  <volist name="item.attr_value" id="vo">
-                                    <option <eq name="item.attr_values" value="$vo">selected</eq>>{$vo}</option>
-                                  </volist>
+                                <select class="chosen-select form-control" id="{'select'.$item.id}" name="attr[<?php echo ($item["attr_id"]); ?>][]" style="cursor: pointer">
+                                  <?php if(is_array($item["attr_value"])): $i = 0; $__LIST__ = $item["attr_value"];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option <?php if(($item["attr_values"]) == $vo): ?>selected<?php endif; ?>><?php echo ($vo); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
                                 </select>
                               </span>
                               </div>
-                            </div>
-                          </eq>
-                        </volist>
-                      </volist>
+                            </div><?php endif; endforeach; endif; else: echo "" ;endif; endforeach; endif; else: echo "" ;endif; ?>
                     </div>
                   </div>
                 </div>
@@ -310,12 +330,10 @@
               <table class="table pic">
                 <tr>
                   <td colspan="2">
-                    <volist name="imgs" id="item">
-                      <div style="float: left;margin-left: 10px;height: 140px;width: auto;">
-                        <img src="/{$item.goods_img}" style="height: 100px;width: auto;display: block">
-                        <button class="btn btn-sm btn-danger btnDel" data-img-id="{$item.id}" type="button">删除</button>
-                      </div>
-                    </volist>
+                    <?php if(is_array($imgs)): $i = 0; $__LIST__ = $imgs;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$item): $mod = ($i % 2 );++$i;?><div style="float: left;margin-left: 10px;height: 140px;width: auto;">
+                        <img src="/<?php echo ($item["goods_img"]); ?>" style="height: 100px;width: auto;display: block">
+                        <button class="btn btn-sm btn-danger btnDel" data-img-id="<?php echo ($item["id"]); ?>" type="button">删除</button>
+                      </div><?php endforeach; endif; else: echo "" ;endif; ?>
                   </td>
                 </tr>
                 <tr>
@@ -334,13 +352,22 @@
     </div>
     <!--提交-->
     <div class="form-group text-center">
-      <input type="hidden" name="id" value="{$data.id}">
+      <input type="hidden" name="id" value="<?php echo ($data["id"]); ?>">
       <button class="btn btn-info" type="submit" id="button">提交</button>
-      <a class="btn btn-warning" href="{:U('index')}">返回</a>
+      <a class="btn btn-warning" href="<?php echo U('index');?>">返回</a>
     </div>
   </form>
-</block>
-<block name="js">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+<script src="/Public/Admin/Js/bootstrap.min.js"></script>
+<script src="/Public/Admin/Js/ace.min.js"></script>
+
   <script>
     $("#addCate").on('click', function () {
       var str = `
@@ -350,12 +377,10 @@
         <span class="block input-icon input-icon-right">
           <select class="chosen-select form-control" name="cate_id[]" style="cursor: pointer">
             <option value="" selected>|--请选择--</option>
-            <volist name="cate" id="item">
-              <option value="{$item.id}">
-                |{$item.level|str_repeat="----",###}
-                {$item.cname}
-              </option>
-            </volist>
+            <?php if(is_array($cate)): $i = 0; $__LIST__ = $cate;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$item): $mod = ($i % 2 );++$i;?><option value="<?php echo ($item["id"]); ?>">
+                |<?php echo (str_repeat("----",$item["level"])); ?>
+                <?php echo ($item["cname"]); ?>
+              </option><?php endforeach; endif; else: echo "" ;endif; ?>
           </select>
         </span>
       </div>
@@ -374,7 +399,7 @@
       var img_dom = $(this).parent();
       var img_id = $(this).attr('data-img-id');
       $.ajax({
-        url: "{:U('delImg')}",
+        url: "<?php echo U('delImg');?>",
         type: 'post',
         data: {img_id:img_id},
         success: function (data) {
@@ -399,4 +424,5 @@
       }
     }
   </script>
-</block>
+
+</html>

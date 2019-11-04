@@ -9,6 +9,13 @@ final class GoodsController extends CommonController
     }
     $goodsModel = D('Goods');
     $good = $goodsModel->where("is_sale=1 AND id={$goods_id}")->find();
+    if(!$good) {
+      $this->redirect('Errors/errors',array('message'=>'商品不存在'));
+    }
+    // 设置促销价格
+    if ($good['cx_price']>0 && $good['start'] < time() && $good['end'] > time()) {
+      $good['shop_price'] = $good['cx_price'];
+    }
     // 将商品描述进行html标签反序列化
     $good['goods_body'] = htmlspecialchars_decode($good['goods_body']);
     // 获取商品相册
@@ -18,7 +25,7 @@ final class GoodsController extends CommonController
       field('a.*,b.attr_name,b.attr_type')->
       join('left join wj_attribute b on a.attr_id=b.id')->
       where("a.goods_id={$goods_id}")->select();
-    // 根据单选和唯一拆分属性
+      // 根据单选和唯一拆分属性
     foreach ($attr as $value) {
       if ($value['attr_type'] == 1) {
         // 唯一属性
