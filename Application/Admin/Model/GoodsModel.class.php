@@ -15,10 +15,10 @@ final class GoodsModel extends CommonModel
 
   // 定义字段自动校验
   protected $_validate = array(
-//    array('goods_name', 'require', '商品名称必填', 1, 'regex', 3),
-//    array('category_id', 'checkCategory', '分类名称必填', 1, 'callback', 3),
-//    array('market_price', 'currency', '市场价格格式不对', 1, 'regex', 3),
-//    array('shop_price', 'currency', '本店价格格式不对', 1, 'regex', 3),
+    array('goods_name', 'require', '商品名称必填', 1, 'regex', 3),
+    array('category_id', 'checkCategory', '分类名称必填', 1, 'callback', 3),
+    array('market_price', 'currency', '市场价格格式不对', 1, 'regex', 3),
+    array('shop_price', 'currency', '本店价格格式不对', 1, 'regex', 3),
   );
 
   // 校验商品分类的回调函数
@@ -289,6 +289,11 @@ final class GoodsModel extends CommonModel
     D('GoodsCate')->where("goods_id={$id}")->delete();
     // （3）删除商品的基本信息
     return $res = $this->where("id={$id}")->delete();
+  }
+
+  // 根据类型获取商品
+  public function getRecGoods($type) {
+    return $this->where("is_sale=1 AND {$type}=1")->select();
   }
 
   // 使用自动完成规则补齐参数

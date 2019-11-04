@@ -1,5 +1,8 @@
 <extend name="Public/base" />
-<block name="title">首页</block>
+<block name="title">文君购物</block>
+<block name="css">
+  <link rel="stylesheet" type="text/css" href="__PUBLIC_HOME__/css/tabulous.css"/>
+</block>
 <block name="content">
   <!--商品分类-->
   <include file="Public:category"/>
@@ -7,6 +10,8 @@
   <include file="Public:slide"/>
   <!--购物新闻推荐-->
   <include file="Public:shopNew"/>
+  <!--热卖推荐-->
+  <include file="Public:hot" />
   <!--今日秒杀-->
   <include file="Public:seckill" />
   <!--优质新品-->
@@ -37,42 +42,22 @@
   </div>-->
 </block>
 <block name="js">
-  <script type="text/javascript" src="__PUBLIC_HOME__/js/kuCity.js"></script>
-  <script type="text/javascript" src="__PUBLIC_HOME__/js/jquery.SuperSlider.js"></script>
   <script type="text/javascript" src="__PUBLIC_HOME__/js/slide.js"></script>
+  <script type="text/javascript" src="__PUBLIC_HOME__/js/jquery.tabs.js"></script>
   <script>
-    $('.li_dorpdown').hover(function() {
-      $('.dorpdown-layer').show();
-    });
-    $('.li_dorpdown').mouseleave(function() {
-      $('.dorpdown-layer').hide();
-    });
-    $('.icon-close').click(function() {
-      $('.top_banner').hide();
-    });
-    $('.my_center_box_left a').hover(function() {
-
-    });
-    $('.cate-layer-right-slide img').mouseenter(function() {
-
-      $(this).delay('300').animate(300);
-    });
-    $('.cate-layer-right-slide img').mouseleave(function() {
-      $(this).css('border', 'none')
-    });
-    $()
-  </script>
-  <script>
-    $('.search').kuCity();
-    $("#lun2").slide({
-      autoplay: true,
-      autoTime: 5000,
+    $(function(){
+      $('.demo2').Tabs({
+        event:'click'
+      });
+      $("#lun2").slide({
+        autoplay: true,
+        autoTime: 5000,
+      });
     });
   </script>
   <!--滚动展示-->
   <script type="text/javascript">
     (function($) {
-
       $.fn.myScroll = function(options) {
         //默认配置
         var defaults = {
@@ -125,16 +110,15 @@
       }
 
     })(jQuery);
-
     $(function() {
-
       $("div.ranklist").myScroll({
         speed: 50,
         rowHeight: 50
       });
 
     });
-    $(".closehd").click(function() { //右下角红包图标点击变小
+    $(".closehd").click(function() {
+      //右下角红包图标点击变小
       $(this).hide();
       $('.bk_foot_redbag a').animate({
         width: '80px',
