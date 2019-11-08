@@ -14,4 +14,15 @@ final class OrderController extends CommonController
     $this->assign('total',$total);
     $this->display();
   }
+
+  public function order() {
+    // 下单之前，必须先登陆
+    $this->checkLogin();
+    $model = D('Order');
+    $res = $model->order();
+    if (!$res) {
+      $this->error($model->getError());
+    }
+    $this->success('下单成功');
+  }
 }
