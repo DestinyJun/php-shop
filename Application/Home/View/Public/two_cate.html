@@ -4,18 +4,54 @@
     display: flex;
     min-height: 100px;
     margin: 10px auto 0;
-    background-color: red;
+    background-color: #FFFFFF;
   }
   .category{
-    flex: 1;
-    background-color: yellow;
+    flex: 2;
+    padding: 0 10px;
   }
   .cate_goods{
-    flex: 2;
-    background-color: green;
+    flex: 8;
+  }
+  .category_list li{
+    cursor: pointer;
   }
 </style>
-<div class="two_cate">
-  <div class="category"></div>
-  <div class="cate_goods"></div>
-</div>
+<volist name="floor" id="item">
+  <div class="two_cate">
+    <div class="category">
+      <h1>{$item.cname}</h1>
+      <ul class="category_list">
+        <volist name="item.son" id="vo">
+          <li><a href="{:U('Category/index','id='.$vo['id'])}">{$vo.cname}</a></li>
+        </volist>
+      </ul>
+    </div>
+    <div class="cate_goods">
+      <div class="box demo1" style="width: 100%">
+        <ul class="tab_menu">
+          <volist name="item.recson" id="vo" key="keys">
+            <li class="<eq name='keys' value='1'>current</eq>"><a href="javascript:void(0)">{$vo.cname}</a></li>
+          </volist>
+        </ul>
+        <div class="tab_box">
+          <volist name="item.recson" id="vo" key="keys">
+            <div class="<neq name='keys' value='1'>hide</neq>">
+              <ul>
+                <volist name="vo.goods" id="v">
+                  <li>
+                    <span>▪</span>
+                    <a href="{:U('Goods/index','id='.$v['id'])}">
+                      {$v.goods_name}
+                    </a>
+                  </li>
+                </volist>
+            </ul>
+          </div>
+          </volist>
+        </div>
+      </div>
+    </div>
+  </div>
+</volist>
+

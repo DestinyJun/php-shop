@@ -1,0 +1,174 @@
+<extend name="Public/base"/>
+<block name="title">购物车</block>
+<block name="css">
+  <link rel="stylesheet" href="__PUBLIC_HOME__/css/carts.css"/>
+</block>
+<block name="content">
+  <div class="w1200_container">
+    <div class="no_goods <notempty name='total.data'>hide</notempty>">
+      <div class="cart_empt">
+        <div class="cart_message">
+          <div class="txt">购物车快饿瘪了，主人快给我挑点宝贝吧</div>
+          <div class="info">
+            <a href="{:U('Index/index')}" class="btn sc_redBg_btn">马上去逛逛</a>
+            <empty name="Think.session.client_id">
+              <a href="{:U('Client/login')}" id="go_pay" class="login">去登录</a>
+            </empty>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section class="cartMain">
+      <div class="cartMain_hd">
+        <ul class="order_lists cartTop">
+          <li class="list_chk">
+            <!--所有商品全选-->
+            <input type="checkbox" id="all" class="whole_check">
+            <label for="all"></label> 全选
+          </li>
+          <li class="list_con">商品信息</li>
+          <li class="list_info">商品参数</li>
+          <li class="list_price">单价</li>
+          <li class="list_amount">数量</li>
+          <li class="list_sum">金额</li>
+          <li class="list_op">操作</li>
+        </ul>
+      </div>
+      <div class="cartBox">
+        <div class="shop_info">
+          <div class="all_check">
+            <!--店铺全选-->
+            <input type="checkbox" id="shop_a" class="shopChoice">
+            <label for="shop_a" class="shop"></label>
+          </div>
+          <div class="shop_name">
+            店铺：
+            <a href="javascript:;">京西商城</a>
+          </div>
+        </div>
+        <div class="order_content">
+          <volist name="total.data" id="vo">
+            <ul class="order_lists">
+              <li class="list_chk">
+                <input type="checkbox" id="checkbox_2" class="son_check">
+                <label for="checkbox_2"></label>
+              </li>
+              <li class="list_con">
+                <div class="list_img">
+                  <a href="javascript:;"><img src="/{$vo.goods.goods_thumb}" alt=""
+                                              style="width: 90px;height: 90px"></a>
+                </div>
+                <div class="list_text">
+                  <a href="javascript:;">{$vo.goods.goods_name}</a>
+                </div>
+              </li>
+              <li class="list_info">
+                <volist name="vo.attr" id="item">
+                  <p>{$item.attr_name}：{$item.attr_values}</p>
+                </volist>
+              </li>
+              <li class="list_price">
+                <p class="price">￥{$vo.goods.shop_price}</p>
+              </li>
+              <li class="list_amount">
+                <div class="amount_box">
+                  <a class="reduce" style="cursor: pointer">-</a>
+                  <input type="text" value="{$vo.goods_count}" class="sum">
+                  <a class="plus" style="cursor: pointer">+</a>
+                </div>
+              </li>
+              <li class="list_sum">
+                <p class="sum_price">￥{$vo['goods']['shop_price']*$vo['goods_count']}</p>
+              </li>
+              <li class="list_op">
+                <p class="del">
+                  <a href="{:U('del','goods_id='.$vo['goods_id'].'&goods_attr_ids='.$vo['goods_attr_ids'])}"
+                     class="delBtn">移除商品</a>
+                </p>
+              </li>
+            </ul>
+          </volist>
+        </div>
+      </div>
+      <!--底部-->
+      <div class="bar-wrapper">
+        <div class="bar-right">
+          <div class="piece">已选商品<strong class="piece_num">{$total.count}</strong>件</div>
+          <div class="totalMoney">共计: <strong class="total_text">{$total.price}</strong></div>
+          <div class="calBtn">
+            <a href="{:U('Order/check')}">结算</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="model_bg"></section>
+    <section class="my_model">
+      <p class="title">删除宝贝<span class="closeModel">X</span></p>
+      <p>您确认要删除该宝贝吗？</p>
+      <div class="opBtn">
+        <a href="javascript:;" class="dialog-sure">确定</a>
+        <a href="javascript:;" class="dialog-close">关闭</a>
+      </div>
+    </section>
+  </div>
+</block>
+<block name="js">
+  <script type="text/javascript" src="__PUBLIC_HOME__/js/carts.js"></script>
+  <script type="text/javascript" src="__PUBLIC_HOME__/js/slide.js"></script>
+  <script language="javascript" type="text/javascript">
+    $(function () {
+      //全选或全不选
+      $("#all").click(function () {
+        if (this.checked) {
+          $("#list :checkbox").prop("checked", true);
+        } else {
+          $("#list :checkbox").prop("checked", false);
+        }
+      });
+      //全选
+      $("#selectAll").click(function () {
+        $("#list :checkbox,#all").prop("checked", true);
+      });
+      //				//全不选
+      //				$("#unSelect").click(function() {
+      //					$("#list :checkbox,#all").prop("checked", false);
+      //				});
+      //				//反选
+      //				$("#reverse").click(function() {
+      //					$("#list :checkbox").each(function() {
+      //						$(this).prop("checked", !$(this).prop("checked"));
+      //					});
+      //					allchk();
+      //				});
+
+      //设置全选复选框
+      $("#list :checkbox").click(function () {
+        allchk();
+      });
+
+      //获取选中选项的值
+      $("#getValue").click(function () {
+        var valArr = new Array;
+        $("#list :checkbox[checked]").each(function (i) {
+          valArr[i] = $(this).val();
+        });
+        var vals = valArr.join(',');
+        alert(vals);
+      });
+    });
+    function allchk() {
+      var chknum = $("#list :checkbox").size(); //选项总个数
+      var chk = 0;
+      $("#list :checkbox").each(function () {
+        if ($(this).prop("checked") == true) {
+          chk++;
+        }
+      });
+      if (chknum == chk) { //全选
+        $("#all").prop("checked", true);
+      } else { //不全选
+        $("#all").prop("checked", false);
+      }
+    }
+  </script>
+</block>

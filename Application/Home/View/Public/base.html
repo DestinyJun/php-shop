@@ -29,14 +29,25 @@
 
       </div>
       <div class="txt-info" id="ECS_MEMBERZONE">
-        <a href="login.html" class="link-login red">请登录</a>
-        <a href="register.html" class="link-regist">免费注册</a>
+        <empty name="Think.session.client_id">
+          <a href="{:U('client/login')}" class="link-login red">请登录</a>
+          <a href="{:U('client/register')}" class="link-regist">免费注册</a>
+          <else />
+          <a href="javascript:void(0)" class="link-login red">您好{$Think.session.client.username}，欢迎您！</a>
+          <a href="{:U('client/logout')}" class="link-regist" style="margin-right: 15px">退出</a>
+        </empty>
       </div>
     </div>
     <ul class="quick-menu fr">
       <li>
         <div class="dt">
           <a href="#">我的订单</a>
+        </div>
+      </li>
+      <li class="spacer"></li>
+      <li>
+        <div class="dt">
+          <a href="{:U('Cart/index')}">我的购物车</a>
         </div>
       </li>
       <li class="spacer"></li>

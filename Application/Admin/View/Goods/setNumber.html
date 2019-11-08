@@ -22,7 +22,7 @@
             <td>
               <select class="chosen-select form-control" name="attr[{$item.0.attr_id}][]" style="cursor: pointer">
                 <volist name="item" id="vo">
-                  <option value="{$vo.attr_values}" <in name="vo.attr_values" value="$v.goods_attr_ids">selected</in>>{$vo.attr_values}</option>
+                  <option value="{$vo.id}" <in name="vo.attr_values" value="$v.goods_attr_ids">selected</in>>{$vo.attr_values}</option>
                 </volist>
               </select>
             </td>
@@ -62,7 +62,6 @@
     function cloneThis(obj){
       var current = $(obj).parent().parent().parent();
       var newDom = current.clone();
-      console.log(newDom.find('input')[0]);
       if ($(obj).val() == '增加') {
         newDom.find('.btn').val('减少');
         current.after(newDom);

@@ -80,4 +80,28 @@ final class CategoryModel extends CommonModel
     }
     return $this->save($data);
   }
+
+  // 返回分类楼层
+  public function getFloors() {
+    // （1）获取所有的顶级分类
+    $data = $this->where("parent_id=0")->select();
+    // （2）获取顶层分类下的二级分类以及二级分类中标识为推荐的分类
+    foreach ($data as $key=>$value) {
+      $data[$key]['son'] = $this->where("parent_id={$value['id']}")->select(); // 得到顶级分类下的二级分类
+      $data[$key]['recson'] = $this->where("isrec=1 AND parent_id={$value['id']}")->select(); // 得到顶级分类下的二级分类
+      // 获取推荐的二级分类下的商品（包括其子分类下的商品）
+      foreach ($data[$key]['recson'] as $k=>$v) {
+        $data[$key]['recson'][$k]['goods'] = $this->getGoodsByCateId($v['id']);
+      }
+    }
+    return $data;
+  }
+
+  public function getGoodsByCateId($cate_id,$limit=8) {
+    // 获取当前分类下的子分类
+    $children = $this->getChildren($cate_id);
+    $children[] = $cate_id;
+    $children = implode(',',$children);
+    return D('Goods')->where("is_sale=1 AND category_id in ($children)")->limit($limit)->select();
+  }
 }

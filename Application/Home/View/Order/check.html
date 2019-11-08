@@ -1,0 +1,274 @@
+<extend name="Public/base"/>
+<block name="title">商品结算</block>
+<block name="css">
+  <link rel="stylesheet" href="__PUBLIC_HOME__/css/carts.css"/>
+</block>
+<block name="content">
+  <div class="w1200_container">
+    <div class="address_c">
+      <div class="address_top">
+        <h3>收货人信息</h3>
+        <a href="#">管理收货信息</a>
+      </div>
+      <div class="address_icon clear ">
+        <i><img src="__PUBLIC_HOME__/images/place1.png"/></i>
+        <br />
+        <span><a href="#">添加新地址</a></span>
+      </div>
+      <div class="new_address hide">
+        <div class="model_bg">
+          <div class="my_model">
+            <div class="add_address_con">
+              <div class="add_address_hd">
+                <span>新增收货人地址</span>
+                <a href="#" class="add_add_clo fr">X</a>
+              </div>
+              <div class="pb_bd">
+                <div class="pb_ct">
+                  <div class="user_form foreg_form">
+                    <form action="javascript:;" method="get" name="theForm" id="theForm" class="user_form">
+                      <div class="form_row">
+                        <div class="form_label"><span class="red">*</span>收货人：</div>
+                        <div class="form_value">
+                          <input type="text" class="form_input" value="" maxlength="20" name="consignee" id="consignee_name">
+                          <span id="consigneeNameNote" class="status error hide">请您填写收货人姓名</span>
+                        </div>
+                      </div>
+                      <div class="form_row">
+                        <div class="form_label"><span class="red">*</span>手机号码：</div>
+                        <div class="form_value">
+                          <input type="text" class="form_input" maxlength="11" name="mobile" value="" id="consignee_mobile">
+                          <span id="consigneeMobileTelNote" class="status error hide">请您填写收货人联系方式</span>
+                        </div>
+                      </div>
+
+                      <div class="form_row">
+                        <div class="form_label form_label_lh"><span class="red">*</span>所在地区：</div>
+                        <div class="form_value" ectype="regionLinkage">
+                          <div class="address">
+                            <span class="queren hide"><span class="red">*</span> <label> 所在地区：</label></span>
+                            <select name="province" class="province"></select><label>&nbsp;省 &nbsp;</label>
+                            <select name="city" class="city"></select><label>&nbsp;市 &nbsp;</label>
+                            <select name="area" class="area"></select><label>&nbsp;县/区</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form_row">
+                        <div class="form_label"><span class="red">*</span>详细信息：</div>
+                        <div class="form_value">
+                          <input type="text" class="form_input form_input_long" name="address" value="" id="consignee_address">
+                          <span id="consigneeAddressNote" class="status error hide">请您填写收货详细地址</span>
+                        </div>
+                      </div>
+                      <div class="form_row">
+                        <div class="form_label">邮编：</div>
+                        <div class="form_value">
+                          <input type="text" class="form_input" name="zipcode" value="" id="consignee_zipcode">
+                          <span id="consigneeZipcodeNote" class="status error"></span>
+                        </div>
+                      </div>
+                      <div class="form_row">
+                        <div class="form_label">邮箱：</div>
+                        <div class="form_value">
+                          <input type="text" class="form_input" name="email" value="" id="consignee_email">
+                          <span id="emailNote" class="status error hide">请您填写邮箱</span>
+                        </div>
+                      </div>
+
+                      <div class="form_row">
+                        <div class="form_label">地址别名：</div>
+                        <div class="form_value"><input type="text" class="form_input fl" value="" name="sign_building" id="consignee_sign_building">
+                          <div class="notic">设置一个易记的名称，如：'送到家里'、'送到公司'&nbsp;&nbsp;</div>
+                        </div>
+                        <span id="consigneeAliasNote" class="status error hide">请您填写地址别名</span>
+                      </div>
+                      <input name="goods_flow_type" value="101" type="hidden">
+                      <input name="address_id" value="" type="hidden">
+                    </form>
+                  </div>
+                </div>
+                <div class="tip_box icon_box">
+                  <div class="pb_ft">
+                    <a class="pb_btn pb_ok">保存收货人信息</a>
+                    <a class="pb_btn pb_cl">取消</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!--商品信息-->
+      <section class="cartMain">
+        <div class="cartMain_hd">
+          <ul class="order_lists cartTop">
+            <li class="list_chk">
+              <!--所有商品全选-->
+              <input type="checkbox" id="all" class="whole_check">
+              <label for="all"></label> 全选
+            </li>
+            <li class="list_con">商品信息</li>
+            <li class="list_info">商品参数</li>
+            <li class="list_price">单价</li>
+            <li class="list_amount">数量</li>
+            <li class="list_sum">金额</li>
+          </ul>
+        </div>
+        <div class="cartBox">
+          <div class="shop_info">
+            <div class="all_check">
+              <!--店铺全选-->
+              <input type="checkbox" id="shop_a" class="shopChoice">
+              <label for="shop_a" class="shop"></label>
+            </div>
+            <div class="shop_name">
+              店铺：
+              <a href="javascript:;">京西商城</a>
+            </div>
+          </div>
+          <div class="order_content">
+            <volist name="total.data" id="vo">
+              <ul class="order_lists">
+                <li class="list_chk">
+                  <input type="checkbox" id="checkbox_2" class="son_check">
+                  <label for="checkbox_2"></label>
+                </li>
+                <li class="list_con">
+                  <div class="list_img">
+                    <a href="javascript:;"><img src="/{$vo.goods.goods_thumb}" alt=""
+                                                style="width: 90px;height: 90px"></a>
+                  </div>
+                  <div class="list_text">
+                    <a href="javascript:;">{$vo.goods.goods_name}</a>
+                  </div>
+                </li>
+                <li class="list_info">
+                  <volist name="vo.attr" id="item">
+                    <p>{$item.attr_name}：{$item.attr_values}</p>
+                  </volist>
+                </li>
+                <li class="list_price">
+                  <p class="price">￥{$vo.goods.shop_price}</p>
+                </li>
+                <li class="list_amount">
+                  <div class="amount_box">
+                    <a class="reduce" style="cursor: pointer">-</a>
+                    <input type="text" value="{$vo.goods_count}" class="sum">
+                    <a class="plus" style="cursor: pointer">+</a>
+                  </div>
+                </li>
+                <li class="list_sum">
+                  <p class="sum_price">￥{$vo['goods']['shop_price']*$vo['goods_count']}</p>
+                </li>
+              </ul>
+            </volist>
+          </div>
+        </div>
+        <!--底部-->
+        <div class="bar-wrapper">
+          <div class="bar-right">
+            <div class="piece">已选商品<strong class="piece_num">{$total.count}</strong>件</div>
+            <div class="totalMoney">共计: <strong class="total_text">{$total.price}</strong></div>
+            <div class="calBtn">
+              <a href="{:U('Order/check')}">提交订单</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="model_bg"></section>
+      <section class="my_model">
+        <p class="title">删除宝贝<span class="closeModel">X</span></p>
+        <p>您确认要删除该宝贝吗？</p>
+        <div class="opBtn">
+          <a href="javascript:;" class="dialog-sure">确定</a>
+          <a href="javascript:;" class="dialog-close">关闭</a>
+        </div>
+      </section>
+      <!--商品信息-->
+      <div class="enjoy_title">
+        <h3>猜你喜欢</h3>
+      </div>
+      <div class="no_enough">
+        <ul>
+          <li class="opacity_img1">
+            <a href="#" target="_blank">
+              <div class="p_img">
+                <img src="__PUBLIC_HOME__/images/no_enough1.jpg" />
+              </div>
+              <div class="no_ename" title="【情侣款】Camel骆驼男靴 时尚潮流英伦风马丁靴高帮皮靴 爆卖1万双！ 情侣马丁靴 好评如潮">
+                【情侣款】Camel骆驼男靴 时尚潮流英伦风马丁靴高帮皮靴 爆卖1万双！ 情侣马丁靴 好评如潮
+              </div>
+              <div class="no_eprice">
+                <em>¥</em>555.00
+              </div>
+            </a>
+          </li>
+          <li class="opacity_img1">
+            <a href="#" target="_blank">
+              <div class="p_img">
+                <img src="__PUBLIC_HOME__/images/no_enough2.jpg" />
+              </div>
+              <div class="no_ename" title="春季马丁靴男真皮男靴黄靴工装军靴韩版短靴沙漠靴高帮男鞋大黄靴 头层牛皮">
+                春季马丁靴男真皮男靴黄靴工装军靴韩版短靴沙漠靴高帮男鞋大黄靴 头层牛皮
+              </div>
+              <div class="no_eprice">
+                <em>¥</em>555.00
+              </div>
+            </a>
+          </li>
+          <li class="opacity_img1">
+            <a href="#" target="_blank">
+              <div class="p_img">
+                <img src="__PUBLIC_HOME__/images/no_enough3.jpg" />
+              </div>
+              <div class="no_ename" title="特步女鞋2017春季新款运动鞋休闲鞋女慢跑步鞋旅游鞋轻便舒适时尚 早春特惠 爆款休闲女鞋 赠运费险">
+                特步女鞋2017春季新款运动鞋休闲鞋女慢跑步鞋旅游鞋轻便舒适时尚 早春特惠 爆款休闲女鞋 赠运费险
+              </div>
+              <div class="no_eprice">
+                <em>¥</em>555.00
+              </div>
+            </a>
+          </li>
+          <li class="opacity_img1">
+            <a href="#" target="_blank">
+              <div class="p_img">
+                <img src="__PUBLIC_HOME__/images/no_enough4.jpg" />
+              </div>
+              <div class="no_ename" title="新款韩版chic学生宽松短款外套上衣字母长袖连帽套头卫衣女潮">
+                新款韩版chic学生宽松短款外套上衣字母长袖连帽套头卫衣女潮
+              </div>
+              <div class="no_eprice">
+                <em>¥</em>555.00
+              </div>
+            </a>
+          </li>
+          <li class="opacity_img1">
+            <a href="#" target="_blank">
+              <div class="p_img">
+                <img src="__PUBLIC_HOME__/images/no_enough5.jpg" />
+              </div>
+              <div class="no_ename" title="igtt铝框行李箱拉杆箱旅行箱万向轮男女20/24/26寸密码箱登机箱子 铝合金框 加强密码锁 万向轮 终身保修">
+                igtt铝框行李箱拉杆箱旅行箱万向轮男女20/24/26寸密码箱登机箱子 铝合金框 加强密码锁 万向轮 终身保修
+              </div>
+              <div class="no_eprice">
+                <em>¥</em>555.00
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+</block>
+<block name="js">
+  <script type="text/javascript" src="__PUBLIC_HOME__/js/carts.js"></script>
+  <script type="text/javascript" src="__PUBLIC_HOME__/js/slide.js"></script>
+  <script src="__PUBLIC_HOME__/js/PCASClass.js"></script>
+  <script>
+    new PCAS("province", "city", "area", "", " ", " ");
+  </script>
+</block>
+
+

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="__PUBLIC_HOME__/css/style.css" />
+		<link rel="stylesheet" href="__PUBLIC_HOME__/css/base.css" />
+		<title>注册</title>
+	</head>
+
+	<body>
+		<div class="register_header">
+			<div class="reg_hc">
+				<img src="__PUBLIC_HOME__/images/logo.png" />
+				<h4>欢迎注册</h4>
+				<span class="forget fr">已有账号？<a href="{:U('login')}">请登录</a></span>
+			</div>
+		</div>
+		<div class="register_con">
+			<div class="register_conr">
+				<div class="register">
+					<h5 class="personal active1">个人注册</h5>
+					<!--<h6 class="business cancel">商户注册</h6>-->
+				</div>
+				<div class="clear"></div>
+				<div class="user per_register">
+					<span>用户名：</span>
+					<img src="__PUBLIC_HOME__/images/user.png" class="psw" style="margin-top: 10px;" />
+					<input type="text" name="username" id="username" class="input_comm" placeholder="请输入用户名" style="margin-top: 0px;">
+					<br />
+					<span>密码：</span>
+					<img src="__PUBLIC_HOME__/images/password.png" class="psw" />
+					<input type="password" name="password" id="password" class="input_comm" placeholder="请至少使用两种字符组合" />
+					<br />
+					<span>确认密码：</span>
+					<img src="__PUBLIC_HOME__/images/password.png" class="psw" />
+					<input type="password" name="fireword" id="fireword" class="input_comm" placeholder="请确认密码" />
+					<br />
+				<!--	<span>手机号：</span>
+					<img src="__PUBLIC_HOME__/images/phone.png" class="psw" />
+					<input type="text" name="phone" id="phone" class="input_comm" placeholder="手机号" />-->
+					<br />
+					<!--<span>邮箱：</span>
+					<img src="__PUBLIC_HOME__/images/email.png" class="psw"  />
+					<input type="email" name="email" class="input_comm" placeholder="请输入邮箱" />
+					<button class="quire_yzm">获取验证码</button>-->
+					<br />
+					<span>验证码：</span>
+					<input type="text" name="code" id="code" class="yanzhengma" placeholder="请输入验证码" />
+					<img src="{:U('code')}" class="yanzheng" onclick="changeCode(this)" style="cursor: pointer"/>
+					<p class="change fr">
+						<a href="#">看不清楚 再换一张</a>
+					</p>
+					<div class="clear"></div>
+					<!--<input type="checkbox" name="jizhu" value="记住账号和密码" class="bark"/><span class="bark1">记住账号和密码</span>
+						<span class="forget fr"><a href="#">忘记密码</a></span>-->
+					<input type="button" name="denglu" value="注   册" class="btn_register" id="register"/>
+				</div>
+				<!--商户注册-->
+				<!--<div class="user business_register">
+					<span>商店名称：</span>
+					<img src="__PUBLIC_HOME__/images/business.png" class="psw" style="margin-top: 10px;" />
+					<input type="text" name="user" id="IDnum" class="input_comm" placeholder="请输商店名称" style="margin-top: 0px;">
+					<br />
+					<span>密码：</span>
+					<img src="__PUBLIC_HOME__/images/password.png" class="psw" />
+					<input type="password" name="password" id="password" class="input_comm" placeholder="请输入密码" />
+					<br />
+					<span>确认密码：</span>
+					<img src="__PUBLIC_HOME__/images/password.png" class="psw" />
+					<input type="password" name="password" id="password" class="input_comm" placeholder="请确认密码" />
+					<br />
+					<span>手机号：</span>
+					<img src="__PUBLIC_HOME__/images/phone.png" class="psw" />
+					<input type="text" name="phone" id="phone" class="input_comm" placeholder="手机号" />
+					<br />
+					<span>邮箱：</span>
+					<img src="__PUBLIC_HOME__/images/email.png" class="psw" />
+					<input type="text" name="yanzhengma" class="input_comm" placeholder="请输入邮箱" />
+					<button class="quire_yzm">获取验证码</button>
+					<br />
+					<span>城市：</span>
+					<img src="__PUBLIC_HOME__/images/place2.png" class="psw" />
+					<input type="text" placeholder="请输入或选择商铺所在城市" class="input_comm search" />
+					<span>验证码：</span>
+					<input type="text" name="yanzhengma" class="yanzhengma" placeholder="请输入验证码" />
+					<img src="__PUBLIC_HOME__/images/yanzhengma.png" class="yanzheng" />
+					<p class="change fr">
+						<a href="#">看不清楚 再换一张</a>
+					</p>
+					<div class="clear"></div>
+
+					&lt;!&ndash;<input type="checkbox" name="jizhu" value="记住账号和密码" class="bark"/><span class="bark1">记住账号和密码</span>
+						<span class="forget fr"><a href="#">忘记密码</a></span>&ndash;&gt;
+					<input type="button" name="register" value="注   册" class="btn_register"/>
+				</div>-->
+			</div>
+			<div class="clear"></div>
+		</div>
+	</body>
+	<script src="__PUBLIC_HOME__/js/jquery.min.js"></script>
+	<script src="__PUBLIC_HOME__/js/kuCity.js"></script>
+	<script>
+		$('.business').click(function() {
+			$('.business_register').show();
+			$('.per_register').hide();
+			$(this).addClass('active1').removeClass('cancel');
+			$('.personal').addClass('cancel').removeClass('active1');
+		});
+		$('.personal').click(function() {
+			$('.business_register').hide();
+			$('.per_register').show();
+			$(".business").addClass('cancel').removeClass('active1');
+			$(this).addClass('active1').removeClass('cancel');
+		});
+		function changeCode(obj) {
+      $(obj).attr('src',"{:U('code','time='.time())}")
+    }
+    $("#register").click(function () {
+      var username = $("#username").val();
+      var password = $("#password").val();
+      var fireword = $("#fireword").val();
+      var code = $("#code").val();
+      if (password !== fireword) {
+        alert('两次输入的密码一致');
+        return false;
+      }
+      $.ajax({
+        url: "{:U('register')}",
+        type: "post",
+        data: {username: username,password:password,fireword:fireword,code:code},
+        success: function (data) {
+          window.alert(data.message);
+        }
+      })
+    })
+	</script>
+	<script>
+		$('.search').kuCity();
+	</script>
+</html>
