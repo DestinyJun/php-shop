@@ -13,7 +13,19 @@ class MyPage extends Page
     'first' => '第一页',
     'last'  => '最后一页',
     'theme' => '%FIRST% %UP_PAGE% %LINK_PAGE% %DOWN_PAGE% %END% %HEADER% %NOW_PAGE%',
+    'is_anchor'=>false, // 是否支持锚点
+    'anchorName'=>'detail' // 指定锚点名称
   );
+
+  protected function url($page)
+  {
+    $url = str_replace(urlencode('[PAGE]'), $page, $this->url);
+    if ($this->config['is_anchor']) {
+      $url .= '#'.$this->config['anchorName'];
+    }
+    return $url;
+  }
+
   /**
    * 组装分页链接
    * @return string

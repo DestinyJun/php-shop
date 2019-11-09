@@ -20,6 +20,9 @@ define('APP_DEBUG',true);
 // 定义目录分隔符
 define('DS',DIRECTORY_SEPARATOR);
 
+// 项目跟物理路径
+define('PROJECT_ROOT',str_replace('/','\\',$_SERVER['DOCUMENT_ROOT']).DS);
+
 // 定义应用存储目录
 define('APP_PATH','./Application'.DS);
 
