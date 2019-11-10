@@ -47,6 +47,8 @@ class CommentModel extends Model
         );
       }
     }
+    // 实现评论总数的增加
+    M('goods')->where("id={$data['goods_id']}")->setInc('plcount');
     if ($data) {
       $imModel->addAll($data);
     }

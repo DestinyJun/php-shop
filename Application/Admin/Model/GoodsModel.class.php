@@ -12,7 +12,7 @@ final class GoodsModel extends CommonModel
   protected $fields = array(
     'id', 'goods_name', 'goods_sn', 'category_id', 'market_price', 'shop_price', 'goods_body',
     'goods_img', 'goods_thumb', 'is_hot', 'is_rec', 'is_new', 'is_del', 'is_sale', 'addtime','type_id','goods_number',
-    'cx_price','start','end'
+    'cx_price','start','end','plcount','sale_number'
   );
 
   // 定义字段自动校验
@@ -323,6 +323,88 @@ final class GoodsModel extends CommonModel
     return $this->
     where("is_sale=1 AND cx_price>0 AND start<".time()." AND end>".time())->
     limit(5)->select();
+  }
+
+  // 获取某一个分类下的商品
+  public function getList() {
+    // 获取当前分类ID
+    $category_id = I('get.id');
+    // 获取当前分类下的所有子ID
+    $children = D('Admin/Category')->getChildren($category_id);
+    // 把当前ID加入$children中
+    $children[] = $category_id;
+    // 为了使用MySQL的in语法，把数组转为字符串
+    $children = implode(',',$children);
+    // 查询条件
+    $where = "is_sale=1 AND category_id in ({$children})";
+
+    // 计算当前分类下的价格筛选条件，
+    //第一步：获取当前分类下的商品的最大价格以及最小价格
+    $goods_info = $this->field("max(shop_price) max_price,min(shop_price) min_price,count(id) goods_count,group_concat(id) goods_ids")->where($where)->find();
+    // 第二步：根据当前商品的个数判断是否需要显示出价格区间
+    if ($goods_info['goods_count']>1) {
+      $cha = $goods_info['max_price'] - $goods_info['min_price'];
+      if ($cha<100) {
+        $sec = 1; // 具体显示的价格区间的个数
+      } elseif ($cha<500) {
+        $sec = 2;
+      } elseif ($cha<1000) {
+        $sec = 3;
+      } elseif ($cha<5000) {
+        $sec = 4;
+      } elseif ($cha<10000) {
+        $sec = 5;
+      }else{
+        $sec = 6;
+      }
+      $price = array(); // 保存具体的每一个价格区间对应的值
+      $first = ceil($goods_info['min_price']); // 开始价格
+      $zl = ceil($cha/$sec); // 每个价格区间增加的数量
+      // 第三步：运算具体的价格区间
+      for ($i=0;$i<$sec;$i++) {
+        $price[] = $first.'-'.($first+$zl);
+        $first += $zl;
+      }
+    }
+    // 第四步：增加价格查询条件
+    if (I('get.price')) {
+      $price_list = explode('-',I('get.price'));
+      $where .= " AND shop_price>{$price_list[0]} AND shop_price<{$price_list[1]}";
+    }
+
+    //根据属性赛选条件查询
+    $attr = M('goods_attr')->alias('a')->field('distinct a.attr_id,a.attr_values,b.attr_name')->
+    join("left join wj_attribute b on a.attr_id=b.id")->
+    where("a.goods_id in ({$goods_info['goods_ids']})")->select();
+    foreach ($attr as $key=>$value) {
+      $attr_list[$value['attr_id']][] = $value;
+    }
+    // 根据属性值查询商品id
+    if (I('get.attr')) {
+      // 为了方便使用，把attr转为数组
+      $tem = explode(',',I('get.attr')); // 得到属性的数组
+      // 根据属性数组查询商品id
+      $goods_ids = M('goods_attr')->field("group_concat(goods_id) as goods_ids")->where(array('attr_values'=>array('in'=>$tem)))->find();
+      if ($goods_ids) {
+        $where .= " AND id in ({$goods_ids})";
+      }
+    }
+
+    // 分页查询
+    $p = I('get.p');
+    $count = $this->where($where)->count();
+    $pagesize = 5;
+    $page = new MyPage($count,$pagesize);
+    $pageStr = $page->show();
+    // 商品数据排序
+    $sort = I('get.sort')?I('get.sort'):'sale_number';
+    $data = $this->where($where)->page($p,$pagesize)->order("$sort desc")->select();
+    return array(
+      'goods'     =>$data,
+      'price'     =>$price,
+      'attr_list' =>$attr_list,
+      'page'      =>$pageStr
+    );
   }
 
   // 使用自动完成规则补齐参数

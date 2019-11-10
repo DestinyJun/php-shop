@@ -53,6 +53,8 @@ final class OrderModel extends Model
       if ($value['goods_attr_ids']) {
         M('goods_number')->where($where)->setDec('goods_number',$value['goods_count']);
       }
+      // ③给商品增加销量
+      M('goods')->where("id={$value['goods_id']}")->setInc('sale_number',$value['goods_count']);
     }
     // （6）清空购物车中的数据
     $client_id = session('client_id');
