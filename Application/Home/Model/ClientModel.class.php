@@ -4,13 +4,21 @@ use Think\Model;
 
 final class ClientModel extends Model
 {
-  public function regist($username,$password) {
+  protected $fields = array('id','username','password','tel','email','status','salt');
+  public function regist($username,$password, $tel, $email) {
     // （1）判断用户名是否存在
     $info = $this->where("username='{$username}'")->find();
     if ($info) {
       $this->error = '用户名重复';
       return false;
     }
+    // 判断手机号是否重复
+    $info = $this->where("tel='{$tel}'")->find();
+    if ($info) {
+      $this->error = '手机号重复';
+      return false;
+    }
+
     // （2）生成密码盐
     $salt = rand(100000,999999);
     // （3）生成双重MD5之后密码
@@ -19,6 +27,9 @@ final class ClientModel extends Model
     $data = array(
       'username'=>$username,
       'password'=>$db_password,
+      'tel'=>$tel,
+      'email'=>$email,
+      'status'=>1,
       'salt'=>$salt
     );
     return $this->add($data);
