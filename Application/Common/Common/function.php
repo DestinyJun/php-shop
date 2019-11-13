@@ -84,7 +84,7 @@ function sendTemplateSMS($to="18798723901", $datas=array('2345','60'), $tempId="
  * @return bool
  * @throws \PHPMailer\PHPMailer\Exception
  */
-function sendEmail($code,$address) {
+function sendEmail($email,$subject,$body) {
   include_once './PHPMailer/Exception.php';
   include_once './PHPMailer/SMTP.php';
   include_once './PHPMailer/PHPMailer.php';
@@ -101,9 +101,9 @@ function sendEmail($code,$address) {
   $mail->CharSet = 'UTF-8'; // 内容字符集
   $mail->From = 'wwjwxm0858@163.com'; // 发件人邮件地址
   $mail->FromName = '文君电商'; // 发件人昵称
-  $mail->Subject = '文君电商注册邮箱认证'; // 邮件主题
-  $mail->msgHTML("邮箱验证码位：{$code}，10分钟内有效"); // 邮件正文
-  $mail->addAddress($address); // 收件人
+  $mail->Subject = $subject; // 邮件主题
+  $mail->msgHTML($body); // 邮件正文
+  $mail->addAddress($email); // 收件人
   $mail->addAttachment('./Uploads/goods/2019-10-24/5db1c4bb3a571.jpg'); // 追加附件
   $res = $mail->send();
   return $res;

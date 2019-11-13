@@ -1,0 +1,66 @@
+<extend name="Public/base"/>
+<block name="title">订单管理</block>
+<block name="location">订单列表</block>
+<block name="content">
+  <div class="row"></div>
+  <table id="simple-table" class="table  table-bordered table-hover">
+    <thead>
+    <tr>
+      <th class="center">
+        <label class="pos-rel">
+          <input type="checkbox" class="ace">
+          <span class="lbl"></span>
+        </label>
+      </th>
+      <th class="detail-col">订单号</th>
+      <th>订单金额</th>
+      <th>订单支付状态</th>
+      <th>收货人</th>
+      <th>收获地址</th>
+      <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <volist name="data" id="item" key="k">
+      <tr>
+        <td class="center">
+          <label class="pos-rel">
+            <input type="checkbox" class="ace">
+            <span class="lbl"></span>
+          </label>
+        </td>
+        <td class="center">{$item.id}</td>
+        <td>{$item.total_price}</td>
+        <td><eq name="item.pay_status" value="1"><span class="text-success">已支付</span> <else /> <span class="text-danger">未支付</span></eq></td>
+        <td>{$item.name}</td>
+        <td>{$item.address}</td>
+        <td>
+          <div class="hidden-sm hidden-xs btn-group">
+            <eq name="item.order_status" value="1">
+              <a class="btn btn-xs btn-danger" href="{:U('send','id='.$item['id'])}">发货</a>
+              <else />
+              <a class="btn btn-xs btn-success">已发货</a>
+            </eq>
+          </div>
+        </td>
+      </tr>
+    </volist>
+    </tbody>
+  </table>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="dataTables_paginate paging_simple_numbers" id="dynamic-table_paginate">
+
+      </div>
+    </div>
+  </div>
+</block>
+<block name="js">
+  <script>
+    function deleteItem(id) {
+      if (window.confirm('确定要删除吗？')) {
+        location.href = "/goods/del/id/"+id;
+      }
+    }
+  </script>
+</block>

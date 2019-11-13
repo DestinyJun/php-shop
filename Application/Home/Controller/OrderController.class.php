@@ -3,6 +3,15 @@ namespace Home\Controller;
 
 final class OrderController extends CommonController
 {
+  public function index() {
+    $this->checkLogin();
+    $client_id = session('client_id');
+    $model = D('Order');
+    $data = $model->where("client_id={$client_id}")->select();
+    $this->assign('data',$data);
+    $this->display();
+  }
+
   public function check() {
     // 结算之前，必须先登陆
     $this->checkLogin();

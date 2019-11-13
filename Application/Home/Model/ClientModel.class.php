@@ -4,7 +4,7 @@ use Think\Model;
 
 final class ClientModel extends Model
 {
-  protected $fields = array('id','username','password','tel','email','status','salt');
+  protected $fields = array('id','username','password','tel','email','active_code','status','salt');
   public function regist($username,$password, $tel, $email) {
     // （1）判断用户名是否存在
     $info = $this->where("username='{$username}'")->find();
@@ -29,10 +29,13 @@ final class ClientModel extends Model
       'password'=>$db_password,
       'tel'=>$tel,
       'email'=>$email,
+      'active_code'=>uniqid(), // 生成唯一激活码
       'status'=>1,
       'salt'=>$salt
     );
-    return $this->add($data);
+    $client_id =  $this->add($data);
+    $data['client_id'] = $client_id;
+    return $data;
   }
 
   public function login ($username,$password) {
@@ -42,7 +45,12 @@ final class ClientModel extends Model
       $this->error = '用户名或密码错误';
       return false;
     }
-    // （2）加密密码进行比对
+    // （2）检查用户是否激活
+    if ($info['status'] != 1) {
+      $this->error = '该用户没有激活';
+      return false;
+    }
+    // （3）加密密码进行比对
     $db_password = md5(md5($password).$info['salt']);
     if ($db_password != $info['password']) {
       $this->error = '用户名或密码错误';
