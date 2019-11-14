@@ -40,6 +40,7 @@
 					<!--<input type="checkbox" name="jizhu" value="记住账号和密码" class="bark"/><span class="bark1">记住账号和密码</span>
 						<span class="forget fr"><a href="#">忘记密码</a></span>-->
 					<input type="button" name="denglu" value="登 录" class="btn_register" id="toIndex"/>
+					<input type="button" name="qqlogin" value="QQ登录" class="btn_register btn_buynow" id="qqlogin" onclick='toQzoneLogin()'/>
 				</div>
 				<!--商户注册-->
 			<!--	<div class="user business_register">
@@ -123,6 +124,15 @@
       })
     })
 	</script>
+  <script type="text/javascript">
+    var childWindow;
+    function toQzoneLogin() {
+      childWindow = window.open("{:U('oauth')}","TencentLogin","width=450,height=320,menubar=0,scrollbars=1, resizable=1,status=1,titlebar=0,toolbar=0,location=1");
+    }
+    function closeChildWindow() {
+      childWindow.close();
+    }
+  </script>
 	<script>
 		$('.search').kuCity();
 	</script>

@@ -169,11 +169,37 @@ final class ClientController extends CommonController
     $this->success('激活成功！',U('login'));
   }
 
+  // QQ登陆
+  public function oauth() {
+    require_once("qq/API/qqConnectAPI.php");
+    $qc = new \QC();
+    $qc->qq_login();
+  }
+
+  // QQ授权登陆后的回调
+  public function callback() {
+    require_once("qq/API/qqConnectAPI.php");
+    $qc = new \QC();
+    $access_token = $qc->qq_callback(); // 拿到access_token
+    $openid       = $qc->get_openid(); // 拿到qq用户的openid,是某一个用户的唯一标识
+
+    // 在获取用户信息之前，再次实例化QC对象可以防止网络已经修改了QQ信息的报错问题报错问题,此时需要把$access_token跟$openid传入
+    $qc = new \QC($access_token,$openid);
+    $client = $qc->get_user_info(); // 拿到qq用户的基本信息
+    // 把QQ授权后的详细信息写入数据库
+    $model = D('Client');
+    $model->qqLogin($client,$openid);
+    $this->success('操作成功！',U('Index/index'));
+  }
+
   public function test() {
-    // 拼接激活链接
-    $link = "//www.baidu.com";
-    $content = "<p>点击连接激活：<a href='$link'>$link</a></p>";
-    $res = sendEmail('wxmwsw0858@163.com','文君祝贺',$content);
-    dump($res);
+    $data = array(
+      'username'=>'wwj',
+      'password'=>'1',
+      'c'=>'user', // 指定api接口中的具体控制器
+      'a'=>'login',// 指定api接口中的具体方法
+    );
+    $res = get_data($data,'get');
+    $this->ajaxReturn($res);
   }
 }

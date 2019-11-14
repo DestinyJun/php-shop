@@ -4,7 +4,7 @@ use Think\Model;
 
 final class ClientModel extends Model
 {
-  protected $fields = array('id','username','password','tel','email','active_code','status','salt');
+  protected $fields = array('id','username','password','tel','email','active_code','status','salt','openid');
   public function regist($username,$password, $tel, $email) {
     // （1）判断用户名是否存在
     $info = $this->where("username='{$username}'")->find();
@@ -62,5 +62,30 @@ final class ClientModel extends Model
     // 登陆成功后转移购物车中的数据
     D('Cart')->cookie2db();
     return true;
+  }
+
+  public function qqLogin($client,$openid) {
+    // 生成密码盐
+    $salt = rand(100000,999999);
+    // 生成双重MD5之后密码
+    $db_password = md5(md5('123456').$salt);
+    // 先判断此QQ号是否已经注册
+    $data = $this->where("openid={$openid}")->find();
+    if (!$data) {
+      // 没有注册，就给注册
+      $data = array(
+        'username'=>"qquser_".rand(1000,9999),"{$client['nikename']}", // 随机生成用户名
+        'password'=>$db_password,
+        'salt'=>$salt,
+        'status'=>1,
+        'openid'=>$openid
+      );
+      $data['id'] = $this->add($data);
+    }
+    // 验证成功，保存用户状态
+    session('client',$data);
+    session('client_id',$data['id']);
+    // 登陆成功后转移购物车中的数据
+    D('Cart')->cookie2db();
   }
 }

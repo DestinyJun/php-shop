@@ -1,0 +1,2 @@
+<?php die('forbidden'); ?>
+{"appid":"asdadasd","appkey":"cdeb78a06c59d55ed57154c87a4e216c","callback":"http://www.wshop.com/Home/Client/callback","scope":"get_user_info","errorReport":true,"storageType":"file","host":"localhost","user":"root","password":"root","database":"test"}
