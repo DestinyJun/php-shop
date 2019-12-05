@@ -2,6 +2,7 @@
 
 # compiled output
 /dist
+/Application/Runtime
 /tmp
 /out-tsc
 /src/assets/images
